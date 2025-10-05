@@ -24,7 +24,7 @@ interface WomenMakingItHappenProps {
 const defaultOrganizers: Organizer[] = [
   {
     name: "Maureen Josephine",
-    title: "WIT Summit Host | Founder Tambua | Software Engineer | GDE",
+    title: "WIT Summit Host | Founder - Tambua | Software Engineer | GDE",
     image: "/speakers/mj.png",
   },
   {
@@ -39,7 +39,7 @@ const defaultOrganizers: Organizer[] = [
   },
 
   {
-    name: "Kendi Jaqueline",
+    name: "Kendi Jacqueline",
     title: "Software Engineer | Tech Speaker | Community Organizer ",
     image: "/speakers/kendi.jpeg",
   },

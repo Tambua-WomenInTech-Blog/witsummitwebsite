@@ -38,7 +38,7 @@ const PricingSection: React.FC = () => {
     {
       id: "empowerher",
       name: "EmpowerHER Pass (Regular Ticket)",
-      price: "3000 / $24",
+      price: "3,000 / $24",
       currency: "KES",
       popular: true,
       badge: "Most Popular",
