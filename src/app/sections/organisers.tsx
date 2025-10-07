@@ -39,8 +39,8 @@ const defaultOrganizers: Organizer[] = [
   },
 
   {
-    name: "Kendi Jacqueline",
-    title: "Software Engineer | Tech Speaker | Community Organizer ",
+    name: "Kendi J",
+    title: "Software Engineer | Tech Speaker | Data Scientist",
     image: "/speakers/kendi.jpeg",
   },
   {
