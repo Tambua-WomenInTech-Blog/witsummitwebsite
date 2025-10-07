@@ -8,12 +8,22 @@ const Partners: React.FC = () => {
   const partners = [
     { src: "/sponsors/platcorp.png", alt: "platcorp", height: 90, width: 150 },
     { src: "/sponsors/vabu.png", alt: "vabu", height: 80, width: 100 },
+    { src: "/sponsors/lamu.png", alt: "lamu", height: 80, width: 150 },
+    { src: "/sponsors/ihub.png", alt: "ihub", height: 80, width: 150 },
+    { src: "/sponsors/kdk.png", alt: "kdk", height: 80, width: 150 },
+    {
+      src: "/sponsors/tech_event_kenya.png",
+      alt: "k_tech_event",
+      height: 80,
+      width: 100,
+    },
     {
       src: "/sponsors/wtn.png",
       alt: "womentechNetwork",
       height: 80,
       width: 150,
     },
+
     { src: "/sponsors/ttw.png", alt: "ttw", height: 90, width: 100 },
     { src: "/sponsors/awit.png", alt: "awit", height: 80, width: 150 },
   ];
