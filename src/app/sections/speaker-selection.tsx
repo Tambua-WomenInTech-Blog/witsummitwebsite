@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import EventSpeakerDemo from "./speakers-page";
 
 interface SpeakerCardProps {
   name: string;
@@ -124,7 +125,9 @@ const SpeakersSection: React.FC = () => {
             Maureen Josephine
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
+
+          <EventSpeakerDemo />
+          {/* <div className="grid md:grid-cols-3 gap-6">
             {keynoteSpeakers.map((speaker, index) => (
               <SpeakerCard
                 key={index}
@@ -135,10 +138,10 @@ const SpeakersSection: React.FC = () => {
                 comingSoon={true}
               />
             ))}
-          </div>
+          </div> */}
         </div>
 
-        <div>
+        {/* <div>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Speakers</h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl">
             Real voices. Honest journeys. Everything they say will land
@@ -157,7 +160,7 @@ const SpeakersSection: React.FC = () => {
               />
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
