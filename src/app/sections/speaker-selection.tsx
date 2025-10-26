@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import EventSpeakerDemo from "./event-speaker-section";
+import EventSpeakerSection from "./event-speaker-section";
 
 interface SpeakerCardProps {
   name: string;
@@ -146,7 +146,7 @@ const SpeakersSection: React.FC = () => {
             differently—because they've walked where you're walking.
           </p>
 
-          <EventSpeakerDemo />
+          <EventSpeakerSection />
         </div>
       </div>
     </section>

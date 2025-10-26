@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { EventSpeaker } from "./event-speaker";
 
-const EventSpeakerDemo = () => {
+const EventSpeakerSection = () => {
   const [viewMore, setViewMore] = useState(false);
   const [randomizedSpeakers, setRandomizedSpeakers] = useState<typeof speakers>(
     []
@@ -33,12 +33,13 @@ const EventSpeakerDemo = () => {
       bio: 'Tech innovator with a diploma in Water and Environmental Engineering. Passionate about using data and technology for social good, focusing on empowering women and youth. Motto: "I use tech to speak for those who can\'t—and build for those who will."',
       image: "https://drive.google.com/open?id=17bu4EX-75xMeU0BWVFcLQpvd9SmG5ggo",
     },
-    {
-      name: "Macharia Mercy Wambui",
-      company: "Meru National Polytechnic",
-      bio: "Graduate of Meru National Polytechnic with a Diploma in Electrical and Electronic Engineering. Experienced in motor control systems and automation, passionate about applying technology to real-world problems.",
-      image: null,
-    },
+    // TODO: Add back later (@JosephineAkello)
+    // {
+    //   name: "Macharia Mercy Wambui",
+    //   company: "Meru National Polytechnic",
+    //   bio: "Graduate of Meru National Polytechnic with a Diploma in Electrical and Electronic Engineering. Experienced in motor control systems and automation, passionate about applying technology to real-world problems.",
+    //   image: null,
+    // },
     {
       name: "Chinaza Chukwunweike",
       company: "Software Engineer",
@@ -85,68 +86,58 @@ const EventSpeakerDemo = () => {
       name: "Faith Wanyangu",
       company: "Cybersecurity Analyst",
       bio: "Cybersecurity Analyst specializing in threat monitoring and incident response in the financial sector. Focused on strengthening defenses and safeguarding critical systems.",
-      image: null,
+      image: "https://drive.google.com/open?id=1xZcDmqqfIrh6wb_u_HHZhLrfZYRc_Yt-",
     },
     {
       name: "Saido Omar Noor",
       company: "TechniKam Hub",
       bio: "Software engineer, social entrepreneur, and founder of TechniKam Hub, a social enterprise empowering women with digital skills, mentorship, and job opportunities.",
-      image: null,
+      image: "https://drive.google.com/open?id=17fD98BDvJsTD2qQQYRzjlITIlBUH-a73",
     },
     {
       name: "Mary Maina",
       company: "Software Developer",
       bio: "Software developer experienced in Next.js, Node.js, TypeScript, and API integrations. Passionate about building scalable systems and impactful tech solutions.",
-      image: null,
+      image: "https://drive.google.com/open?id=1etRcPQhVjc4JKwcC5MW5VD4AYBLREZ-0",
     },
     {
       name: "Jacqueline Kamadi",
       company: "Kiwami Tech",
       bio: "Software Quality Assurance Engineer and Test Engineering Advocate. Certified ISTQB Advanced Test Automation Engineer and ITIL V4 professional. Enthusiast for intelligent testing.",
-      image: null,
+      image: "https://drive.google.com/open?id=1IlP9gL5iGNkY-FifIwVfJQJxIjaY8LMK",
     },
-    {
-      name: "Sally Musanga",
-      company: "CMU-Africa",
-      bio: "Research scientist and CMU-Africa MSIT graduate focusing on human-centered, responsible AI. Combines full-stack engineering and ML to deliver solutions in agriculture, climate, and social impact.",
-      image: null,
-    },
+   
     {
       name: "Latifa Noor",
       company: "Lamu Tech Hub",
       bio: "Communications professional and founder of Lamu Tech Hub, a community-based organization for youth and women in STEAM. Background in program management and organizational communication.",
-      image: null,
+      image: "https://drive.google.com/open?id=1wsTuXtUSq_LmKh2crgufryBXJZG4XPYp",
     },
     {
       name: "Bosibori Valeria",
       company: "Tech Sisters Kenya",
       bio: "Product and Project Manager, Community Builder, and Co-Founder of Tech Sisters Kenya. Empowered 1,700+ women in tech through mentorship and growth opportunities.",
-      image: null,
+      image: "https://drive.google.com/open?id=1hQy_vCd2eR9XkXpaYxU8GINkvbGHzhEy",
     },
     {
-      name: "Elizabeth Adhiambo Onyango",
+      name: "Elizabeth Onyango",
       company: "Software Developer",
       bio: "Early-career technologist exploring Python, automation, and software development. Passionate about increasing women's participation in tech.",
-      image: null,
+      image: "https://drive.google.com/open?id=1H5tg5R6zmBnyxUQegBR6eM6Bxb1ycjfg",
     },
     {
       name: "Grace Ngari",
       company: "Pathways Technologies",
       bio: "Dynamic data scientist leveraging AI for real-world challenges. Experienced in ML, NLP, and AI-driven solutions. Winner of multiple hackathons including Nairobi AI and Innovate 254.",
-      image: null,
+      image: "https://drive.google.com/open?id=16W-4asiQ-fKRQOmyapHteeodgBT6fduA",
     },
     {
       name: "June Katei Reeves",
       company: "Essai International",
       bio: "Founder & CEO of Essai International, a software testing and talent acquisition company. Over a decade of experience in software testing, building and leading QA departments.",
-      image: null,
+      image: "https://drive.google.com/open?id=1nCoJqFlHcEjn9FZxkq42VvMBwHrt5FHq",
     },
-    {
-      name: "Tabitha Kavyuu",
-      company: "AltSchool Africa",
-      bio: "Tabitha Kavyu is a passionate community builder, educator, and advocate for women in technology, committed to using the power of education and opportunity to transform lives. She currently serves as the Senior Community Manager at AltSchool Africa, where she leads programs that support over 30,000 learners across the continent in acquiring in-demand tech skills.",
-      image: null,
-    },
+   
   ];
 
   
@@ -185,4 +176,4 @@ const EventSpeakerDemo = () => {
   );
 };
 
-export default EventSpeakerDemo;
+export default EventSpeakerSection;
