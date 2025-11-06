@@ -160,6 +160,8 @@ const WomenInTechSummitHero: React.FC = () => {
 
         <Link
           href="https://vabu.app/women-in-tech-summit-kenya-2025-11"
+          target="_blank"
+              rel="noopener noreferrer" 
           className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
         >
           RSVP
@@ -207,6 +209,8 @@ const WomenInTechSummitHero: React.FC = () => {
 
           <Link
             href="https://docs.google.com/forms/d/1I825WonV8qEBd3KrFnsUQRNAejI4pXD7eOiFW12shso/preview"
+            target="_blank"
+              rel="noopener noreferrer" 
             className="bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm flex items-center space-x-2"
           >
             <Mic className="w-5 h-5" />
@@ -221,7 +225,10 @@ const WomenInTechSummitHero: React.FC = () => {
           <span className="text-2xl group-hover:translate-x-1 transition-transform">
             →
           </span>
-          <Link href="https://docs.google.com/forms/d/1G87aMDpsTIXKiRg9jCvbrEILdV8sVyvBgdPjATGi1Xo/preview" className="text-purple-300 underline underline-offset-4 decoration-2 decoration-purple-300">
+          <Link href="https://docs.google.com/forms/d/1G87aMDpsTIXKiRg9jCvbrEILdV8sVyvBgdPjATGi1Xo/preview"
+          target="_blank"
+              rel="noopener noreferrer" 
+          className="text-purple-300 underline underline-offset-4 decoration-2 decoration-purple-300">
             View Sponsor Deck
           </Link>
         </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Twitter, Linkedin, Instagram } from "lucide-react";
 import Link from "next/link";
+import GoogleMapWidget from "./google-location";
 
 const HeroFooterSection: React.FC = () => {
   return (
@@ -72,29 +73,50 @@ const HeroFooterSection: React.FC = () => {
         </div>
       </div>
 
+      
+      <div className="absolute bottom-42 right-6 md:right-8 lg:right-12 z-20 hidden md:block">
+        <div style={{ width: "300px", height: "300px" }}>
+          <GoogleMapWidget
+            latitude={-1.2921}
+            longitude={36.8219}
+            address="Nairobi, Kenya"
+            title="Summit Venue"
+            zoom={15}
+            height="300px"
+          />
+        </div>
+      </div>
+
       <footer className="pb-24 relative z-10 flex flex-col sm:flex-row justify-between items-center px-6 md:px-8 lg:px-12 py-6 border-t border-white/10">
         <div className="text-white/70 text-sm mb-4 sm:mb-0">
           © Women In Tech Summit KE 2025 — Copyright
         </div>
 
         <div className="flex space-x-4">
-          <a
+        <a 
+          
             href="https://x.com/w_techshoutouts"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-white/70 hover:text-white transition-colors duration-200"
             aria-label="Twitter"
           >
             <Twitter className="w-5 h-5" />
           </a>
-          <a
-            href="https://www.linkedin.com/company/women-in-tech-shoutouts/"
+          
+            <a href="https://www.linkedin.com/company/women-in-tech-shoutouts/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-white/70 hover:text-white transition-colors duration-200"
             aria-label="LinkedIn"
           >
             <Linkedin className="w-5 h-5" />
           </a>
-          <a
-            href="https://www.tiktok.com/@womenintechshoutouts"
+          
+           <a href="https://www.tiktok.com/@womenintechshoutouts"
             className="text-white/70 hover:text-white transition-colors duration-200"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="TikTok"
           >
             <div className="w-5 h-5 flex items-center justify-center">
@@ -103,14 +125,17 @@ const HeroFooterSection: React.FC = () => {
               </svg>
             </div>
           </a>
-          <a
-            href="https://www.instagram.com/w_techshoutouts/?"
+          
+           <a href="https://www.instagram.com/w_techshoutouts/?"
             className="text-white/70 hover:text-white transition-colors duration-200"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Instagram"
           >
             <Instagram className="w-5 h-5" />
           </a>
-        </div>
+          </div>
+        
       </footer>
     </section>
   );

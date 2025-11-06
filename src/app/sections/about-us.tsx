@@ -137,6 +137,8 @@ const AboutSection: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Link
               href="https://vabu.app/women-in-tech-summit-kenya-2025-11"
+              target="_blank"
+              rel="noopener noreferrer"   
               className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
               Grab my Ticket
@@ -144,6 +146,8 @@ const AboutSection: React.FC = () => {
 
             <Link
               href="https://docs.google.com/forms/d/1I825WonV8qEBd3KrFnsUQRNAejI4pXD7eOiFW12shso/preview"
+              target="_blank"
+              rel="noopener noreferrer" 
               className="bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
             >
               Apply to Speak
