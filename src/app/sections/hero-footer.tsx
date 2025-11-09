@@ -80,6 +80,7 @@ const HeroFooterSection: React.FC = () => {
             latitude={-1.2921}
             longitude={36.8219}
             address="Nairobi, Kenya"
+            // TODO: Update exact location View (davies)
             title="Summit Venue"
             zoom={15}
             height="300px"
