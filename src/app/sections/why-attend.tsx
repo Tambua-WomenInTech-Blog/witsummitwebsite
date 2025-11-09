@@ -153,6 +153,8 @@ export default function WhyAttend() {
               </button>
               <Link
                 href="https://docs.google.com/forms/d/1I825WonV8qEBd3KrFnsUQRNAejI4pXD7eOiFW12shso/preview"
+                target="_blank"
+              rel="noopener noreferrer" 
                 className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-all"
               >
                 Apply to Speak

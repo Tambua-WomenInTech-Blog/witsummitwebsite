@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import EventSpeakerSection from "./event-speaker-section";
 
 interface SpeakerCardProps {
   name: string;
@@ -145,18 +146,7 @@ const SpeakersSection: React.FC = () => {
             differently—because they've walked where you're walking.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {speakers.map((speaker, index) => (
-              <SpeakerCard
-                key={index}
-                name={speaker.name}
-                title={speaker.title}
-                bgColor={speaker.bgColor}
-                image={speaker.image}
-                comingSoon={true}
-              />
-            ))}
-          </div>
+          <EventSpeakerSection />
         </div>
       </div>
     </section>
