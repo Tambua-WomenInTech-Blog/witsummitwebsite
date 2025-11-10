@@ -77,8 +77,8 @@ const HeroFooterSection: React.FC = () => {
       <div className="absolute bottom-42 right-6 md:right-8 lg:right-12 z-20 hidden md:block">
         <div style={{ width: "300px", height: "300px" }}>
           <GoogleMapWidget
-            latitude={-1.2921}
-            longitude={36.8219}
+            latitude={-1.2853}
+            longitude={36.7628}
             address="Nairobi, Kenya"
             // TODO: Update exact location View (davies)
             title="Summit Venue"
