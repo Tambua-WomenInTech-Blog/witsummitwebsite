@@ -69,7 +69,7 @@ const EventSpeakerSection = () => {
       name: "Kayuyu Mwaura",
       company: "Technology Researcher",
       bio: "Multidisciplinary technology leader and researcher leveraging AI and emerging technologies for human-centered innovation in Africa. Advocate for ethical AI and digital literacy.",
-      image: "https://drive.google.com/open?id=1O_PQ42MxTFGQzf-yYNNDFrlhToqsJFG1",
+      image: "https://drive.google.com/open?id=1WAmVhFL8VQ_ZDTsMdurxIqoaqds0H29e",
        // TODO: Update image Link (davies)
       // https://drive.google.com/file/d/1WAmVhFL8VQ_ZDTsMdurxIqoaqds0H29e/view?usp=drive_link
     },
