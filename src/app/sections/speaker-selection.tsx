@@ -155,7 +155,7 @@ const SpeakersSection: React.FC = () => {
       name: "Faith Ngogoyo",
       company: "CEO and Founder Tanda Tech Hub",
       bio: "Faith Ngogoyo-Mwangi, is a visionary leader in the African EdTech and innovation space. She has over nine years of experience leading transformative education and technology programs across East, West, and Southern Africa. Faith has served as Country Director, Co-Founder, and Program Director in several forward-thinking organizations, designing scalable, high-impact solutions that prepare teachers, youth, and entrepreneurs for the future of work. Her work has reached thousands of learners and educators, and she has been featured on Citizen TV, Nation Media Group, The SA Summit, and Online Education forums for her contributions to digital transformation and education reform.",
-      image: "https://drive.google.com/open?id=1TFyS-Mwz_6KqpZW00fnL14ZWZryPH3s2/view?usp=drivesdk",
+      image: "https://drive.google.com/open?id=1TFyS-Mwz_6KqpZW00fnL14ZWZryPH3s2",
     },
     {
       name: "Faith Kimanzi",
@@ -187,7 +187,7 @@ const SpeakersSection: React.FC = () => {
       name: "Patricia Okelo",
       company: "Founder Candid Conversations",
       bio: "Patricia is passionate about entrepreneurship and empowering women. She is a strong believer that women entrepreneurs will be in the frontline in changing Africa for the better. She is the Co-Author of – A Candid Handbook for Women doing Business in Kenya, primarily to encourage women to venture into entrepreneurship, as she believes that this will empower them into leadership roles. She is the founder of Candid Conversations: Circles for Women in Business. This is a community of female entrepreneurs who believe in the principle of abundance. It's a space where knowledge is shared through candid conversations held through curated networking events.",
-      image: "https://drive.google.com/open?id=18vVtTGDh0t1WrMuKcYBcJXM6S9ZW1olH/view?usp=drivesdk",
+      image: "https://drive.google.com/open?id=18vVtTGDh0t1WrMuKcYBcJXM6S9ZW1olH",
     },
 
  
@@ -221,7 +221,7 @@ const SpeakersSection: React.FC = () => {
       name: "Hannah Ogega",
       company: "Head Of Product (D365 BC) - Platcorp Group",
       bio: "Hannah Ogega is a project and IT leader with experience managing large, complex portfolios across multiple subsidiaries. She has overseen more than 200 projects, led cross-functional teams across five regions, and introduced structures that improved delivery speed, reduced backlogs, and strengthened collaboration between technical and non-technical teams.Hannah has managed major ERP implementations, including D365 and Business Central, and has guided organisations through process improvements that have increased efficiency, accuracy, and transparency. She has also delivered automation initiatives, cut operational costs, and supported teams through system changes and new ways of working. She holds an MSc in Mobile Telecommunications and Innovation, a PMP certification, and has completed multiple leadership programmes focused on practical, people-centred management.",
-      image: "https://drive.google.com/open?id=14s9hVXbGQfuUI-x6IyXvcpKXldbvmbKA/view",
+      image: "https://drive.google.com/open?id=14s9hVXbGQfuUI-x6IyXvcpKXldbvmbKA",
     },
     {
       name: "Violet Awuor",
