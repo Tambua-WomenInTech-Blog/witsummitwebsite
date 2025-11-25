@@ -132,10 +132,7 @@ const EventSpeakerSection = () => {
   ];
 
   
-  React.useEffect(() => {
-    const shuffled = [...speakers].sort(() => Math.random() - 0.5);
-    setRandomizedSpeakers(shuffled);
-  }, []);
+  
 
   const displayedSpeakers = viewMore
     ? randomizedSpeakers

@@ -29,27 +29,29 @@ interface WITSummitAgendaProps {
 const firstDayViewMoreSessions: Session[] = [
   {
     time: "12:15 – 13:15",
-    title: "Lunch & Networking",
-    description: "Break for lunch and networking opportunities",
+    title: "Lunch & Networking & Group Photos",
+    description: "Lunch break, networking, and group photo sessions",
     tags: ["Break", "Networking"],
   },
   {
     time: "13:15 – 13:45",
-    title: "Technical Workshop: Data & AI",
-    description: "Hands-on workshop on data science and AI",
-    tags: ["Workshop", "Technical", "AI"],
+    title: "Panel: Leadership & Career",
+    description:
+      "Panel moderated by Debbie Mong'are | Breakout: Workshop: Do You Just Join, or Contribute? by Bosibori Valeria",
+    tags: ["Panel", "Leadership", "Career"],
   },
   {
     time: "13:45 – 14:15",
-    title: "Prompt Engineering for Developers & Non-Techies",
-    description: "Learn effective prompt engineering techniques",
-    tags: ["Workshop", "AI", "Technical"],
+    title: "Save Time with Python",
+    description:
+      "Talk by Elizabeth Adhiambo Onyango | Breakout: Talk: Responsible AI in the Generative AI Era by Cynthia Kamau",
+    tags: ["Python", "Technical"],
   },
   {
     time: "14:15 – 14:45",
-    title: "Workshop –TBD",
-    description: "Additional workshop session",
-    tags: ["Workshop"],
+    title: "Building AI Chatbots Using LangChain",
+    description: "Talk by Grace Ngari",
+    tags: ["AI", "Technical"],
   },
   {
     time: "14:45 – 15:00",
@@ -59,26 +61,20 @@ const firstDayViewMoreSessions: Session[] = [
   },
   {
     time: "15:00 – 15:30",
-    title: "Panel – Women Leading in Data & AI",
-    description: "Panel discussion on women in data and AI leadership",
-    tags: ["Panel", "Leadership", "AI"],
+    title: "Workshop: Integrating Mpesa STK Push with Node.js",
+    description: "Workshop by Mary Maina",
+    tags: ["Workshop", "Technical", "Payments"],
   },
   {
     time: "15:30 – 16:00",
-    title: "Design Thinking for Product Innovation",
-    description: "Workshop on design thinking methodologies",
-    tags: ["Workshop", "Design", "Product"],
+    title: "Beyond Testing – Role of Quality Engineering",
+    description: "Talk by Jacqueline Kamadi",
+    tags: ["Quality Engineering", "Technical"],
   },
   {
-    time: "16:00 – 16:45",
-    title: "Cybersecurity in the Age of AI & IoT",
-    description: "Understanding modern cybersecurity challenges",
-    tags: ["Talk", "Security", "AI"],
-  },
-  {
-    time: "16:45 – 17:00",
-    title: "Wrap-Up & Speed Networking and Closing",
-    description: "Day wrap-up and networking session",
+    time: "16:00 – 17:00",
+    title: "Wrap-Up & Speed Networking and Group Photo",
+    description: "Day wrap-up, speed networking sessions, and group photos",
     tags: ["Closing", "Networking"],
   },
 ];
@@ -106,7 +102,7 @@ const secondDayViewMoreSessions: Session[] = [
     time: "14:15 – 14:45",
     title: "Talk – Building a Tech Career in Africa",
     description: "Insights on building successful tech careers in Africa",
-    tags: ["Talk", "Career"],
+    tags: ["Career"],
   },
   {
     time: "14:45 – 15:00",
@@ -118,7 +114,7 @@ const secondDayViewMoreSessions: Session[] = [
     time: "15:00 – 15:30",
     title: "Financial Literacy for Tech Professionals",
     description: "Financial planning and literacy for tech workers",
-    tags: ["Talk", "Finance"],
+    tags: ["Finance"],
   },
   {
     time: "15:30 – 16:00",
@@ -142,7 +138,8 @@ const defaultScheduleData: DaySchedule[] = [
       {
         time: "09:00 – 09:30",
         title: "Registration and Welcome",
-        description: "Check-in and welcome coffee",
+        description:
+          "Check-in and welcome coffee (MC: Allela Eunice & Valentine Rutto)",
         tags: ["Welcome"],
       },
       {
@@ -153,8 +150,8 @@ const defaultScheduleData: DaySchedule[] = [
       },
       {
         time: "10:00 – 10:30",
-        title: "Keynote: Leading With Purpose in Tech",
-        description: "Inspiring keynote on purposeful leadership",
+        title: "Keynote: So, How Did We Get Here Anyway?",
+        description: "Keynote by Maureen J",
         tags: ["Keynote", "Leadership"],
       },
       {
@@ -165,21 +162,24 @@ const defaultScheduleData: DaySchedule[] = [
       },
       {
         time: "10:45 – 11:15",
-        title: "TechPanel: Women Founders Building for Africa",
-        description: "Panel discussion with successful women founders",
-        tags: ["Panel", "Entrepreneurship"],
+        title: "Panel: Women Leading in Data & AI & CyberSec",
+        description:
+          "Panel discussion moderated by Allela A | Breakout: Owning Your Space – Breaking Into Tech Before You're 'Ready' by Esther Oyoo",
+        tags: ["Panel", "Data & AI", "Cybersecurity"],
       },
       {
         time: "11:15 – 11:45",
-        title: "Talk – TBD",
-        description: "Industry insights and trends",
-        tags: ["Talk"],
+        title: "Product Management, UX/UI, DevOps",
+        description:
+          "Talk by Latifa Noor | Breakout: Workshop: 101 Ways to MVP by Jennifer D. Daniel",
+        tags: ["Product", "Workshop"],
       },
       {
         time: "11:45 – 12:15",
-        title: "Panel – Products Innovation",
-        description: "Innovation in product development",
-        tags: ["Panel", "Product"],
+        title: "Panel: Product Innovation & Future of Tech",
+        description:
+          "Panel moderated by Val Rutto | Breakout: Talk: Figma Make It, Copilot Build It by Kayuyu Mwaura",
+        tags: ["Panel", "Product", "Innovation"],
       },
     ],
   },
@@ -190,44 +190,46 @@ const defaultScheduleData: DaySchedule[] = [
       {
         time: "09:00 – 09:30",
         title: "Opening and Welcome",
-        description: "Day 2 welcome and agenda overview",
+        description: "Opening remarks (MC: Male Ally)",
         tags: ["Welcome"],
       },
       {
         time: "09:30 – 10:00",
-        title: "Keynote – TBD",
-        description: "Inspiring morning keynote",
-        tags: ["Keynote"],
+        title: "Keynote: Fireside Chat",
+        description: "Fireside chat with Maureen J and Anie Akpe",
+        tags: ["Keynote", "Fireside Chat"],
       },
       {
         time: "10:00 – 10:30",
-        title: "Panel Session – Entrepreneurship & Startups",
-        description: "Expert panel on entrepreneurship and startups",
-        tags: ["Panel", "Entrepreneurship"],
+        title: "Talk: Mentorship & Building Inclusive Communities in Tech",
+        description: "Talk by Linet Muriuki",
+        tags: ["Mentorship", "Community"],
       },
       {
         time: "10:30 – 10:45",
         title: "Break & Networking",
-        description: "Coffee break and networking",
+        description: "Coffee break and networking opportunity",
         tags: ["Break"],
       },
       {
         time: "10:45 – 11:15",
-        title: "Technical Workshop: Cloud & Dev-Ops",
-        description: "Hands-on cloud and DevOps workshop",
-        tags: ["Workshop", "Technical", "Cloud"],
+        title: "Panel: Entrepreneurship & Startups",
+        description:
+          "Main Track: Panel (Annie/Rachel) | Breakout: Talk: Development of a Health Data Collection & AI System by Robinson Otochi",
+        tags: ["Panel", "Entrepreneurship", "Startups"],
       },
       {
         time: "11:15 – 11:45",
-        title: "Technical Workshop: Quality Testing",
-        description: "Workshop on software quality testing",
-        tags: ["Workshop", "Technical", "Testing"],
+        title: "From Refugee Camp to Innovation – Building Social Enterprise",
+        description: "Talk by Saido Omar Noor",
+        tags: ["Social Enterprise", "Innovation"],
       },
       {
         time: "11:45 – 12:15",
-        title: "Fireside – Confidence & Speaking Up",
-        description: "Intimate conversation on building confidence",
-        tags: ["Fireside", "Career"],
+        title: "Panel: Wellness",
+        description:
+          "Main Track: Wellness Panel (Annie/Rachel) | Breakout: Talk: Lessons from the Frontlines of Incident Response by Faith Wanyangu",
+        tags: ["Panel", "Wellness", "Security"],
       },
     ],
   },
