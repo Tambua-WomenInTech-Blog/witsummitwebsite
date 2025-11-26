@@ -26,6 +26,25 @@ interface WITSummitAgendaProps {
   scheduleData?: DaySchedule[];
 }
 
+
+const extractBreakout = (description: string) => {
+  const breakoutMatch = description.match(/\|\s*Breakout:\s*(.+?)(?:\s*by\s+(.+))?$/i);
+  if (breakoutMatch) {
+    return {
+      hasBreakout: true,
+      breakoutTitle: breakoutMatch[1].trim(),
+      breakoutSpeaker: breakoutMatch[2]?.trim(),
+      mainDescription: description.split('|')[0].trim()
+    };
+  }
+  return {
+    hasBreakout: false,
+    breakoutTitle: null,
+    breakoutSpeaker: null,
+    mainDescription: description
+  };
+};
+
 const firstDayViewMoreSessions: Session[] = [
   {
     time: "12:15 – 13:15",
@@ -241,7 +260,6 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
   const [activeTab, setActiveTab] = useState<number>(0);
   const [viewMore, setViewMore] = useState<boolean>(false);
 
-  // Calculate the sessions to display based on viewMore state
   const displayedSessions = useMemo(() => {
     const currentDaySessions = scheduleData[activeTab].sessions;
 
@@ -249,7 +267,6 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
       return currentDaySessions;
     }
 
-    // Add additional sessions when viewMore is true
     if (activeTab === 0) {
       return [...currentDaySessions, ...firstDayViewMoreSessions];
     } else if (activeTab === 1) {
@@ -259,7 +276,6 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
     return currentDaySessions;
   }, [activeTab, viewMore, scheduleData]);
 
-  // Reset viewMore when switching tabs
   const handleTabChange = (index: number) => {
     setActiveTab(index);
     setViewMore(false);
@@ -285,7 +301,7 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
             workshops, live mentoring, and plenty of good vibes. From technical
             mastery to leadership transitions to executive presence, we've
             designed sessions that honor your ambitions, not just your current
-            role..
+            role.
           </p>
         </div>
 
@@ -384,78 +400,88 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
                 </tr>
               </thead>
               <tbody>
-                {displayedSessions.map((session, index) => (
-                  <tr
-                    key={index}
-                    className={`border-b border-gray-200 ${
-                      index % 2 === 0 ? "bg-gray-50" : "bg-white"
-                    } hover:bg-purple-50 transition-colors duration-150`}
-                  >
-                    <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-                      {session.time}
-                    </td>
-                    <td className="py-4 px-6">
-                      <div className="space-y-2">
-                        <h4 className="font-semibold text-gray-900">
-                          {session.title}
-                        </h4>
-                        <p className="text-sm text-gray-600 leading-relaxed">
-                          {session.description}
-                        </p>
-                        <div className="flex flex-wrap gap-1">
-                          {session.tags.map((tag, tagIndex) => (
-                            <span
-                              key={tagIndex}
-                              className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full font-medium"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                        {session.speaker && (
-                          <div className="flex items-center gap-3 mt-3 p-3 bg-gray-100 rounded-lg">
-                            <div className="w-10 h-10 bg-purple-200 rounded-full flex items-center justify-center">
-                              <svg
-                                className="w-5 h-5 text-purple-800"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
+                {displayedSessions.map((session, index) => {
+                  const breakoutInfo = extractBreakout(session.description);
+                  
+                  return (
+                    <tr
+                      key={index}
+                      className={`border-b border-gray-200 ${
+                        index % 2 === 0 ? "bg-gray-50" : "bg-white"
+                      } hover:bg-purple-50 transition-colors duration-150`}
+                    >
+                      <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                        {session.time}
+                      </td>
+                      <td className="py-4 px-6">
+                        <div className="space-y-2">
+                          <h4 className="font-semibold text-gray-900">
+                            {session.title}
+                          </h4>
+                          <p className="text-sm text-gray-600 leading-relaxed">
+                            {breakoutInfo.mainDescription}
+                          </p>
+                          <div className="flex flex-wrap gap-1">
+                            {session.tags.map((tag, tagIndex) => (
+                              <span
+                                key={tagIndex}
+                                className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full font-medium"
                               >
-                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                              </svg>
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                          {session.speaker && (
+                            <div className="flex items-center gap-3 mt-3 p-3 bg-gray-100 rounded-lg">
+                              <div className="w-10 h-10 bg-purple-200 rounded-full flex items-center justify-center">
+                                <svg
+                                  className="w-5 h-5 text-purple-800"
+                                  fill="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                              </div>
+                              <div>
+                                <p className="font-medium text-gray-900">
+                                  {session.speaker.name}
+                                </p>
+                                <p className="text-sm text-gray-600">
+                                  {session.speaker.title}
+                                  {session.speaker.company &&
+                                    `, ${session.speaker.company}`}
+                                </p>
+                              </div>
                             </div>
-                            <div>
-                              <p className="font-medium text-gray-900">
-                                {session.speaker.name}
+                          )}
+                        </div>
+                      </td>
+                      <td className="py-4 px-6 text-gray-600 align-top">
+                        {breakoutInfo.hasBreakout ? (
+                          <div className="space-y-2">
+                            <p className="font-semibold text-gray-900 text-sm">
+                              {breakoutInfo.breakoutTitle}
+                            </p>
+                            {breakoutInfo.breakoutSpeaker && (
+                              <p className="text-xs text-gray-600">
+                                by {breakoutInfo.breakoutSpeaker}
                               </p>
-                              <p className="text-sm text-gray-600">
-                                {session.speaker.title}
-                                {session.speaker.company &&
-                                  `, ${session.speaker.company}`}
-                              </p>
-                            </div>
+                            )}
+                          </div>
+                        ) : session.tags.includes("Break") || 
+                           session.tags.includes("Welcome") || 
+                           session.tags.includes("Opening") ? (
+                          <span className="text-gray-400">—</span>
+                        ) : (
+                          <div className="space-y-1">
+                            <p className="font-medium text-sm"> - </p>
+                           
                           </div>
                         )}
-                      </div>
-                    </td>
-                    <td className="py-4 px-6 text-gray-600 align-top">
-                      {session.tags.includes("Break") ? (
-                        <span className="text-purple-600 font-medium">
-                          Break & Networking
-                        </span>
-                      ) : session.tags.includes("Welcome") ||
-                        session.tags.includes("Opening") ? (
-                        <span className="text-gray-400">—</span>
-                      ) : (
-                        <div className="space-y-1">
-                          <p className="font-medium text-sm">Workshop – TBD</p>
-                          <p className="text-xs text-gray-500">
-                            Details coming soon
-                          </p>
-                        </div>
-                      )}
-                    </td>
-                  </tr>
-                ))}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

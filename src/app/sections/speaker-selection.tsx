@@ -111,7 +111,7 @@ const SpeakersSection: React.FC = () => {
       company: "SOC Analyst",
       bio: "Cybersecurity Analyst specializing in threat monitoring and incident response in the financial sector. Focused on strengthening defenses and safeguarding critical systems.",
       image:
-        "https://drive.google.com/open?id=1K74UGZD7F8SBFqab8AR54Upo-e7cmgRp",
+        "https://drive.google.com/open?id=1xZcDmqqfIrh6wb_u_HHZhLrfZYRc_Yt-",
     },
     {
       name: "Dorcas Mutunga",
@@ -199,7 +199,7 @@ const SpeakersSection: React.FC = () => {
       company: "Founder & Executive Director",
       bio: "",
       image:
-        "https://drive.google.com/open?id=14-TmJFpzN3aFcuFsmKsPlSq8dSRzyVnF",
+        "https://drive.google.com/open?id=1wsTuXtUSq_LmKh2crgufryBXJZG4XPYp",
     },
 
     // Day 2 - Mentorship Panel
