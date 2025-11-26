@@ -26,22 +26,23 @@ interface WITSummitAgendaProps {
   scheduleData?: DaySchedule[];
 }
 
-
 const extractBreakout = (description: string) => {
-  const breakoutMatch = description.match(/\|\s*Breakout:\s*(.+?)(?:\s*by\s+(.+))?$/i);
+  const breakoutMatch = description.match(
+    /\|\s*Breakout:\s*(.+?)(?:\s*by\s+(.+))?$/i
+  );
   if (breakoutMatch) {
     return {
       hasBreakout: true,
       breakoutTitle: breakoutMatch[1].trim(),
       breakoutSpeaker: breakoutMatch[2]?.trim(),
-      mainDescription: description.split('|')[0].trim()
+      mainDescription: description.split("|")[0].trim(),
     };
   }
   return {
     hasBreakout: false,
     breakoutTitle: null,
     breakoutSpeaker: null,
-    mainDescription: description
+    mainDescription: description,
   };
 };
 
@@ -101,27 +102,29 @@ const firstDayViewMoreSessions: Session[] = [
 const secondDayViewMoreSessions: Session[] = [
   {
     time: "12:15 – 13:15",
-    title: "Lunch & Networking",
+    title: "Lunch & Networking & Group Photos",
     description: "Break for lunch and networking opportunities",
     tags: ["Break", "Networking"],
   },
   {
     time: "13:15 – 13:45",
-    title: "Career Connect – Meet, Learn, Grow",
-    description: "Career development and networking session",
+    title:
+      "Why Ignoring QA is Costing You.",
+    description: "by June Katei Reeves | Breakout: Talk: Reinvention and the Courage to Pivot in Tech by Sarah Muwanguzi",
     tags: ["Career", "Networking"],
   },
   {
     time: "13:45 – 14:15",
-    title: "Mentor-Mentee Pairing Session",
-    description: "Connect with mentors and mentees",
+    title:
+      "Career & Mentorship Panel",
+    description: "(Moderator: Tima Ali) | Breakout: Talk: From Engineer to Change-Maker – AI for Community Health by Alice  Wangeci",
     tags: ["Mentorship", "Networking"],
   },
   {
     time: "14:15 – 14:45",
-    title: "Talk – Building a Tech Career in Africa",
-    description: "Insights on building successful tech careers in Africa",
-    tags: ["Career"],
+    title: "Financial Inclusion and Independence ",
+    description: "by Vyrone Ochola",
+    tags: ["Finance", "Independence"],
   },
   {
     time: "14:45 – 15:00",
@@ -131,20 +134,20 @@ const secondDayViewMoreSessions: Session[] = [
   },
   {
     time: "15:00 – 15:30",
-    title: "Financial Literacy for Tech Professionals",
-    description: "Financial planning and literacy for tech workers",
-    tags: ["Finance"],
+    title: "Main Hall: Mixer Activities",
+    description: "",
+    tags: ["Activities"],
   },
   {
     time: "15:30 – 16:00",
-    title: "Wrap-Up & Group Reflections",
-    description: "Reflect on learnings and key takeaways",
-    tags: ["Closing", "Reflection"],
+    title: "POP UP FIRESIDE CHAT by MC Omar",
+    description: "",
+    tags: ["Closing"],
   },
   {
     time: "16:00 – 17:00",
     title: "Closing Ceremony & Group Photos",
-    description: "Official closing and group photo session",
+    description: "",
     tags: ["Closing", "Photos"],
   },
 ];
@@ -402,7 +405,7 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
               <tbody>
                 {displayedSessions.map((session, index) => {
                   const breakoutInfo = extractBreakout(session.description);
-                  
+
                   return (
                     <tr
                       key={index}
@@ -468,14 +471,13 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
                               </p>
                             )}
                           </div>
-                        ) : session.tags.includes("Break") || 
-                           session.tags.includes("Welcome") || 
-                           session.tags.includes("Opening") ? (
+                        ) : session.tags.includes("Break") ||
+                          session.tags.includes("Welcome") ||
+                          session.tags.includes("Opening") ? (
                           <span className="text-gray-400">—</span>
                         ) : (
                           <div className="space-y-1">
                             <p className="font-medium text-sm"> - </p>
-                           
                           </div>
                         )}
                       </td>
