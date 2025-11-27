@@ -26,30 +26,52 @@ interface WITSummitAgendaProps {
   scheduleData?: DaySchedule[];
 }
 
+const extractBreakout = (description: string) => {
+  const breakoutMatch = description.match(
+    /\|\s*Breakout:\s*(.+?)(?:\s*by\s+(.+))?$/i
+  );
+  if (breakoutMatch) {
+    return {
+      hasBreakout: true,
+      breakoutTitle: breakoutMatch[1].trim(),
+      breakoutSpeaker: breakoutMatch[2]?.trim(),
+      mainDescription: description.split("|")[0].trim(),
+    };
+  }
+  return {
+    hasBreakout: false,
+    breakoutTitle: null,
+    breakoutSpeaker: null,
+    mainDescription: description,
+  };
+};
+
 const firstDayViewMoreSessions: Session[] = [
   {
     time: "12:15 – 13:15",
-    title: "Lunch & Networking",
-    description: "Break for lunch and networking opportunities",
+    title: "Lunch & Networking & Group Photos",
+    description: "Lunch break, networking, and group photo sessions",
     tags: ["Break", "Networking"],
   },
   {
     time: "13:15 – 13:45",
-    title: "Technical Workshop: Data & AI",
-    description: "Hands-on workshop on data science and AI",
-    tags: ["Workshop", "Technical", "AI"],
+    title: "Panel: Leadership & Career",
+    description:
+      "Panel moderated by Debbie Mong'are | Breakout: Workshop: Do You Just Join, or Contribute? by Bosibori Valeria",
+    tags: ["Panel", "Leadership", "Career"],
   },
   {
     time: "13:45 – 14:15",
-    title: "Prompt Engineering for Developers & Non-Techies",
-    description: "Learn effective prompt engineering techniques",
-    tags: ["Workshop", "AI", "Technical"],
+    title: "Save Time with Python",
+    description:
+      "Talk by Elizabeth Adhiambo Onyango | Breakout: Talk: Responsible AI in the Generative AI Era by Cynthia Kamau",
+    tags: ["Python", "Technical"],
   },
   {
     time: "14:15 – 14:45",
-    title: "Workshop –TBD",
-    description: "Additional workshop session",
-    tags: ["Workshop"],
+    title: "Building AI Chatbots Using LangChain",
+    description: "Talk by Grace Ngari",
+    tags: ["AI", "Technical"],
   },
   {
     time: "14:45 – 15:00",
@@ -59,26 +81,20 @@ const firstDayViewMoreSessions: Session[] = [
   },
   {
     time: "15:00 – 15:30",
-    title: "Panel – Women Leading in Data & AI",
-    description: "Panel discussion on women in data and AI leadership",
-    tags: ["Panel", "Leadership", "AI"],
+    title: "Workshop: Integrating Mpesa STK Push with Node.js",
+    description: "Workshop by Mary Maina",
+    tags: ["Workshop", "Technical", "Payments"],
   },
   {
     time: "15:30 – 16:00",
-    title: "Design Thinking for Product Innovation",
-    description: "Workshop on design thinking methodologies",
-    tags: ["Workshop", "Design", "Product"],
+    title: "Beyond Testing – Role of Quality Engineering",
+    description: "Talk by Jacqueline Kamadi",
+    tags: ["Quality Engineering", "Technical"],
   },
   {
-    time: "16:00 – 16:45",
-    title: "Cybersecurity in the Age of AI & IoT",
-    description: "Understanding modern cybersecurity challenges",
-    tags: ["Talk", "Security", "AI"],
-  },
-  {
-    time: "16:45 – 17:00",
-    title: "Wrap-Up & Speed Networking and Closing",
-    description: "Day wrap-up and networking session",
+    time: "16:00 – 17:00",
+    title: "Wrap-Up & Speed Networking and Group Photo",
+    description: "Day wrap-up, speed networking sessions, and group photos",
     tags: ["Closing", "Networking"],
   },
 ];
@@ -86,27 +102,29 @@ const firstDayViewMoreSessions: Session[] = [
 const secondDayViewMoreSessions: Session[] = [
   {
     time: "12:15 – 13:15",
-    title: "Lunch & Networking",
+    title: "Lunch & Networking & Group Photos",
     description: "Break for lunch and networking opportunities",
     tags: ["Break", "Networking"],
   },
   {
     time: "13:15 – 13:45",
-    title: "Career Connect – Meet, Learn, Grow",
-    description: "Career development and networking session",
+    title:
+      "Why Ignoring QA is Costing You.",
+    description: "by June Katei Reeves | Breakout: Talk: Reinvention and the Courage to Pivot in Tech by Sarah Muwanguzi",
     tags: ["Career", "Networking"],
   },
   {
     time: "13:45 – 14:15",
-    title: "Mentor-Mentee Pairing Session",
-    description: "Connect with mentors and mentees",
+    title:
+      "Career & Mentorship Panel",
+    description: "(Moderator: Tima Ali) | Breakout: Talk: From Engineer to Change-Maker – AI for Community Health by Alice  Wangeci",
     tags: ["Mentorship", "Networking"],
   },
   {
     time: "14:15 – 14:45",
-    title: "Talk – Building a Tech Career in Africa",
-    description: "Insights on building successful tech careers in Africa",
-    tags: ["Talk", "Career"],
+    title: "Financial Inclusion and Independence ",
+    description: "by Vyrone Ochola",
+    tags: ["Finance", "Independence"],
   },
   {
     time: "14:45 – 15:00",
@@ -116,20 +134,20 @@ const secondDayViewMoreSessions: Session[] = [
   },
   {
     time: "15:00 – 15:30",
-    title: "Financial Literacy for Tech Professionals",
-    description: "Financial planning and literacy for tech workers",
-    tags: ["Talk", "Finance"],
+    title: "Main Hall: Mixer Activities",
+    description: "",
+    tags: ["Activities"],
   },
   {
     time: "15:30 – 16:00",
-    title: "Wrap-Up & Group Reflections",
-    description: "Reflect on learnings and key takeaways",
-    tags: ["Closing", "Reflection"],
+    title: "POP UP FIRESIDE CHAT by MC Omar",
+    description: "",
+    tags: ["Closing"],
   },
   {
     time: "16:00 – 17:00",
     title: "Closing Ceremony & Group Photos",
-    description: "Official closing and group photo session",
+    description: "",
     tags: ["Closing", "Photos"],
   },
 ];
@@ -142,7 +160,8 @@ const defaultScheduleData: DaySchedule[] = [
       {
         time: "09:00 – 09:30",
         title: "Registration and Welcome",
-        description: "Check-in and welcome coffee",
+        description:
+          "Check-in and welcome coffee (MC: Allela Eunice & Valentine Rutto)",
         tags: ["Welcome"],
       },
       {
@@ -153,8 +172,8 @@ const defaultScheduleData: DaySchedule[] = [
       },
       {
         time: "10:00 – 10:30",
-        title: "Keynote: Leading With Purpose in Tech",
-        description: "Inspiring keynote on purposeful leadership",
+        title: "Keynote: So, How Did We Get Here Anyway?",
+        description: "Keynote by Maureen J",
         tags: ["Keynote", "Leadership"],
       },
       {
@@ -165,21 +184,24 @@ const defaultScheduleData: DaySchedule[] = [
       },
       {
         time: "10:45 – 11:15",
-        title: "TechPanel: Women Founders Building for Africa",
-        description: "Panel discussion with successful women founders",
-        tags: ["Panel", "Entrepreneurship"],
+        title: "Panel: Women Leading in Data & AI & CyberSec",
+        description:
+          "Panel discussion moderated by Allela A | Breakout: Owning Your Space – Breaking Into Tech Before You're 'Ready' by Esther Oyoo",
+        tags: ["Panel", "Data & AI", "Cybersecurity"],
       },
       {
         time: "11:15 – 11:45",
-        title: "Talk – TBD",
-        description: "Industry insights and trends",
-        tags: ["Talk"],
+        title: "Product Management, UX/UI, DevOps",
+        description:
+          "Talk by Latifa Noor | Breakout: Workshop: 101 Ways to MVP by Jennifer D. Daniel",
+        tags: ["Product", "Workshop"],
       },
       {
         time: "11:45 – 12:15",
-        title: "Panel – Products Innovation",
-        description: "Innovation in product development",
-        tags: ["Panel", "Product"],
+        title: "Panel: Product Innovation & Future of Tech",
+        description:
+          "Panel moderated by Val Rutto | Breakout: Talk: Figma Make It, Copilot Build It by Kayuyu Mwaura",
+        tags: ["Panel", "Product", "Innovation"],
       },
     ],
   },
@@ -190,44 +212,46 @@ const defaultScheduleData: DaySchedule[] = [
       {
         time: "09:00 – 09:30",
         title: "Opening and Welcome",
-        description: "Day 2 welcome and agenda overview",
+        description: "Opening remarks (MC: Omar)",
         tags: ["Welcome"],
       },
       {
         time: "09:30 – 10:00",
-        title: "Keynote – TBD",
-        description: "Inspiring morning keynote",
-        tags: ["Keynote"],
+        title: "Keynote: Fireside Chat",
+        description: "Fireside chat with Maureen J and Anie Akpe",
+        tags: ["Keynote", "Fireside Chat"],
       },
       {
         time: "10:00 – 10:30",
-        title: "Panel Session – Entrepreneurship & Startups",
-        description: "Expert panel on entrepreneurship and startups",
-        tags: ["Panel", "Entrepreneurship"],
+        title: "Talk: Mentorship & Building Inclusive Communities in Tech",
+        description: "Talk by Linet Muriuki",
+        tags: ["Mentorship", "Community"],
       },
       {
         time: "10:30 – 10:45",
         title: "Break & Networking",
-        description: "Coffee break and networking",
+        description: "Coffee break and networking opportunity",
         tags: ["Break"],
       },
       {
         time: "10:45 – 11:15",
-        title: "Technical Workshop: Cloud & Dev-Ops",
-        description: "Hands-on cloud and DevOps workshop",
-        tags: ["Workshop", "Technical", "Cloud"],
+        title: "Panel: Entrepreneurship & Startups",
+        description:
+          "Main Track: Panel (Annie/Rachel) | Breakout - Keynote: Talk: Hot careers in digital world and how to own your ambition as a Woman by Lilian Nyawira",
+        tags: ["Panel", "Entrepreneurship", "Startups"],
       },
       {
         time: "11:15 – 11:45",
-        title: "Technical Workshop: Quality Testing",
-        description: "Workshop on software quality testing",
-        tags: ["Workshop", "Technical", "Testing"],
+        title: "From Refugee Camp to Innovation – Building Social Enterprise",
+        description: "Talk by Saido Omar Noor",
+        tags: ["Social Enterprise", "Innovation"],
       },
       {
         time: "11:45 – 12:15",
-        title: "Fireside – Confidence & Speaking Up",
-        description: "Intimate conversation on building confidence",
-        tags: ["Fireside", "Career"],
+        title: "Panel: Wellness",
+        description:
+          "Main Track: Wellness Panel (Annie/Rachel) | Breakout: Talk: Lessons from the Frontlines of Incident Response by Faith Wanyangu",
+        tags: ["Panel", "Wellness", "Security"],
       },
     ],
   },
@@ -239,7 +263,6 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
   const [activeTab, setActiveTab] = useState<number>(0);
   const [viewMore, setViewMore] = useState<boolean>(false);
 
-  // Calculate the sessions to display based on viewMore state
   const displayedSessions = useMemo(() => {
     const currentDaySessions = scheduleData[activeTab].sessions;
 
@@ -247,7 +270,6 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
       return currentDaySessions;
     }
 
-    // Add additional sessions when viewMore is true
     if (activeTab === 0) {
       return [...currentDaySessions, ...firstDayViewMoreSessions];
     } else if (activeTab === 1) {
@@ -257,7 +279,6 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
     return currentDaySessions;
   }, [activeTab, viewMore, scheduleData]);
 
-  // Reset viewMore when switching tabs
   const handleTabChange = (index: number) => {
     setActiveTab(index);
     setViewMore(false);
@@ -283,7 +304,7 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
             workshops, live mentoring, and plenty of good vibes. From technical
             mastery to leadership transitions to executive presence, we've
             designed sessions that honor your ambitions, not just your current
-            role..
+            role.
           </p>
         </div>
 
@@ -330,7 +351,7 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
                 d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
             </svg>
-            Download Full Agenda (Draft)
+            Download Full Agenda
           </button>
         </div>
 
@@ -382,78 +403,87 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
                 </tr>
               </thead>
               <tbody>
-                {displayedSessions.map((session, index) => (
-                  <tr
-                    key={index}
-                    className={`border-b border-gray-200 ${
-                      index % 2 === 0 ? "bg-gray-50" : "bg-white"
-                    } hover:bg-purple-50 transition-colors duration-150`}
-                  >
-                    <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-                      {session.time}
-                    </td>
-                    <td className="py-4 px-6">
-                      <div className="space-y-2">
-                        <h4 className="font-semibold text-gray-900">
-                          {session.title}
-                        </h4>
-                        <p className="text-sm text-gray-600 leading-relaxed">
-                          {session.description}
-                        </p>
-                        <div className="flex flex-wrap gap-1">
-                          {session.tags.map((tag, tagIndex) => (
-                            <span
-                              key={tagIndex}
-                              className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full font-medium"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                        {session.speaker && (
-                          <div className="flex items-center gap-3 mt-3 p-3 bg-gray-100 rounded-lg">
-                            <div className="w-10 h-10 bg-purple-200 rounded-full flex items-center justify-center">
-                              <svg
-                                className="w-5 h-5 text-purple-800"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
+                {displayedSessions.map((session, index) => {
+                  const breakoutInfo = extractBreakout(session.description);
+
+                  return (
+                    <tr
+                      key={index}
+                      className={`border-b border-gray-200 ${
+                        index % 2 === 0 ? "bg-gray-50" : "bg-white"
+                      } hover:bg-purple-50 transition-colors duration-150`}
+                    >
+                      <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
+                        {session.time}
+                      </td>
+                      <td className="py-4 px-6">
+                        <div className="space-y-2">
+                          <h4 className="font-semibold text-gray-900">
+                            {session.title}
+                          </h4>
+                          <p className="text-sm text-gray-600 leading-relaxed">
+                            {breakoutInfo.mainDescription}
+                          </p>
+                          <div className="flex flex-wrap gap-1">
+                            {session.tags.map((tag, tagIndex) => (
+                              <span
+                                key={tagIndex}
+                                className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full font-medium"
                               >
-                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                              </svg>
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                          {session.speaker && (
+                            <div className="flex items-center gap-3 mt-3 p-3 bg-gray-100 rounded-lg">
+                              <div className="w-10 h-10 bg-purple-200 rounded-full flex items-center justify-center">
+                                <svg
+                                  className="w-5 h-5 text-purple-800"
+                                  fill="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                              </div>
+                              <div>
+                                <p className="font-medium text-gray-900">
+                                  {session.speaker.name}
+                                </p>
+                                <p className="text-sm text-gray-600">
+                                  {session.speaker.title}
+                                  {session.speaker.company &&
+                                    `, ${session.speaker.company}`}
+                                </p>
+                              </div>
                             </div>
-                            <div>
-                              <p className="font-medium text-gray-900">
-                                {session.speaker.name}
+                          )}
+                        </div>
+                      </td>
+                      <td className="py-4 px-6 text-gray-600 align-top">
+                        {breakoutInfo.hasBreakout ? (
+                          <div className="space-y-2">
+                            <p className="font-semibold text-gray-900 text-sm">
+                              {breakoutInfo.breakoutTitle}
+                            </p>
+                            {breakoutInfo.breakoutSpeaker && (
+                              <p className="text-xs text-gray-600">
+                                by {breakoutInfo.breakoutSpeaker}
                               </p>
-                              <p className="text-sm text-gray-600">
-                                {session.speaker.title}
-                                {session.speaker.company &&
-                                  `, ${session.speaker.company}`}
-                              </p>
-                            </div>
+                            )}
+                          </div>
+                        ) : session.tags.includes("Break") ||
+                          session.tags.includes("Welcome") ||
+                          session.tags.includes("Opening") ? (
+                          <span className="text-gray-400">—</span>
+                        ) : (
+                          <div className="space-y-1">
+                            <p className="font-medium text-sm"> - </p>
                           </div>
                         )}
-                      </div>
-                    </td>
-                    <td className="py-4 px-6 text-gray-600 align-top">
-                      {session.tags.includes("Break") ? (
-                        <span className="text-purple-600 font-medium">
-                          Break & Networking
-                        </span>
-                      ) : session.tags.includes("Welcome") ||
-                        session.tags.includes("Opening") ? (
-                        <span className="text-gray-400">—</span>
-                      ) : (
-                        <div className="space-y-1">
-                          <p className="font-medium text-sm">Workshop – TBD</p>
-                          <p className="text-xs text-gray-500">
-                            Details coming soon
-                          </p>
-                        </div>
-                      )}
-                    </td>
-                  </tr>
-                ))}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
