@@ -212,7 +212,7 @@ const defaultScheduleData: DaySchedule[] = [
       {
         time: "09:00 – 09:30",
         title: "Opening and Welcome",
-        description: "Opening remarks (MC: Male Ally)",
+        description: "Opening remarks (MC: Omar)",
         tags: ["Welcome"],
       },
       {
@@ -237,7 +237,7 @@ const defaultScheduleData: DaySchedule[] = [
         time: "10:45 – 11:15",
         title: "Panel: Entrepreneurship & Startups",
         description:
-          "Main Track: Panel (Annie/Rachel) | Breakout: Talk: Development of a Health Data Collection & AI System by Robinson Otochi",
+          "Main Track: Panel (Annie/Rachel) | Breakout - Keynote: Talk: Hot careers in digital world and how to own your ambition as a Woman by Lilian Nyawira",
         tags: ["Panel", "Entrepreneurship", "Startups"],
       },
       {
@@ -351,7 +351,7 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
                 d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
             </svg>
-            Download Full Agenda (Draft)
+            Download Full Agenda
           </button>
         </div>
 
