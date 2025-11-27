@@ -10,7 +10,6 @@ const KeynoteSpeakersSection: React.FC = () => {
       bio: "Founder - Tambua Women In Tech | WIT Summit Host | Software Engineer | GDE",
       image: "/speakers/mj.png",
     },
-
     {
       name: "Anie Akpe",
       company: "Founder and Executive Director of AWIT | Fintech Leader",

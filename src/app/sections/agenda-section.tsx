@@ -212,7 +212,7 @@ const defaultScheduleData: DaySchedule[] = [
       {
         time: "09:00 – 09:30",
         title: "Opening and Welcome",
-        description: "Opening remarks (MC: Male Ally)",
+        description: "Opening remarks (MC: Omar)",
         tags: ["Welcome"],
       },
       {
