@@ -136,7 +136,7 @@ const AboutSection: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Link
-              href="https://vabu.app/women-in-tech-summit-kenya-2025-11"
+              href="https://vabu.app/women-in-tech-summit-kenya-2026-20-edition"
               target="_blank"
               rel="noopener noreferrer"   
               className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
