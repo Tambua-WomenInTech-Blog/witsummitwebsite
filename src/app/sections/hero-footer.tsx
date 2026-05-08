@@ -67,7 +67,7 @@ const HeroFooterSection: React.FC = () => {
               rel="noopener noreferrer"
               className="text-purple-400 hover:underline"
             >
-              tambua.women.in.Tech
+              Tambua.Women.In.Tech
             </Link>
           </p>
         </div>
