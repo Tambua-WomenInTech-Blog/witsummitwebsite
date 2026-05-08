@@ -183,7 +183,7 @@ const WomenInTechSummitHero: React.FC = () => {
           Women In Tech Summit
         </h1>
         <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-300 to-purple-300 mb-8 font-space-grotesk">
-          Kenya 2025
+          Kenya 2026
         </h2>
 
         <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl font-light">
