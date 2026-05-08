@@ -112,7 +112,7 @@ const WhyAttendSection: React.FC = () => {
               </Link>
 
               <Link
-                href="https://docs.google.com/forms/d/1I825WonV8qEBd3KrFnsUQRNAejI4pXD7eOiFW12shso/preview"
+                href="https://pretalx.com/witsummitkenya/cfp"
                 className="bg-transparent border-2 border-purple-600 hover:border-purple-700 text-purple-600 hover:text-purple-700 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105"
               >
                 Apply to Speak
