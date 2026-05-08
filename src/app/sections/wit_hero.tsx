@@ -55,7 +55,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
 };
 
 const WomenInTechSummitHero: React.FC = () => {
-  const summitDate = new Date("2025-11-28T08:00:00");
+  const summitDate = new Date("2026-11-27T08:00:00");
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
@@ -175,7 +175,7 @@ const WomenInTechSummitHero: React.FC = () => {
         <div className="mb-8 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 flex items-center space-x-3 shadow-xl">
           <Calendar className="w-5 h-5 text-purple-300" />
           <span className="text-white/90 font-medium">
-            28th - 29th Nov, 2025 • Nairobi, Kenya
+            27th - 28th Nov, 2026 • Nairobi, Kenya
           </span>
         </div>
 
