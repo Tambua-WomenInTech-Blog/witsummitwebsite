@@ -90,7 +90,7 @@ const HeroFooterSection: React.FC = () => {
 
       <footer className="pb-24 relative z-10 flex flex-col sm:flex-row justify-between items-center px-6 md:px-8 lg:px-12 py-6 border-t border-white/10">
         <div className="text-white/70 text-sm mb-4 sm:mb-0">
-          © Women In Tech Summit KE 2025 — Copyright
+          © Women In Tech Summit KE 2026 — Copyright
         </div>
 
         <div className="flex space-x-4">
