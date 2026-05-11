@@ -296,7 +296,7 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             What to Expect at WIT Summit
             <br />
-            Kenya 2025
+            Kenya 2026
           </h1>
 
           <p className="text-gray-700 text-lg max-w-2xl mx-auto leading-relaxed">
