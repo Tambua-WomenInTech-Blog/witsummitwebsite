@@ -192,7 +192,7 @@ const PricingSection: React.FC = () => {
               )}
 
               <Link
-                href="https://vabu.app/women-in-tech-summit-kenya-2025-11"
+                href="https://vabu.app/women-in-tech-summit-kenya-2026-20-edition"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`inline-block w-full py-4 px-6 rounded-2xl font-semibold text-lg text-center transition-all duration-300 ${
