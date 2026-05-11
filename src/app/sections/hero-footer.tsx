@@ -51,7 +51,7 @@ const HeroFooterSection: React.FC = () => {
           </p>
 
           <Link
-            href="https://vabu.app/women-in-tech-summit-kenya-2025-11"
+            href="https://vabu.app/women-in-tech-summit-kenya-2026-20-edition"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold text-lg px-12 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"

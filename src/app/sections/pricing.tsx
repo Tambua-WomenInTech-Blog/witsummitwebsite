@@ -1,5 +1,5 @@
 import React from "react";
-import { Check } from "lucide-react";
+import { Check, AlertTriangle } from "lucide-react";
 import Link from "next/link";
 
 interface PricingTier {
@@ -7,79 +7,74 @@ interface PricingTier {
   name: string;
   price: string;
   currency: string;
+  priceNote?: string;
+  savingsTag?: string;
   badge?: string;
   description: string;
   callout: string;
   features: string[];
   buttonText: string;
   popular?: boolean;
-  highlight?: string;
+  warning?: string;
 }
 
 const PricingSection: React.FC = () => {
   const pricingTiers: PricingTier[] = [
     {
-      id: "starter",
-      name: "Rising Star Pass (Student Ticket)",
-      price: "1,500 / $12",
+      id: "rising-builder",
+      name: "Rising Builder Pass (Student Ticket)",
+      price: "2,000 / $15",
       currency: "KES",
-      description: "Accessible entry for students & future leaders.",
+      description:
+        "For emerging builders stepping confidently into the room. Designed for students and early-career women in STEM ready to grow, connect, and explore what's possible.",
       callout: "Affordable access designed for young women in STEM.",
       features: [
         "Access to all keynotes, panels, and workshops",
-        "Student-only breakout sessions",
-        "Exclusive mentorship & networking with industry leaders",
-        "Free/discounted digital resources (e.g., e-books, toolkits, online courses)",
+        "Student-focused breakout sessions",
+        "Mentorship & networking with industry professionals",
+        "Free / discounted digital resources (e-books, toolkits, courses)",
       ],
       buttonText: "Grab my Ticket",
-      highlight: "👍 Requirement: Provide valid students' IDs.",
+      warning: "Requirement: Valid student ID required.",
     },
-
     {
-      id: "empowerher",
-      name: "EmpowerHER Pass (Regular Ticket)",
-      price: "3,000 / $24",
+      id: "leadher-architect",
+      name: "LeadHER Architect Pass (Regular Ticket)",
+      price: "3,500 / $27",
       currency: "KES",
-      popular: true,
       badge: "Most Popular",
+      popular: true,
       description:
-        "Standard all-access pass for professionals, entrepreneurs, and tech enthusiasts.",
+        "For those leading, designing, and shaping systems that matter. Built for tech professionals and enthusiasts who are actively building, scaling, and influencing their fields.",
       callout: "Full access to all summit sessions & workshops for 2 days.",
       features: [
-        "Full access to all summit sessions & workshops for 2 days",
-        "Networking with professionals & peers",
+        "Full access to all summit sessions (2 days)",
+        "Priority access to high-impact workshops",
+        "Networking with senior professionals & peers",
         "Complimentary summit swags",
+        "Access to curated networking spaces",
       ],
       buttonText: "Grab my Ticket",
-      highlight: "🌟 Perfect for professionals and tech enthusiasts.",
     },
-
     {
-      id: "power-circle",
-      name: "Power Circle Pass (5 Tickets)",
+      id: "executive-circle",
+      name: "Executive Circle (4 Seats)",
       price: "12,000 / $93",
       currency: "KES",
-
+      priceNote: "KES 3,000 per person",
+      savingsTag: "Save KES 2,000 as a team",
       description:
-        "Perfect for teams, companies, and organizations bringing 5 people.",
-      callout: "KES 12,000 (Save KES 3,000)",
+        "For teams driving influence, decisions, and collective impact. Perfect for organizations, communities, and groups who want to experience the summit together.",
+      callout: "KES 12,000 (Save KES 2,000)",
       features: [
-        "5 Change Maker Passes (standard tickets) at a discounted rate",
+        "4 × LeadHER Architect Passes at a discounted rate",
         "Reserved group seating (where possible)",
-        "Optional recognition as a Community Supporter",
-        "Affordable for companies and communities to participate",
+        "Priority access to high-impact workshops",
+        "Enhanced networking opportunities as a team",
       ],
       buttonText: "Grab my Tickets",
-      highlight: "🎉 Ideal for groups and organizations.",
     },
   ];
-
-  const handleButtonClick = () => {
-    window.open(
-      "https://vabu.app/women-in-tech-summit-kenya-2025-11",
-      "_blank"
-    );
-  };
 
   return (
     <section id="tickets" className="py-16 px-6 md:px-8 lg:px-12 bg-gray-50">
@@ -133,11 +128,21 @@ const PricingSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mb-4">
+                <div className="mb-2">
                   <span className="text-4xl md:text-5xl font-bold text-purple-900">
                     {tier.price}
                   </span>
                 </div>
+
+                {tier.priceNote && (
+                  <p className="text-sm text-gray-500 mb-2">{tier.priceNote}</p>
+                )}
+
+                {tier.savingsTag && (
+                  <span className="inline-block bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full mb-3">
+                    {tier.savingsTag}
+                  </span>
+                )}
 
                 <p className="text-gray-600 text-sm mb-4">{tier.description}</p>
 
@@ -179,16 +184,15 @@ const PricingSection: React.FC = () => {
                 ))}
               </div>
 
-              {tier.highlight && (
-                <div className="mb-6">
-                  <p className="text-sm text-gray-600 font-medium">
-                    {tier.highlight}
-                  </p>
+              {tier.warning && (
+                <div className="flex items-start gap-2 bg-amber-50 border border-amber-200 text-amber-800 text-sm px-3 py-2 rounded-xl mb-6">
+                  <AlertTriangle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                  <span>{tier.warning}</span>
                 </div>
               )}
 
               <Link
-                href="https://vabu.app/women-in-tech-summit-kenya-2025-11"
+                href="https://vabu.app/women-in-tech-summit-kenya-2026-20-edition"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`inline-block w-full py-4 px-6 rounded-2xl font-semibold text-lg text-center transition-all duration-300 ${
