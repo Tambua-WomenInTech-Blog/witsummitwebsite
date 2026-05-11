@@ -145,7 +145,7 @@ const AboutSection: React.FC = () => {
             </Link>
 
             <Link
-              href="https://docs.google.com/forms/d/1I825WonV8qEBd3KrFnsUQRNAejI4pXD7eOiFW12shso/preview"
+              href="https://pretalx.com/witsummitkenya/cfp"
               target="_blank"
               rel="noopener noreferrer" 
               className="bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
