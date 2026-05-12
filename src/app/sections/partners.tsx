@@ -83,7 +83,7 @@ const Partners: React.FC = () => {
               <p className="text-xl md:text-2xl text-white/90 font-light">
                 We're seeking visionary partners who understand that investing
                 in women in tech means investing in innovation itself.
-                Sponsoring WIT Summit Kenya 2025 goes beyond brand exposure—it's
+                Sponsoring WIT Summit Kenya 2026 goes beyond brand exposure—it's
                 about shaping the future of African technology leadership. Let's
                 build something bold, together.
               </p>
