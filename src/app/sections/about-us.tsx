@@ -122,10 +122,10 @@ const AboutSection: React.FC = () => {
             </p>
 
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-              Anchored in career growth, the Women in Tech Summit Kenya 2025
+              Anchored in career growth, the Women in Tech Summit Kenya 2026
               champions this year's theme{" "}
               <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
-                "Beyond Limits: Elevate. Lead. Innovate."
+                "Beyond Systems: Thrive. Build. Govern."
               </strong>{" "}
               calling every woman in tech to rise boldly. We're creating a space
               where ambition meets opportunity, where stories turn into
