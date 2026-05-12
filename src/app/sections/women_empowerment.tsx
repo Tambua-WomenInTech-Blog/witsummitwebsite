@@ -40,7 +40,7 @@ const EmpowermentSection: React.FC = () => {
 
           <div className="space-y-6 max-w-4xl mx-auto">
             <p className="text-xl md:text-2xl text-white/90 font-light">
-              WIT Summit Kenya 2025 is your catalyst for career transformation.
+              WIT Summit Kenya 2026 is your catalyst for career transformation.
             </p>
 
             <p className="text-xl md:text-2xl text-white/90 font-light">

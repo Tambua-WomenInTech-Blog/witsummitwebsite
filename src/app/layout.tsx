@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Women in Tech Summit Kenya 2025",
+  title: "Women in Tech Summit Kenya 2026",
   description: " A Summit Built for Changemakers Driving Tech’s Evolution.",
 };
 

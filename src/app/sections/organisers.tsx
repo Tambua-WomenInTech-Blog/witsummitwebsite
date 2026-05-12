@@ -136,7 +136,7 @@ const WomenMakingItHappen: React.FC<WomenMakingItHappenProps> = ({
           </h2>
 
           <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            WIT Summit Kenya 2025 may be our first edition, but the impact is
+            WIT Summit Kenya 2025 was our first edition, but the impact is
             already unfolding. Meet the changemakers, thought leaders, and
             visionaries who are driving this movement forward.
           </p>
