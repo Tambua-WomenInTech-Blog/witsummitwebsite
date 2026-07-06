@@ -112,7 +112,7 @@ const AboutSection: React.FC = () => {
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
               Over the past 5 years,
               <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
-                Tambua Women in Tech
+                Tambua Women In Tech
               </strong>{" "}
               has amplified voices globally — celebrating 400+ women in STEM across
               Africa, Europe, Asia, and the Americas through shoutouts and
