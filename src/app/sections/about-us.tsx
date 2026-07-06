@@ -110,15 +110,15 @@ const AboutSection: React.FC = () => {
 
           <div className="max-w-5xl mx-auto space-y-6">
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-              Over the past 4 years,
+              Over the past 5 years,
               <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
                 Tambua Women in Tech
               </strong>{" "}
-              has amplified voices globally — celebrating 350+ women across
-              Africa, Europe, and the Americas through shoutouts and
-              storytelling. And building onto this initiative, we are hosting
-              our 1st ever Women In Tech summit to bring together these voices
-              in one space.
+              has amplified voices globally — celebrating 400+ women in STEM across
+              Africa, Europe, Asia, and the Americas through shoutouts and
+              storytelling. And building onto this initiative, we are hosting a second edition of 
+              our Women In Tech summit after a successful 1st ever Women In Tech summit to 
+              bring together these voices in one space.
             </p>
 
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
