@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Calendar, Users, Mic, Eye } from "lucide-react";
-import Image from "next/image";
+import { Calendar, Users, Mic } from "lucide-react";
 import Link from "next/link";
+import SiteHeader from "../components/site-header";
 
 interface CountdownTimerProps {
   targetDate: Date;
@@ -56,49 +56,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
 
 const WomenInTechSummitHero: React.FC = () => {
   const summitDate = new Date("2026-11-27T08:00:00");
-  const [activeSection, setActiveSection] = useState("home");
-
-  useEffect(() => {
-    const updateActiveSection = () => {
-      const hash = window.location.hash.replace("#", "") || "home";
-      setActiveSection(hash);
-    };
-
-    updateActiveSection();
-
-    window.addEventListener("hashchange", updateActiveSection);
-
-    return () => {
-      window.removeEventListener("hashchange", updateActiveSection);
-    };
-  }, []);
-
-  const handleNavClick = (sectionId: string, e: React.MouseEvent) => {
-    e.preventDefault();
-
-    window.history.pushState(null, "", `#${sectionId}`);
-
-    setActiveSection(sectionId);
-
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
-
-  const navItems = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "speakers", label: "Speakers" },
-    { id: "tickets", label: "Tickets" },
-    { id: "sponsors", label: "Sponsors" },
-    { id: "organisers", label: "Organisers" },
-    { id: "partners", label: "Partners" },
-  ];
-
+  
   return (
     <div className="relative min-h-screen overflow-hidden">
       <div
@@ -127,46 +85,7 @@ const WomenInTechSummitHero: React.FC = () => {
         ></div>
       </div>
 
-      <nav className="relative z-10 flex items-center justify-between p-6 md:p-8">
-        <div className="flex items-center space-x-2">
-          <div className="w-12 h-12 bg-white rounded-full shadow-2xl flex items-center justify-center border-4 border-purple-200">
-            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center border-gradient-to-r from-purple-600 to-pink-600">
-              <Image
-                src="/wit_logo.png"
-                height={20}
-                width={80}
-                alt="Wit logo"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={(e) => handleNavClick(item.id, e)}
-              className={`transition-colors ${
-                activeSection === item.id
-                  ? "text-white border-b-2 border-purple-400 pb-1 font-medium"
-                  : "text-white/80 hover:text-white"
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-
-        <Link
-          href="https://vabu.app/women-in-tech-summit-kenya-2026-20-edition"
-          target="_blank"
-              rel="noopener noreferrer" 
-          className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-        >
-          RSVP
-        </Link>
-      </nav>
+      <SiteHeader />
 
       <div
         id="home"
