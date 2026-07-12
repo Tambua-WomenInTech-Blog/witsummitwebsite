@@ -56,7 +56,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
 
 const WomenInTechSummitHero: React.FC = () => {
   const summitDate = new Date("2026-11-27T08:00:00");
-  
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       <div
@@ -129,7 +129,7 @@ const WomenInTechSummitHero: React.FC = () => {
           <Link
             href="https://pretalx.com/witsummitkenya/cfp"
             target="_blank"
-              rel="noopener noreferrer" 
+            rel="noopener noreferrer"
             className="bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm flex items-center space-x-2"
           >
             <Mic className="w-5 h-5" />
@@ -144,10 +144,12 @@ const WomenInTechSummitHero: React.FC = () => {
           <span className="text-2xl group-hover:translate-x-1 transition-transform">
             →
           </span>
-          <Link href="https://docs.google.com/forms/d/1G87aMDpsTIXKiRg9jCvbrEILdV8sVyvBgdPjATGi1Xo/preview"
-          target="_blank"
-              rel="noopener noreferrer" 
-          className="text-purple-300 underline underline-offset-4 decoration-2 decoration-purple-300">
+          <Link
+            href="https://docs.google.com/forms/d/1G87aMDpsTIXKiRg9jCvbrEILdV8sVyvBgdPjATGi1Xo/preview"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-300 underline underline-offset-4 decoration-2 decoration-purple-300"
+          >
             View Sponsor Deck
           </Link>
         </div>

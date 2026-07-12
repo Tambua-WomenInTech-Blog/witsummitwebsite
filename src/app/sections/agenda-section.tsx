@@ -1,5 +1,7 @@
 import React from "react";
-import PastAgendaTable, { DaySchedule } from "../past-events/2025/components/past-agenda-table";
+import PastAgendaTable, {
+  DaySchedule,
+} from "../past-events/2025/components/past-agenda-table";
 
 interface WITSummitAgendaProps {
   scheduleData?: DaySchedule[];

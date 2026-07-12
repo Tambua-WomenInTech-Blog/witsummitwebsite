@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
 import { X, User } from "lucide-react";
 
 interface EventSpeakerProps {
@@ -10,14 +9,16 @@ interface EventSpeakerProps {
   image?: string | null;
 }
 
-const convertGoogleDriveUrl = (url: string | null | undefined): string | null => {
+const convertGoogleDriveUrl = (
+  url: string | null | undefined,
+): string | null => {
   if (!url) return null;
-  
+
   const match = url.match(/[?&]id=([^&]+)/);
   if (match && match[1]) {
     return `https://drive.google.com/thumbnail?id=${match[1]}&sz=w1000`;
   }
-  
+
   return url;
 };
 
@@ -32,13 +33,17 @@ export const EventSpeaker: React.FC<EventSpeakerProps> = ({
 
   return (
     <>
-      <div 
+      <div
         className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
         onClick={() => setIsDialogOpen(true)}
       >
         <div className="h-60 relative overflow-hidden bg-gradient-to-br from-purple-100 to-pink-100">
           {imageUrl ? (
-            <img src={imageUrl} alt={name} className="w-full h-full object-cover" />
+            <img
+              src={imageUrl}
+              alt={name}
+              className="w-full h-full object-cover"
+            />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-24 h-24 bg-purple-500/20 rounded-full flex items-center justify-center">
@@ -49,17 +54,19 @@ export const EventSpeaker: React.FC<EventSpeakerProps> = ({
         </div>
 
         <div className="bg-purple-800 text-white p-4">
-          <h3 className="text-lg font-bold mb-1 truncate" title={name}>{name}</h3>
+          <h3 className="text-lg font-bold mb-1 truncate" title={name}>
+            {name}
+          </h3>
           <p className="text-sm text-purple-200 truncate">{company}</p>
         </div>
       </div>
 
       {isDialogOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
           onClick={() => setIsDialogOpen(false)}
         >
-          <div 
+          <div
             className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
@@ -83,10 +90,17 @@ export const EventSpeaker: React.FC<EventSpeakerProps> = ({
               <div className="flex gap-6 mb-6">
                 <div className="flex-shrink-0">
                   <div className="relative w-32 h-32">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 animate-spin" style={{ animationDuration: '3s' }}></div>
+                    <div
+                      className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 animate-spin"
+                      style={{ animationDuration: "3s" }}
+                    ></div>
                     <div className="absolute inset-1 rounded-full overflow-hidden bg-gradient-to-br from-purple-100 to-pink-100">
                       {imageUrl ? (
-                        <img src={imageUrl} alt={name} className="w-full h-full object-cover" />
+                        <img
+                          src={imageUrl}
+                          alt={name}
+                          className="w-full h-full object-cover"
+                        />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center bg-white">
                           <User className="w-16 h-16 text-purple-500" />
@@ -96,8 +110,12 @@ export const EventSpeaker: React.FC<EventSpeakerProps> = ({
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Biography</h3>
-                  <p className="text-gray-700 leading-relaxed whitespace-pre-line">{bio}</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    Biography
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                    {bio}
+                  </p>
                 </div>
               </div>
             </div>

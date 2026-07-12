@@ -33,9 +33,7 @@ interface PastSponsors2025Props {
   year?: number | string;
 }
 
-const PastSponsors2025: React.FC<PastSponsors2025Props> = ({
-  year = 2025,
-}) => {
+const PastSponsors2025: React.FC<PastSponsors2025Props> = ({ year = 2025 }) => {
   return (
     <section className="bg-white py-16 px-6 md:px-8 lg:px-12">
       <div className="max-w-6xl mx-auto">
