@@ -1,7 +1,7 @@
+import SpeakersSection from "@/app/sections/speaker-selection";
 import { Mic } from "lucide-react";
-import SpeakersSection from "./speaker-selection";
 
-export default function Speakers() {
+export default function PastSpeakers() {
   return (
     <>
       <section id="speakers">
@@ -14,28 +14,19 @@ export default function Speakers() {
               <div className="inline-flex mb-16 items-center space-x-3 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full px-6 py-3 border border-purple-200">
                 <Mic className="w-5 h-5 text-purple-600" />
                 <span className="text-purple-800 font-semibold text-sm uppercase tracking-wide">
-                  Meet the Speakers
+                  2025 Keynote Speakers
                 </span>
               </div>
 
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight max-w-3xl mx-auto">
-                Meet the Women Leading the Conversation
+                The Women Who Led the Conversation
               </h1>
 
               <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-                These aren't just speakers—they're trailblazers who've navigated
-                your challenges, celebrated breakthrough moments, and are ready
-                to accelerate your growth.
+                These weren't just speakers—they were trailblazers who shared
+                their journeys, celebrated breakthrough moments, and inspired
+                the next generation of women in tech at WITSummit 2025.
               </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-                <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105">
-                  Want to speak? Apply now
-                </button>
-                <button className="border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-600 hover:text-white transition-all">
-                  See Full Lineup
-                </button>
-              </div>
             </div>
           </div>
           <SpeakersSection />

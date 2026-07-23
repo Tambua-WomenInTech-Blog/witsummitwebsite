@@ -11,7 +11,12 @@ const CommunityBacking: React.FC = () => {
     //  { src: "/sponsors/luxpng.png", alt: "lux", height: 80, width: 150 },
     { src: "/sponsors/ihub.png", alt: "ihub", height: 80, width: 150 },
     { src: "/sponsors/kdk.png", alt: "kdk", height: 80, width: 150 },
-    { src: "/sponsors/tech_event_kenya.png", alt: "k_tech_event", height: 80, width: 100 },
+    {
+      src: "/sponsors/tech_event_kenya.png",
+      alt: "k_tech_event",
+      height: 80,
+      width: 100,
+    },
     {
       src: "/sponsors/wtn.png",
       alt: "womentechNetwork",

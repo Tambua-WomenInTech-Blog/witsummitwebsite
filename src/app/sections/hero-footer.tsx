@@ -73,7 +73,6 @@ const HeroFooterSection: React.FC = () => {
         </div>
       </div>
 
-      
       <div className="absolute bottom-42 right-6 md:right-8 lg:right-12 z-20 hidden md:block">
         <div style={{ width: "300px", height: "300px" }}>
           <GoogleMapWidget
@@ -94,8 +93,7 @@ const HeroFooterSection: React.FC = () => {
         </div>
 
         <div className="flex space-x-4">
-        <a 
-          
+          <a
             href="https://x.com/w_techshoutouts"
             target="_blank"
             rel="noopener noreferrer"
@@ -104,8 +102,9 @@ const HeroFooterSection: React.FC = () => {
           >
             <Twitter className="w-5 h-5" />
           </a>
-          
-            <a href="https://www.linkedin.com/company/women-in-tech-shoutouts/"
+
+          <a
+            href="https://www.linkedin.com/company/women-in-tech-shoutouts/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/70 hover:text-white transition-colors duration-200"
@@ -113,8 +112,9 @@ const HeroFooterSection: React.FC = () => {
           >
             <Linkedin className="w-5 h-5" />
           </a>
-          
-           <a href="https://www.tiktok.com/@womenintechshoutouts"
+
+          <a
+            href="https://www.tiktok.com/@womenintechshoutouts"
             className="text-white/70 hover:text-white transition-colors duration-200"
             target="_blank"
             rel="noopener noreferrer"
@@ -126,8 +126,9 @@ const HeroFooterSection: React.FC = () => {
               </svg>
             </div>
           </a>
-          
-           <a href="https://www.instagram.com/w_techshoutouts/?"
+
+          <a
+            href="https://www.instagram.com/w_techshoutouts/?"
             className="text-white/70 hover:text-white transition-colors duration-200"
             target="_blank"
             rel="noopener noreferrer"
@@ -135,8 +136,7 @@ const HeroFooterSection: React.FC = () => {
           >
             <Instagram className="w-5 h-5" />
           </a>
-          </div>
-        
+        </div>
       </footer>
     </section>
   );
