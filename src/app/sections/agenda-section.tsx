@@ -57,21 +57,21 @@ const firstDayViewMoreSessions: Session[] = [
     time: "13:15 – 13:45",
     title: "Panel: Leadership & Career",
     description:
-      "Panel moderated by Debbie Mong'are | Breakout: Workshop: Do You Just Join, or Contribute? by Bosibori Valeria",
+      "Mentorship under Career Growth & Positioning for desired roles by Julie Ojwaya  | Why Your Next Promotion Isn't Just About Your Skills by Eunice Eze",
     tags: ["Panel", "Leadership", "Career"],
   },
   {
     time: "13:45 – 14:15",
-    title: "Save Time with Python",
+    title: "Speed Recruitment TBD",
     description:
-      "Talk by Elizabeth Adhiambo Onyango | Breakout: Talk: Responsible AI in the Generative AI Era by Cynthia Kamau",
-    tags: ["Python", "Technical"],
+      "Partner Led Session",
+    tags: ["Career", "Recruitment"],
   },
   {
     time: "14:15 – 14:45",
-    title: "Building AI Chatbots Using LangChain",
-    description: "Talk by Grace Ngari",
-    tags: ["AI", "Technical"],
+    title: "The Design of Wealth: A Financial Blueprint for Kenya's Creative Tech Professionals",
+    description: "Talk by Kyendereta Chantelle",
+    tags: ["Finance", "UI/UX", "Design"],
   },
   {
     time: "14:45 – 15:00",
@@ -81,14 +81,14 @@ const firstDayViewMoreSessions: Session[] = [
   },
   {
     time: "15:00 – 15:30",
-    title: "Workshop: Integrating Mpesa STK Push with Node.js",
-    description: "Workshop by Mary Maina",
-    tags: ["Workshop", "Technical", "Payments"],
+    title: "The Habits Holding Her Back: Unlearning the Rules That Got You Here",
+    description: "Talk by Tabitha Kavyu",
+    tags: ["Career", "Growth", "Thrive"],
   },
   {
     time: "15:30 – 16:00",
-    title: "Beyond Testing – Role of Quality Engineering",
-    description: "Talk by Jacqueline Kamadi",
+    title: "Lighting talks  – Community Showcase ",
+    description: " Community members share quick wins/projects",
     tags: ["Quality Engineering", "Technical"],
   },
   {
@@ -155,25 +155,25 @@ const secondDayViewMoreSessions: Session[] = [
 const defaultScheduleData: DaySchedule[] = [
   {
     day: "Friday",
-    date: "Nov 28, 2025",
+    date: "Nov 27, 2026",
     sessions: [
       {
-        time: "09:00 – 09:30",
+        time: "08:30 – 09:00",
         title: "Registration and Welcome",
         description:
-          "Check-in and welcome coffee (MC: Allela Eunice & Valentine Rutto)",
+          "Check-in and welcome (MC: Allela Eunice)",
         tags: ["Welcome"],
       },
       {
-        time: "09:30 – 10:00",
+        time: "09:00 – 10:00",
         title: "Opening Ceremony & Welcome",
         description: "Official opening and welcome remarks",
         tags: ["Opening"],
       },
       {
         time: "10:00 – 10:30",
-        title: "Keynote: So, How Did We Get Here Anyway?",
-        description: "Keynote by Maureen J",
+        title: "Keynote: TBD",
+        description: "Keynote by Maureen Josephine",
         tags: ["Keynote", "Leadership"],
       },
       {
@@ -184,35 +184,35 @@ const defaultScheduleData: DaySchedule[] = [
       },
       {
         time: "10:45 – 11:15",
-        title: "Panel: Women Leading in Data & AI & CyberSec",
+        title: "Session: Building a Global Tech Career",
         description:
-          "Panel discussion moderated by Allela A | Breakout: Owning Your Space – Breaking Into Tech Before You're 'Ready' by Esther Oyoo",
-        tags: ["Panel", "Data & AI", "Cybersecurity"],
+          "Talk by Esther Sumba | Breakout: The Surreal Pivot: Navigating a Career I Never Planned by Brenda Mwaura",
+        tags: ["Leadership", "Career"],
       },
       {
         time: "11:15 – 11:45",
-        title: "Product Management, UX/UI, DevOps",
+        title: "The Future Belongs to Translators",
         description:
-          "Talk by Latifa Noor | Breakout: Workshop: 101 Ways to MVP by Jennifer D. Daniel",
+          "Talk by Sarah Muwanguzi",
         tags: ["Product", "Workshop"],
       },
       {
         time: "11:45 – 12:15",
-        title: "Panel: Product Innovation & Future of Tech",
+        title: "Beyond Technical Expertise: Building Influence in the Boardroom and Shaping Technology Decisions",
         description:
-          "Panel moderated by Val Rutto | Breakout: Talk: Figma Make It, Copilot Build It by Kayuyu Mwaura",
-        tags: ["Panel", "Product", "Innovation"],
+          "Talk by Mercy Chore",
+        tags: ["Governance", "Influence"],
       },
     ],
   },
   {
     day: "Saturday",
-    date: "Nov 29, 2025",
+    date: "Nov 28, 2026",
     sessions: [
       {
         time: "09:00 – 09:30",
         title: "Opening and Welcome",
-        description: "Opening remarks (MC: Omar)",
+        description: "Opening remarks (MC: TBD)",
         tags: ["Welcome"],
       },
       {
