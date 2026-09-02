@@ -55,23 +55,23 @@ const firstDayViewMoreSessions: Session[] = [
   },
   {
     time: "13:15 – 13:45",
-    title: "Panel: Leadership & Career",
+    title: "Positioning for desired roles",
     description:
-      "Panel moderated by Debbie Mong'are | Breakout: Workshop: Do You Just Join, or Contribute? by Bosibori Valeria",
-    tags: ["Panel", "Leadership", "Career"],
+      "Positioning for desired roles by Julie Ojwaya  | Why Your Next Promotion Isn't Just About Your Skills by Eunice Eze",
+    tags: ["Roles", "Leadership", "Career"],
   },
   {
     time: "13:45 – 14:15",
-    title: "Save Time with Python",
+    title: "Speed Recruitment TBD",
     description:
-      "Talk by Elizabeth Adhiambo Onyango | Breakout: Talk: Responsible AI in the Generative AI Era by Cynthia Kamau",
-    tags: ["Python", "Technical"],
+      "Partner Led Session",
+    tags: ["Career", "Recruitment"],
   },
   {
     time: "14:15 – 14:45",
-    title: "Building AI Chatbots Using LangChain",
-    description: "Talk by Grace Ngari",
-    tags: ["AI", "Technical"],
+    title: "The Design of Wealth: A Financial Blueprint for Kenya's Creative Tech Professionals",
+    description: "Talk by Kyendereta Chantelle",
+    tags: ["Finance", "UI/UX", "Design"],
   },
   {
     time: "14:45 – 15:00",
@@ -81,15 +81,15 @@ const firstDayViewMoreSessions: Session[] = [
   },
   {
     time: "15:00 – 15:30",
-    title: "Workshop: Integrating Mpesa STK Push with Node.js",
-    description: "Workshop by Mary Maina",
-    tags: ["Workshop", "Technical", "Payments"],
+    title: "The Habits Holding Her Back: Unlearning the Rules That Got You Here",
+    description: "Talk by Tabitha Kavyu",
+    tags: ["Career", "Growth", "Thrive"],
   },
   {
     time: "15:30 – 16:00",
-    title: "Beyond Testing – Role of Quality Engineering",
-    description: "Talk by Jacqueline Kamadi",
-    tags: ["Quality Engineering", "Technical"],
+    title: "Lighting talks  – Community Showcase ",
+    description: " Community members share quick wins/projects",
+    tags: ["Open Mic", "Community", "Showcase"],
   },
   {
     time: "16:00 – 17:00",
@@ -109,22 +109,22 @@ const secondDayViewMoreSessions: Session[] = [
   {
     time: "13:15 – 13:45",
     title:
-      "Why Ignoring QA is Costing You.",
-    description: "by June Katei Reeves | Breakout: Talk: Reinvention and the Courage to Pivot in Tech by Sarah Muwanguzi",
-    tags: ["Career", "Networking"],
+      "Building Secure Software in the Age of AI: Protecting Your Projects from Supply Chain Attacks",
+    description: "by Blossom Dugbatey | Breakout: Talk: From Finance to Production Systems by Lydiah Ng'ang'a",
+    tags: ["Security", "Cybersecurity", "Quality Assurance", "AI"],
   },
   {
     time: "13:45 – 14:15",
     title:
-      "Career & Mentorship Panel",
-    description: "(Moderator: Tima Ali) | Breakout: Talk: From Engineer to Change-Maker – AI for Community Health by Alice  Wangeci",
+      "You Can’t Build in a Silo: How Community Drives Wealth, Power, and Longevity in Tech",
+    description: "Talk by: Tabitha Margaret | Breakout: Talk: Nobody Is Coming: Building Before the World Confirms It Is Time by Amen Divine Ikamba",
     tags: ["Mentorship", "Networking"],
   },
   {
     time: "14:15 – 14:45",
-    title: "Financial Inclusion and Independence ",
-    description: "by Vyrone Ochola",
-    tags: ["Finance", "Independence"],
+    title: "Financial Investment session TBD ",
+    description: "TBD",
+    tags: ["Finance", "Money", "Investment"],
   },
   {
     time: "14:45 – 15:00",
@@ -134,15 +134,15 @@ const secondDayViewMoreSessions: Session[] = [
   },
   {
     time: "15:00 – 15:30",
-    title: "Main Hall: Mixer Activities",
-    description: "",
-    tags: ["Activities"],
+    title: "Main Hall: Building a Global Tech Career",
+    description: "by Esther Sumba",
+    tags: ["Global Tech", "Career", "Growth"],
   },
   {
     time: "15:30 – 16:00",
-    title: "POP UP FIRESIDE CHAT by MC Omar",
+    title: "POP UP FIRESIDE CHAT TBD",
     description: "",
-    tags: ["Closing"],
+    tags: ["Closing", "Fireside Chat"],
   },
   {
     time: "16:00 – 17:00",
@@ -155,25 +155,25 @@ const secondDayViewMoreSessions: Session[] = [
 const defaultScheduleData: DaySchedule[] = [
   {
     day: "Friday",
-    date: "Nov 28, 2025",
+    date: "Nov 27, 2026",
     sessions: [
       {
-        time: "09:00 – 09:30",
+        time: "08:30 – 09:00",
         title: "Registration and Welcome",
         description:
-          "Check-in and welcome coffee (MC: Allela Eunice & Valentine Rutto)",
+          "Check-in and welcome (MC: Allela Eunice)",
         tags: ["Welcome"],
       },
       {
-        time: "09:30 – 10:00",
+        time: "09:00 – 10:00",
         title: "Opening Ceremony & Welcome",
         description: "Official opening and welcome remarks",
         tags: ["Opening"],
       },
       {
         time: "10:00 – 10:30",
-        title: "Keynote: So, How Did We Get Here Anyway?",
-        description: "Keynote by Maureen J",
+        title: "Keynote: TBD",
+        description: "Keynote by Maureen Josephine",
         tags: ["Keynote", "Leadership"],
       },
       {
@@ -184,48 +184,55 @@ const defaultScheduleData: DaySchedule[] = [
       },
       {
         time: "10:45 – 11:15",
-        title: "Panel: Women Leading in Data & AI & CyberSec",
+        title: "Session: Beyond Technical Expertise: Building Influence in the Boardroom",
         description:
-          "Panel discussion moderated by Allela A | Breakout: Owning Your Space – Breaking Into Tech Before You're 'Ready' by Esther Oyoo",
-        tags: ["Panel", "Data & AI", "Cybersecurity"],
+          "Talk by by Mercy Chore",
+        tags: ["Leadership", "Governance", "Legal Tech"],
+      },
+         {
+        time: "11:15 – 11:45 (TBD)",
+        title: "Executive & Boadroom Track",
+        description:
+          "Panel Discussion",
+        tags: ["Panel", "Executive", "Boardroom"],
       },
       {
         time: "11:15 – 11:45",
-        title: "Product Management, UX/UI, DevOps",
+        title: "The Future Belongs to Translators",
         description:
-          "Talk by Latifa Noor | Breakout: Workshop: 101 Ways to MVP by Jennifer D. Daniel",
+          "Talk by Sarah Muwanguzi | Breakout: The Surreal Pivot: Navigating a Career I Never Planned by Brenda Mwaura",
         tags: ["Product", "Workshop"],
       },
       {
         time: "11:45 – 12:15",
-        title: "Panel: Product Innovation & Future of Tech",
+        title: " AI for the Duka: Building Affordable Demand Intelligence for Kenya's 900,000+ Retail SMEs",
         description:
-          "Panel moderated by Val Rutto | Breakout: Talk: Figma Make It, Copilot Build It by Kayuyu Mwaura",
-        tags: ["Panel", "Product", "Innovation"],
+          "Talk by Abigael Mukuru",
+        tags: ["AI", "SMEs", "Retail", "Software", "Engineering"],
       },
     ],
   },
   {
     day: "Saturday",
-    date: "Nov 29, 2025",
+    date: "Nov 28, 2026",
     sessions: [
       {
         time: "09:00 – 09:30",
         title: "Opening and Welcome",
-        description: "Opening remarks (MC: Omar)",
+        description: "Opening remarks (MC: TBD)",
         tags: ["Welcome"],
       },
       {
         time: "09:30 – 10:00",
-        title: "Keynote: Fireside Chat",
-        description: "Fireside chat with Maureen J and Anie Akpe",
+        title: "Opening Keynote: Fireside Chat",
+        description: "TBD",
         tags: ["Keynote", "Fireside Chat"],
       },
       {
         time: "10:00 – 10:30",
-        title: "Talk: Mentorship & Building Inclusive Communities in Tech",
-        description: "Talk by Linet Muriuki",
-        tags: ["Mentorship", "Community"],
+        title: "Keynote: Google Representative TBD",
+        description: "TBD",
+        tags: ["Current State of Tech", "AI", "Google Technologies"],
       },
       {
         time: "10:30 – 10:45",
@@ -235,23 +242,23 @@ const defaultScheduleData: DaySchedule[] = [
       },
       {
         time: "10:45 – 11:15",
-        title: "Panel: Entrepreneurship & Startups",
+        title: "Leadership by Example",
         description:
-          "Main Track: Panel (Annie/Rachel) | Breakout - Keynote: Talk: Hot careers in digital world and how to own your ambition as a Woman by Lilian Nyawira",
-        tags: ["Panel", "Entrepreneurship", "Startups"],
+          "Main Track: Leadership by Depha Anns Okal | Breakout: From Idea to Impact: Product Innovation for Communities by Christal Riziki",
+        tags: ["Leadership", "Entrepreneurship", "Product Innovation"],
       },
       {
         time: "11:15 – 11:45",
-        title: "From Refugee Camp to Innovation – Building Social Enterprise",
-        description: "Talk by Saido Omar Noor",
-        tags: ["Social Enterprise", "Innovation"],
+        title: "Building Production-Ready RAG Apps: Deploying Angular & Gemini AI on Firebase ",
+        description: "Talk by Morara Millicent | Breakout: Your Data Never Has to Leave the Building: Building Production AI Systems Without the Cloud - by Alfonce Micah Yano",
+        tags: ["Software Engineering", "Gemini AI", "Data", "AI", "RAG"],
       },
       {
         time: "11:45 – 12:15",
-        title: "Panel: Wellness",
+        title: "Panel: Mentorship & Career Growth",
         description:
-          "Main Track: Wellness Panel (Annie/Rachel) | Breakout: Talk: Lessons from the Frontlines of Incident Response by Faith Wanyangu",
-        tags: ["Panel", "Wellness", "Security"],
+          "Main Track: Faith & TBD",
+        tags: ["Panel", "Mentorship", "Growth"],
       },
     ],
   },
@@ -351,7 +358,7 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
                 d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
             </svg>
-            Download Previous Agenda(2025)
+            Download Agenda(DRAFT)
           </button>
         </div>
 
