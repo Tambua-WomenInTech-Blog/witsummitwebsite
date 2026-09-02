@@ -309,8 +309,8 @@ const WITSummitAgenda: React.FC<WITSummitAgendaProps> = ({
           <p className="text-gray-700 text-lg max-w-2xl mx-auto leading-relaxed">
             A powerful 2-Day High Impact experience, under the Theme: Beyond Systems: "Thrive.Build.Govern", 
             filled with keynotes, talks, panels, intimate workshops, live mentoring & networking, and plenty 
-            of good vibes. From technical mastery, AI Governance, Legal Tech to leadership transitions 
-            to executive presence, we've designed sessions that honor your ambitions, not just your current role. 
+            of good vibes. From technical mastery, AI Governance, Legal Tech, Leadership transitions 
+            to Executive presence, we've designed sessions that honor your ambitions, not just your current role. 
           </p>
         </div>
 
