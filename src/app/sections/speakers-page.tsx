@@ -23,9 +23,8 @@ export default function Speakers() {
               </h1>
 
               <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-                These aren't just speakers—they're trailblazers who've navigated
-                your challenges, celebrated breakthrough moments, and are ready
-                to accelerate your growth.
+                These aren't just speakers, they're trailblazers who've navigated your challenges,
+                celebrated breakthrough moments, and are ready to accelerate your growth.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
