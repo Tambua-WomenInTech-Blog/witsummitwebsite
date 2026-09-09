@@ -154,7 +154,7 @@ export default function WhyAttend() {
               <Link
                 href="https://pretalx.com/witsummitkenya/cfp"
                 target="_blank"
-              rel="noopener noreferrer" 
+                rel="noopener noreferrer"
                 className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-all"
               >
                 Apply to Speak

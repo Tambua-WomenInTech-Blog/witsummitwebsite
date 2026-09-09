@@ -114,11 +114,12 @@ const AboutSection: React.FC = () => {
               <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
                 Tambua Women In Tech
               </strong>{" "}
-              has amplified voices globally — celebrating 400+ women in STEM across
-              Africa, Europe, Asia, and the Americas through shoutouts and
-              storytelling. And building onto this initiative, we are hosting a second edition of 
-              our Women In Tech summit after a successful 1st ever Women In Tech summit to 
-              bring together these voices in one space.
+              has amplified voices globally — celebrating 400+ women in STEM
+              across Africa, Europe, Asia, and the Americas through shoutouts
+              and storytelling. And building onto this initiative, we are
+              hosting a second edition of our Women In Tech summit after a
+              successful 1st ever Women In Tech summit to bring together these
+              voices in one space.
             </p>
 
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
@@ -138,7 +139,7 @@ const AboutSection: React.FC = () => {
             <Link
               href="https://vabu.app/women-in-tech-summit-kenya-2026-20-edition"
               target="_blank"
-              rel="noopener noreferrer"   
+              rel="noopener noreferrer"
               className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
               Grab my Ticket
@@ -147,7 +148,7 @@ const AboutSection: React.FC = () => {
             <Link
               href="https://pretalx.com/witsummitkenya/cfp"
               target="_blank"
-              rel="noopener noreferrer" 
+              rel="noopener noreferrer"
               className="bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
             >
               Apply to Speak

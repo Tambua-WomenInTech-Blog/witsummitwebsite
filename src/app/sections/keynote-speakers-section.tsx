@@ -18,11 +18,13 @@ const KeynoteSpeakersSection: React.FC = () => {
       image:
         "https://drive.google.com/open?id=1gOE5W3rMVRoDWZaUMKrwYx29YVfCT5uk",
     },
-     {
+    {
       name: "Lilian Nyawira",
-      company: "Senior Tech Leader at Safaricom | Cloud Infrastructure & Women in Tech Advocate",
+      company:
+        "Senior Tech Leader at Safaricom | Cloud Infrastructure & Women in Tech Advocate",
       bio: "Lilian Nyawira Kiambati stands out as a senior tech leader at Safaricom who blends digital service delivery expertise, cloud infrastructure strategy, and active advocacy for women in tech. Her public roles, moderating tech forums, leading panels, and mentoring, highlight her commitment to steering Kenya’s digital transformation inclusively. A visible mentor for Women in Technology initiatives within Safaricom and the broader industry—helping to close the gender gap in tech.",
-      image: "https://drive.google.com/open?id=1TCeIvsOcqWU5qRHHVFQq5F5aoA8vu2bf",
+      image:
+        "https://drive.google.com/open?id=1TCeIvsOcqWU5qRHHVFQq5F5aoA8vu2bf",
     },
 
     {
