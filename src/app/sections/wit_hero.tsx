@@ -225,7 +225,7 @@ const WomenInTechSummitHero: React.FC = () => {
           <span className="text-2xl group-hover:translate-x-1 transition-transform">
             →
           </span>
-          <Link href="https://docs.google.com/forms/d/1G87aMDpsTIXKiRg9jCvbrEILdV8sVyvBgdPjATGi1Xo/preview"
+          <Link href="https://forms.gle/QcDq9yJc537ksVNu9"
           target="_blank"
               rel="noopener noreferrer" 
           className="text-purple-300 underline underline-offset-4 decoration-2 decoration-purple-300">
