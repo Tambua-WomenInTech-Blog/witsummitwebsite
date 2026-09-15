@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Calendar, Users, Mic, Eye } from "lucide-react";
+import { Calendar, Users, Mic, Menu, X, ArrowUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -57,6 +57,39 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
 const WomenInTechSummitHero: React.FC = () => {
   const summitDate = new Date("2026-11-27T08:00:00");
   const [activeSection, setActiveSection] = useState("home");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const updateScrollTopVisibility = () => {
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      const fullHeight = document.documentElement.scrollHeight;
+
+      const pastThreshold = scrollY > 400;
+      const nearBottom = scrollY + viewportHeight >= fullHeight - 10;
+
+      setShowScrollTop(pastThreshold && !nearBottom);
+    };
+
+    updateScrollTopVisibility();
+
+    window.addEventListener("scroll", updateScrollTopVisibility, {
+      passive: true,
+    });
+    window.addEventListener("resize", updateScrollTopVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", updateScrollTopVisibility);
+      window.removeEventListener("resize", updateScrollTopVisibility);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.history.pushState(null, "", "#home");
+    setActiveSection("home");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   useEffect(() => {
     const updateActiveSection = () => {
@@ -73,12 +106,20 @@ const WomenInTechSummitHero: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   const handleNavClick = (sectionId: string, e: React.MouseEvent) => {
     e.preventDefault();
 
     window.history.pushState(null, "", `#${sectionId}`);
 
     setActiveSection(sectionId);
+    setMobileMenuOpen(false);
 
     const element = document.getElementById(sectionId);
     if (element) {
@@ -127,7 +168,7 @@ const WomenInTechSummitHero: React.FC = () => {
         ></div>
       </div>
 
-      <nav className="relative z-10 flex items-center justify-between p-6 md:p-8">
+      <nav className="relative z-30 flex items-center justify-between p-6 md:p-8">
         <div className="flex items-center space-x-2">
           <div className="w-12 h-12 bg-white rounded-full shadow-2xl flex items-center justify-center border-4 border-purple-200">
             <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center border-gradient-to-r from-purple-600 to-pink-600">
@@ -161,12 +202,70 @@ const WomenInTechSummitHero: React.FC = () => {
         <Link
           href="https://vabu.app/women-in-tech-summit-kenya-2026-20-edition"
           target="_blank"
-              rel="noopener noreferrer" 
-          className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+          rel="noopener noreferrer"
+          className="hidden md:inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
         >
           RSVP
         </Link>
+
+        <button
+          type="button"
+          onClick={() => setMobileMenuOpen((prev) => !prev)}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileMenuOpen}
+          className="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white shadow-lg"
+        >
+          {mobileMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
+        </button>
       </nav>
+
+      <div
+        className={`md:hidden fixed inset-0 z-20 transition-opacity duration-300 ${
+          mobileMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <div
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          onClick={() => setMobileMenuOpen(false)}
+        ></div>
+
+        <div
+          className={`absolute top-0 right-0 h-full w-72 max-w-[80%] bg-gradient-to-b from-purple-900/95 via-indigo-900/95 to-pink-900/95 border-l border-white/10 shadow-2xl pt-24 px-6 flex flex-col space-y-2 transform transition-transform duration-300 ${
+            mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={(e) => handleNavClick(item.id, e)}
+              className={`py-3 px-4 rounded-xl text-lg transition-colors ${
+                activeSection === item.id
+                  ? "bg-white/15 text-white font-semibold"
+                  : "text-white/80 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
+
+          <Link
+            href="https://vabu.app/women-in-tech-summit-kenya-2026-20-edition"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mt-4 text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg"
+          >
+            RSVP
+          </Link>
+        </div>
+      </div>
 
       <div
         id="home"
@@ -190,10 +289,6 @@ const WomenInTechSummitHero: React.FC = () => {
           A Summit Built for Changemakers Driving Tech’s Evolution.
         </p>
 
-        {/* <h5 className="text-2xl md:text-5xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-300 to-purple-300 mb-8 font-space-grotesk">
-            Elevate. Lead. Innovate.
-        </h5>  */}
-
         <CountdownTimer targetDate={summitDate} />
 
         <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -210,7 +305,7 @@ const WomenInTechSummitHero: React.FC = () => {
           <Link
             href="https://pretalx.com/witsummitkenya/cfp"
             target="_blank"
-              rel="noopener noreferrer" 
+            rel="noopener noreferrer"
             className="bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm flex items-center space-x-2"
           >
             <Mic className="w-5 h-5" />
@@ -225,10 +320,12 @@ const WomenInTechSummitHero: React.FC = () => {
           <span className="text-2xl group-hover:translate-x-1 transition-transform">
             →
           </span>
-          <Link href="https://forms.gle/QcDq9yJc537ksVNu9"
-          target="_blank"
-              rel="noopener noreferrer" 
-          className="text-purple-300 underline underline-offset-4 decoration-2 decoration-purple-300">
+          <Link
+            href="https://forms.gle/QcDq9yJc537ksVNu9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-300 underline underline-offset-4 decoration-2 decoration-purple-300"
+          >
             View Sponsor Deck
           </Link>
         </div>
@@ -251,6 +348,19 @@ const WomenInTechSummitHero: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <button
+        type="button"
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+        className={`fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-xl flex items-center justify-center transition-all duration-300 transform ${
+          showScrollTop
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 translate-y-4 pointer-events-none"
+        }`}
+      >
+        <ArrowUp className="w-5 h-5" />
+      </button>
 
       <div className="absolute inset-0 pointer-events-none">
         {Array.from({ length: 25 }).map((_, i) => (
