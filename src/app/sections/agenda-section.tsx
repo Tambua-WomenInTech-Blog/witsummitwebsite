@@ -230,9 +230,9 @@ const defaultScheduleData: DaySchedule[] = [
       },
       {
         time: "10:00 – 10:30",
-        title: "Keynote: Google Representative TBD",
+        title: "Keynote: Allela Eunice",
         description: "TBD",
-        tags: ["Current State of Tech", "AI", "Google Technologies"],
+        tags: ["Current State of Tech", "Leadership", "Google Technologies"],
       },
       {
         time: "10:30 – 10:45",
