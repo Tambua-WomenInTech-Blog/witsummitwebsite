@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Calendar, Users, Menu, X, ArrowUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import SecondaryCta from "../components/secondary-cta";
 
 interface CountdownTimerProps {
   targetDate: Date;
@@ -303,25 +304,7 @@ const WomenInTechSummitHero: React.FC = () => {
             <span>Reserve My Seat</span>
           </Link>
 
-          {/* TODO(@JosephineAkello): revert when calling for pagers */}
-          <Link
-            href="#agenda"
-           
-            rel="noopener noreferrer"
-            className="bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm flex items-center space-x-2"
-          >
-            <Calendar className="w-5 h-5" />
-            <span>Check Schedule</span>
-          </Link>
-          {/* <Link
-            href="https://pretalx.com/witsummitkenya/cfp"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm flex items-center space-x-2"
-          >
-            <Mic className="w-5 h-5" />
-            <span>Apply to Speak</span>
-          </Link> */}
+         <SecondaryCta />
         </div>
 
         <div className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors cursor-pointer group">

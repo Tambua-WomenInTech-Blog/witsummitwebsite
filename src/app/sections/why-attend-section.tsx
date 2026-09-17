@@ -1,6 +1,7 @@
 import React from "react";
 import { MapPin, Mic, Users, Briefcase, GraduationCap, Calendar } from "lucide-react";
 import Link from "next/link";
+import SecondaryCta from "../components/secondary-cta";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -110,21 +111,7 @@ const WhyAttendSection: React.FC = () => {
                 Grab my Ticket
               </Link>
 
-              {/* <Link
-                href="https://pretalx.com/witsummitkenya/cfp"
-                className="bg-transparent border-2 border-purple-600 hover:border-purple-700 text-purple-600 hover:text-purple-700 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105"
-              >
-                Apply to Speak
-              </Link> */}
-              <Link
-            href="#agenda"
-           
-            rel="noopener noreferrer"
-            className="bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm flex items-center space-x-2"
-          >
-            <Calendar className="w-5 h-5" />
-            <span>Check Schedule</span>
-          </Link>
+             <SecondaryCta/>
             </div>
           </div>
 
