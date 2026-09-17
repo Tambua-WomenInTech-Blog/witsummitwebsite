@@ -53,12 +53,15 @@ export default function Speakers() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-                <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105">
+                {/* TODO(@JosephineAkello): revert when looking for speakers */}
+                {/* <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105">
                   Want to speak? Apply now
-                </button>
-                <button className="border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-600 hover:text-white transition-all">
+                </button> */}
+                <Link 
+                href="#agenda"
+                className="border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-600 hover:text-white transition-all">
                   See Full Lineup
-                </button>
+                </Link>
               </div>
             </div>
           </div>

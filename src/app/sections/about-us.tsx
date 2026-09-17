@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Info, Users, Calendar, Building } from "lucide-react";
 import Link from "next/link";
+import SecondaryCta from "../components/secondary-cta";
 
 interface StatCardProps {
   number: string;
@@ -144,14 +145,7 @@ const AboutSection: React.FC = () => {
               Grab my Ticket
             </Link>
 
-            <Link
-              href="https://pretalx.com/witsummitkenya/cfp"
-              target="_blank"
-              rel="noopener noreferrer" 
-              className="bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
-            >
-              Apply to Speak
-            </Link>
+           <SecondaryCta/>
           </div>
 
           <div className="mb-16">
