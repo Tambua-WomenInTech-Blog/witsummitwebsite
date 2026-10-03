@@ -120,7 +120,7 @@ const PastEventHighlights: React.FC = () => {
     <div className="relative z-10 px-6 md:px-12 py-16 md:py-20 max-w-7xl mx-auto">
       <div className="text-center mb-14">
         <h1 className="font-space-grotesk text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-300 to-purple-300 mb-5 leading-tight">
-          WITSummit 2025
+          Women In Tech Summit 2025
         </h1>
         <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto font-light">
           Relive the moments, sessions, and energy from the Nairobi edition.
