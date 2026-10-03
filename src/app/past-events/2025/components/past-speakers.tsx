@@ -23,7 +23,7 @@ export default function PastSpeakers() {
               </h1>
 
               <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-                These weren't just speakers—they were trailblazers who shared
+                These weren't just speakers they were trailblazers who shared
                 their journeys, celebrated breakthrough moments, and inspired
                 the next generation of women in tech at WITSummit 2025.
               </p>
