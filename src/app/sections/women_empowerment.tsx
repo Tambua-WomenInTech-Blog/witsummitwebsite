@@ -44,13 +44,16 @@ const EmpowermentSection: React.FC = () => {
             </p>
 
             <p className="text-xl md:text-2xl text-white/90 font-light">
-              Where Women in Tech come to elevate their expertise, build powerful networks, 
-              and create the impact they're meant to make for themselves, their communities, and the future of African innovation.
+              Where Women in Tech come to elevate their expertise, build
+              powerful networks, and create the impact they're meant to make for
+              themselves, their communities, and the future of African
+              innovation.
             </p>
 
             <p className="text-xl md:text-2xl text-white/90 font-light">
-              Connect with trailblazers. Learn from innovators. Accelerate your growth.
-              Because when we rise together, we transform entire industries.
+              Connect with trailblazers. Learn from innovators. Accelerate your
+              growth. Because when we rise together, we transform entire
+              industries.
             </p>
           </div>
 

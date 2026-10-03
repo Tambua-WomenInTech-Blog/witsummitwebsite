@@ -104,7 +104,7 @@ const Partners: React.FC = () => {
                 <Link
                   href="https://forms.gle/QcDq9yJc537ksVNu9"
                   target="_blank"
-              rel="noopener noreferrer" 
+                  rel="noopener noreferrer"
                   className="bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm flex items-center justify-center space-x-2"
                 >
                   <span>View Sponsorship Deck</span>

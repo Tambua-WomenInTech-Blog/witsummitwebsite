@@ -13,19 +13,19 @@ import EmpowermentSection from "./sections/women_empowerment";
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <WomenInTechSummitHero/>
+      <WomenInTechSummitHero />
       <EmpowermentSection />
       {/* <WebsiteHero /> */}
       {/* <WhyAttend /> */}
-      <WhyAttendSection/>
-      <AboutSection/>
+      <WhyAttendSection />
+      <AboutSection />
       <CommunityBacking />
       <Speakers />
       <WITSummitAgenda />
       <WomenMakingItHappen />
       <Partners />
       <PricingSection />
-      <HeroFooterSection/>
+      <HeroFooterSection />
     </div>
   );
 }

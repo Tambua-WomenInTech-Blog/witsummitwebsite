@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { MapPin, ExternalLink } from 'lucide-react';
+import { useState } from "react";
+import { MapPin, ExternalLink } from "lucide-react";
 
 interface GoogleMapWidgetProps {
   latitude: number;
@@ -17,32 +17,32 @@ export default function GoogleMapWidget({
   latitude,
   longitude,
   address,
-  title = 'Event Location',
+  title = "Event Location",
   zoom = 15,
-  height = '300px',
-  className = '',
+  height = "300px",
+  className = "",
 }: GoogleMapWidgetProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const mapEmbedUrlNoKey = `https://maps.google.com/maps?q=${latitude},${longitude}&z=${zoom}&output=embed`;
 
   const openInGoogleMaps = () => {
-    window.open(`https://www.google.com/maps?q=${latitude},${longitude}`, '_blank');
+    window.open(
+      `https://www.google.com/maps?q=${latitude},${longitude}`,
+      "_blank",
+    );
   };
 
   return (
     <div className={`w-full ${className}`}>
       <div className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10">
-
         <div className="bg-white/5 px-4 py-3 border-b border-white/10">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-purple-400" />
               <div>
                 <h3 className="text-white font-medium text-sm">{title}</h3>
-                {address && (
-                  <p className="text-white/60 text-xs">{address}</p>
-                )}
+                {address && <p className="text-white/60 text-xs">{address}</p>}
               </div>
             </div>
             <button
@@ -64,7 +64,7 @@ export default function GoogleMapWidget({
               </div>
             </div>
           )}
-          
+
           <iframe
             src={mapEmbedUrlNoKey}
             width="100%"

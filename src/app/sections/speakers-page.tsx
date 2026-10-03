@@ -1,32 +1,8 @@
-import { Mic } from "lucide-react";
-import Link from "next/link";
+import {  Mic } from "lucide-react";
 import SpeakersSection from "./speaker-selection";
+import Link from "next/link";
 
 export default function Speakers() {
-  const speakers = [
-    {
-      name: "Maureen Josephine",
-      role: "Chief Innovator",
-      company: "",
-      image: "/api/placeholder/300/300",
-      gradient: "from-pink-500 to-purple-600",
-    },
-    {
-      name: "Aisha Njeri",
-      role: "Software Engineer",
-      company: "Microsoft ADC",
-      image: "/api/placeholder/300/300",
-      gradient: "from-purple-500 to-pink-600",
-    },
-    {
-      name: "Brenda Muthoni",
-      role: "Project Manager",
-      company: "Safaricom",
-      image: "/api/placeholder/300/300",
-      gradient: "from-pink-600 to-purple-500",
-    },
-  ];
-
   return (
     <>
       <section id="speakers">
