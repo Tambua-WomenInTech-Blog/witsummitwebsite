@@ -1,12 +1,24 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Calendar, Users, Mic } from "lucide-react";
+import { Calendar, Users } from "lucide-react";
 import Link from "next/link";
-import SiteHeader from "../components/site-header";
+import SecondaryCta from "../components/secondary-cta";
+import SiteHeader, { RSVP_URL } from "../components/site-header";
 
 interface CountdownTimerProps {
   targetDate: Date;
 }
+
+interface Particle {
+  left: string;
+  top: string;
+  animationDelay: string;
+  animationDuration: string;
+}
+
+// Created once, so the countdown's interval isn't reset on every render.
+// Offset assumes Nairobi time (EAT, UTC+3); adjust if the summit starts at a different time.
+const SUMMIT_DATE = new Date("2026-11-27T08:00:00");
 
 const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -55,7 +67,19 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
 };
 
 const WomenInTechSummitHero: React.FC = () => {
-  const summitDate = new Date("2026-11-27T08:00:00");
+  const [particles, setParticles] = useState<Particle[]>([]);
+
+  // Random values only exist on the client, after hydration
+  useEffect(() => {
+    setParticles(
+      Array.from({ length: 25 }).map(() => ({
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 3}s`,
+        animationDuration: `${2 + Math.random() * 3}s`,
+      }))
+    );
+  }, []);
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -109,15 +133,11 @@ const WomenInTechSummitHero: React.FC = () => {
           A Summit Built for Changemakers Driving Tech’s Evolution.
         </p>
 
-        {/* <h5 className="text-2xl md:text-5xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-300 to-purple-300 mb-8 font-space-grotesk">
-            Elevate. Lead. Innovate.
-        </h5>  */}
-
-        <CountdownTimer targetDate={summitDate} />
+        <CountdownTimer targetDate={SUMMIT_DATE} />
 
         <div className="flex flex-col sm:flex-row gap-4 mb-12">
           <Link
-            href="https://vabu.app/women-in-tech-summit-kenya-2026-20-edition"
+            href={RSVP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center space-x-2"
@@ -126,15 +146,7 @@ const WomenInTechSummitHero: React.FC = () => {
             <span>Reserve My Seat</span>
           </Link>
 
-          <Link
-            href="https://pretalx.com/witsummitkenya/cfp"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm flex items-center space-x-2"
-          >
-            <Mic className="w-5 h-5" />
-            <span>Apply to Speak</span>
-          </Link>
+          <SecondaryCta />
         </div>
 
         <div className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors cursor-pointer group">
@@ -173,17 +185,13 @@ const WomenInTechSummitHero: React.FC = () => {
         </div>
       </div>
 
+      {/* Particles are generated after mount to avoid hydration mismatches */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 25 }).map((_, i) => (
+        {particles.map((p, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 bg-white/30 rounded-full animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 3}s`,
-            }}
+            style={p}
           ></div>
         ))}
       </div>

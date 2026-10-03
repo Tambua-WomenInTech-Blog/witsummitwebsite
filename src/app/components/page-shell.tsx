@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import SiteHeader from "./site-header";
 import HeroFooterSection from "../sections/hero-footer";
+import SiteHeader from "../components/site-header";
 
 const PageShell: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
