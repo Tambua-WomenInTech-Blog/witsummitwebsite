@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Calendar, Users } from "lucide-react";
 import Link from "next/link";
 import SecondaryCta from "../components/secondary-cta";
-import SiteHeader, { RSVP_URL } from "../components/site-header";
+import SiteHeader from "../components/site-header";
+import { RSVP_URL } from "../components/site-config";
 
 interface CountdownTimerProps {
   targetDate: Date;
@@ -113,7 +114,7 @@ const WomenInTechSummitHero: React.FC = () => {
 
       <div
         id="home"
-        className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-120px)] px-6 text-center"
+        className="relative z-10 flex flex-col items-center justify-center min-h-screen pt-28 pb-20 px-6 text-center"
       >
         <div className="mb-8 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 flex items-center space-x-3 shadow-xl">
           <Calendar className="w-5 h-5 text-purple-300" />
@@ -184,6 +185,7 @@ const WomenInTechSummitHero: React.FC = () => {
           </div>
         </div>
       </div>
+      
 
       {/* Particles are generated after mount to avoid hydration mismatches */}
       <div className="absolute inset-0 pointer-events-none">

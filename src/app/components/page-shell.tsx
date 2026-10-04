@@ -27,8 +27,9 @@ const PageShell: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
       <SiteHeader />
 
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10 pt-28">{children}</div>
       <HeroFooterSection />
+      
     </div>
   );
 };
