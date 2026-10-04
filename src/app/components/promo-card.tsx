@@ -23,7 +23,7 @@ const promos: Promo[] = [
     href: RSVP_URL,
   },
   {
-    title: "Partner with the summit",
+    title: "Partner with us for the summit",
     meta: "Sponsor deck available",
     image: "/wit_logo.png",
     contain: true,
