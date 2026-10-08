@@ -293,8 +293,7 @@ const SpeakersSection: React.FC = () => {
         </div>
 
         <div>
-           //todo(mj): Update when 2026 speakers are confirmed.
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Previous Speakers</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Speakers</h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl">
             Real voices. Honest journeys. Everything they say will land
             differently—because they've walked where you're walking.
