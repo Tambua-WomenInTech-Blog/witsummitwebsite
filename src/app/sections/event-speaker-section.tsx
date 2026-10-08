@@ -55,7 +55,7 @@ const EventSpeakerSection = () => {
       company: "Software Engineer",
       bio: "Blossom Dugbatey is a software engineer based in Ghana with experience building secure systems across IT business solutions, banking systems, and startup environments. She is passionate about designing secure, scalable systems and actively contributes to developer communities across Ghana.\n\nShe is a Community Manager at Everything Open Source and an admin at DevCongress, where she supports developer growth through events, workshops, system design sessions, and mentorship.\n\nShe has mentored over 200 developers into tech, spoken at 15 tech events, organized a hackathon with MEST and UNICEF, and is focused on bridging the gap between software engineering, open source, and cybersecurity in Africa through advocacy and practical implementation.",
       image:
-        "https://drive.google.com/open?id=1f7l1Y6FXsFi34SkhCJGjOeE6fL_A__Rf",
+        "https://drive.google.com/open?id=17L0ePR4bIRdMhWuUl0wqf07ESpF2h9tE",
     },
     {
       name: "Sarah Muwanguzi",
