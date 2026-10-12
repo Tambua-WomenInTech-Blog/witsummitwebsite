@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { SpeakerCard } from "./speaker-selection";
+import { SpeakerCard } from "./speaker-card";
 
 interface Organizer {
   name: string;
