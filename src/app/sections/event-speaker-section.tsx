@@ -16,13 +16,6 @@ const EventSpeakerSection = () => {
         "https://drive.google.com/open?id=1f7l1Y6FXsFi34SkhCJGjOeE6fL_A__Rf",
     },
     {
-      name: "Esther Sumba",
-      company: "Project & Change Lead, Security Monitoring",
-      bio: "Esther is a banking technology and product management professional with over 8 years of experience spanning product and project management, business analysis, IT risk management, technology audit, and digital transformation. She is currently serving as a Project and Change Lead in Security Monitoring, where she drives strategic initiatives, manages cross functional change programs and supports secure and resilient technology operations within the fintech space.\n\nCertified as a Scrum Product Owner (CSPO®) and SAFe® 6 Product Owner/Product Manager, Esther has successfully led and delivered multiple projects using Agile methodologies, ensuring efficient execution and timely product launches. Her strong analytical mindset, stakeholder management expertise and adaptability enable her to thrive in dynamic and multicultural environments.\n\nBeyond her corporate experience, Esther is also an Educational Technologist passionate about blending technology into classroom learning. Her passion for education has seen her build technology curriculums for the International University of Applied Sciences in Berlin and United Nations Migration (IOM). She is deeply interested in innovation, digital transformation and empowering others through knowledge sharing and mentorship.",
-      image:
-        "https://drive.google.com/open?id=15-AyLm0YPswYCZA3UVSnu3pQoZwjzLrr",
-    },
-    {
       name: "Lydiah Ng'ang'a",
       company: "Cloud & DevOps Engineer",
       bio: "I'm a Cloud & DevOps Engineer based in Nairobi, currently interning as an SRE/DevOps Engineer at a telecom infrastructure company, where I work on security monitoring, Ansible automation, and log pipeline migrations for production systems. I'm a career transitioner from finance I've built my technical skills through AWS re/Start, the StegHub Cloud & DevOps Apprenticeship, and the Tech4Dev Fellowship. I'm AWS Cloud Practitioner and KCNA certified. I write about what I'm learning as I go, mistakes included.",
