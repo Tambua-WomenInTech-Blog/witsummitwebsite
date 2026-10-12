@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import { X, User } from "lucide-react";
 
 interface EventSpeakerProps {
@@ -39,11 +40,7 @@ export const EventSpeaker: React.FC<EventSpeakerProps> = ({
       >
         <div className="h-60 relative overflow-hidden bg-gradient-to-br from-purple-100 to-pink-100">
           {imageUrl ? (
-            <img
-              src={imageUrl}
-              alt={name}
-              className="w-full h-full object-cover"
-            />
+            <Image src={imageUrl} alt={name} fill className="object-cover" />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-24 h-24 bg-purple-500/20 rounded-full flex items-center justify-center">
@@ -70,7 +67,7 @@ export const EventSpeaker: React.FC<EventSpeakerProps> = ({
             className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="sticky top-0 bg-gradient-to-r from-purple-800 to-pink-600 text-white p-6 rounded-t-2xl">
+            <div className="sticky top-0 z-10 bg-gradient-to-r from-purple-800 to-pink-600 text-white p-6 rounded-t-2xl">
               <div className="flex justify-between items-start">
                 <div>
                   <h2 className="text-2xl font-bold mb-2">{name}</h2>
@@ -96,10 +93,11 @@ export const EventSpeaker: React.FC<EventSpeakerProps> = ({
                     ></div>
                     <div className="absolute inset-1 rounded-full overflow-hidden bg-gradient-to-br from-purple-100 to-pink-100">
                       {imageUrl ? (
-                        <img
+                        <Image
                           src={imageUrl}
                           alt={name}
-                          className="w-full h-full object-cover"
+                          fill
+                          className="object-cover"
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center bg-white">

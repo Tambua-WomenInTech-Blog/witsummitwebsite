@@ -1,7 +1,12 @@
 import SpeakersSection from "@/app/sections/speaker-selection";
+import { speakerLineups } from "@/app/data/speakers";
 import { Mic } from "lucide-react";
 
-export default function PastSpeakers() {
+interface PastSpeakersProps {
+  year: number;
+}
+
+export default function PastSpeakers({ year }: PastSpeakersProps) {
   return (
     <>
       <section id="speakers">
@@ -14,7 +19,7 @@ export default function PastSpeakers() {
               <div className="inline-flex mb-16 items-center space-x-3 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full px-6 py-3 border border-purple-200">
                 <Mic className="w-5 h-5 text-purple-600" />
                 <span className="text-purple-800 font-semibold text-sm uppercase tracking-wide">
-                  2025 Keynote Speakers
+                  {year} Keynote Speakers
                 </span>
               </div>
 
@@ -25,11 +30,11 @@ export default function PastSpeakers() {
               <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
                 These weren't just speakers they were trailblazers who shared
                 their journeys, celebrated breakthrough moments, and inspired
-                the next generation of women in tech at WITSummit 2025.
+                the next generation of women in tech at WITSummit {year}.
               </p>
             </div>
           </div>
-          <SpeakersSection />
+          <SpeakersSection lineup={speakerLineups[year]} />
         </div>
       </section>
     </>

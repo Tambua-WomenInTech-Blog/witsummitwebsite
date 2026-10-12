@@ -1,6 +1,6 @@
 import PageShell from "../../components/page-shell";
 import PastEventHighlights from "../../components/past-event-highlights";
-import PastSpeakers from "./components/past-speakers";
+import PastSpeakers from "../../components/past-speakers";
 import PastSponsors2025 from "./components/past-sponsors-2025";
 
 export const metadata = {
@@ -12,7 +12,7 @@ export default function PastEvent2025Page() {
     <PageShell>
       <PastEventHighlights />
       {/* <WITSummitAgenda isPast={true} year={2025} /> */}
-      <PastSpeakers />
+      <PastSpeakers year={2025} />
       <PastSponsors2025 />
     </PageShell>
   );

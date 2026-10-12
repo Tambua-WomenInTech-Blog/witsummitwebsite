@@ -1,5 +1,5 @@
 import {  Mic } from "lucide-react";
-import SpeakersSection from "./speaker-selection";
+import LatestSpeakersSection from "./latest-speaker-section";
 import Link from "next/link";
 
 export default function Speakers() {
@@ -41,7 +41,7 @@ export default function Speakers() {
               </div>
             </div>
           </div>
-          <SpeakersSection />
+          <LatestSpeakersSection />
         </div>
       </section>
     </>
