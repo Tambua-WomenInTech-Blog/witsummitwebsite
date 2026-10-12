@@ -9,6 +9,7 @@ import { SpeakerCard } from "./speaker-selection";
   }));
 
 const KeynoteSpeakersSection: React.FC = () => {
+  // TOOD(davies-k): Add real keynote speakers data when available
   // const keynoteSpeakers = [
   //   {
   //     name: "Maureen Josephine",
