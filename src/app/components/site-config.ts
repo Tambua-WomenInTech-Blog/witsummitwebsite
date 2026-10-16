@@ -1,7 +1,7 @@
 export const RSVP_URL =
   "https://vabu.app/women-in-tech-summit-kenya-2026-20-edition";
 
-export const SPONSOR_DECK_URL = "https://forms.gle/QcDq9yJc537ksVNu9";
+export const SPONSOR_DECK_URL = "https://forms.gle/W2QctrsxV312EVEYA";
 
 export const navItems = [
   { id: "home", label: "Home" },
