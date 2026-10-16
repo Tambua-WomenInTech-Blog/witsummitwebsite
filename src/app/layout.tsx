@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+// @ts-expect-error CSS is handled by Next.js and has no TypeScript module declaration.
 import "./globals.css";
 
 const geistSans = Geist({
