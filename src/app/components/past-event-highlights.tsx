@@ -117,8 +117,8 @@ const PastEventHighlights: React.FC = () => {
   };
 
   return (
-    <div className="relative z-10 px-6 md:px-12 py-16 md:py-20 max-w-7xl mx-auto">
-      <div className="text-center mb-14">
+    <div className="relative z-10 px-6 md:px-12 pt-4 pb-16 md:py-20 max-w-7xl mx-auto">
+      <div className="text-center mb-8 md:mb-14">
         <h1 className="font-space-grotesk text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-300 to-purple-300 mb-5 leading-tight">
           Women In Tech Summit 2025
         </h1>
@@ -161,17 +161,19 @@ const PastEventHighlights: React.FC = () => {
             }}
           />
 
-          <div className="absolute top-4 left-4 right-4 md:top-6 md:left-6 flex items-center justify-between">
-            <span className="inline-flex items-center space-x-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2 text-sm font-semibold text-white shadow-lg">
-              <MapPin className="w-4 h-4 text-white" />
+          {/* Badges sit at the bottom so the highlight card is seen first */}
+          <div className="absolute bottom-4 inset-x-4 md:bottom-6 md:inset-x-6 flex items-center justify-between">
+            <span className="inline-flex items-center space-x-1.5 md:space-x-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
+              <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
               <span>Nairobi, Kenya</span>
             </span>
-            <span className="rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2 text-sm font-semibold text-white shadow-lg">
+            <span className="rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
               2025 Edition
             </span>
           </div>
 
-          <div className="absolute inset-0 flex items-center justify-center">
+          {/* Centred in the gap between the highlight card and the badges */}
+          <div className="absolute inset-x-0 top-[30%] bottom-14 md:top-[28%] md:bottom-20 flex items-center justify-center">
             <span className="relative flex items-center justify-center w-20 h-20 md:w-28 md:h-28 rounded-full bg-white/15 backdrop-blur-md border border-white/40 shadow-2xl transition-transform duration-300 group-hover:scale-110 motion-reduce:transition-none">
               <span className="absolute inset-0 rounded-full border border-white/50 animate-ping motion-reduce:animate-none" />
               <span className="flex items-center justify-center w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 shadow-xl">
@@ -180,19 +182,19 @@ const PastEventHighlights: React.FC = () => {
             </span>
           </div>
 
-          <div className="absolute inset-x-4 bottom-4 md:inset-x-6 md:bottom-6 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-5 md:px-8 md:py-6 text-left shadow-2xl flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div className="absolute inset-x-4 top-4 md:inset-x-6 md:top-6 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-4 md:px-8 md:py-6 text-left shadow-2xl flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4">
             <div>
-              <h3 className="text-white text-2xl md:text-3xl font-bold font-space-grotesk mb-1">
+              <h3 className="text-white text-lg md:text-3xl font-bold font-space-grotesk mb-1">
                 Highlights from 2025
               </h3>
-              <p className="text-white/80 text-sm md:text-base max-w-md">
+              <p className="text-white/80 text-xs md:text-base leading-snug max-w-md">
                 Watch the recap of two days of sessions, speakers, and
                 community.
               </p>
             </div>
 
-            <span className="inline-flex items-center justify-center space-x-2 self-start md:self-auto shrink-0 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 group-hover:from-purple-700 group-hover:to-pink-700 px-6 py-3 font-semibold text-white shadow-lg transition-colors">
-              <Play className="w-4 h-4 fill-white" />
+            <span className="inline-flex items-center justify-center space-x-2 self-start md:self-auto shrink-0 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 group-hover:from-purple-700 group-hover:to-pink-700 px-4 py-2 text-sm md:px-6 md:py-3 md:text-base font-semibold text-white shadow-lg transition-colors">
+              <Play className="w-3.5 h-3.5 md:w-4 md:h-4 fill-white" />
               <span>Watch recap</span>
             </span>
           </div>
