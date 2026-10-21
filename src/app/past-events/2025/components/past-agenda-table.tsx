@@ -53,7 +53,7 @@ const firstDayViewMoreSessions: Session[] = [
     time: "13:15 – 13:45",
     title: "Positioning for desired roles",
     description:
-      "Positioning for desired roles by Julie Ojwaya  | Why Your Next Promotion Isn't Just About Your Skills by Eunice Eze",
+      "Positioning for desired roles by Julie Ojwaya  | Breakout: Why Your Next Promotion Isn't Just About Your Skills by Eunice Eze",
     tags: ["Roles", "Leadership", "Career"],
   },
   {
@@ -112,7 +112,7 @@ const secondDayViewMoreSessions: Session[] = [
   {
     time: "13:45 – 14:15",
     title:
-      "You Can’t Build in a Silo: How Community Drives Wealth, Power, and Longevity in Tech",
+      "The Human in the Loop: Designing AI Systems That Respect Privacy and Earn Trust",
     description: "Talk by: Tabitha Margaret | Breakout: Talk: Nobody Is Coming: Building Before the World Confirms It Is Time by Amen Divine Ikamba",
     tags: ["Mentorship", "Networking"],
   },
