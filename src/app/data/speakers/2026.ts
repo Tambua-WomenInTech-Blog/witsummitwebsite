@@ -59,8 +59,8 @@ const speakers: Speaker[] = [
   },
   {
     name: "Tabitha Kavyu",
-    company: "Head of Learner Success - AltSchool Africa",
-    bio: "Head of Learner Success at AltSchool Africa, where I lead community, retention, and career readiness across engineering, product, and data programs serving learners across the continent. I am also an organizer with GDG Nairobi, where I have helped design and deliver flagship developer events including DevFest Nairobi and Google I/O Extended Nairobi. My work sits at the intersection of community design and career development: building the systems that help African tech talent not just enter the industry, but stay and rise in it.",
+    company: "Community Lead",
+    bio: "Tabitha Kavyu is a customer success and community strategist who designs customer-centred systems that help people succeed. Her work spans Customer Success, Customer Experience, community strategy, and Voice of Customer.\n\nPreviously, she was Head of Learner Success at AltSchool Africa, where she led the Community and Customer Support functions, supporting more than 35,000 learners across 11 cohorts in over 100 countries. She also worked with Google as a Crowdsource Community Coordinator, coordinating communities across six East African countries and contributing to a community that generated more than 2 million contributions.\n\nTabitha brings experience in building communities, improving customer experiences, and turning customer insights into action. She speaks on Customer Success, community strategy, customer experience, and leadership.",
     image:
       "https://drive.google.com/open?id=1GyJtlEvQ_--F5_q2GDHUojdv6ANKEi2P",
   },
