@@ -5,6 +5,8 @@ import type { SpeakerGroup, SpeakerLineup } from "@/app/data/speakers";
 
 interface SpeakersSectionProps {
   lineup: SpeakerLineup;
+  // Past editions title the groups "Previous Panelists" / "Previous Speakers"
+  isPast?: boolean;
 }
 
 const hasContent = (group: SpeakerGroup) =>
@@ -12,8 +14,12 @@ const hasContent = (group: SpeakerGroup) =>
 
 // Renders any edition's lineup. The home page uses LatestSpeakersSection;
 // /past-events/<year> passes that year's lineup.
-const SpeakersSection: React.FC<SpeakersSectionProps> = ({ lineup }) => {
+const SpeakersSection: React.FC<SpeakersSectionProps> = ({
+  lineup,
+  isPast = false,
+}) => {
   const { keynotes, panelists, speakers } = lineup;
+  const prefix = isPast ? "Previous " : "";
 
   return (
     <section
@@ -29,7 +35,7 @@ const SpeakersSection: React.FC<SpeakersSectionProps> = ({ lineup }) => {
         {hasContent(keynotes) && (
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Keynote Speakers
+               {prefix}Keynote Speakers
             </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl">
               "I'm building the space I wish existed when I was starting out."
@@ -43,7 +49,7 @@ const SpeakersSection: React.FC<SpeakersSectionProps> = ({ lineup }) => {
         {hasContent(panelists) && (
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Panelists
+              {prefix}Panelists
             </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl">
               Different perspectives. Shared wisdom. Their experiences connect
@@ -56,7 +62,9 @@ const SpeakersSection: React.FC<SpeakersSectionProps> = ({ lineup }) => {
 
         {hasContent(speakers) && (
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Speakers</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              {prefix}Speakers
+            </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl">
               Real voices. Honest journeys. Everything they say will land
               differently—because they've walked where you're walking.

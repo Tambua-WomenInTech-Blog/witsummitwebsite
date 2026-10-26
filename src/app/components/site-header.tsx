@@ -21,6 +21,7 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({ showPromo = true }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [promoVisible, setPromoVisible] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -303,14 +304,16 @@ const SiteHeader: React.FC<SiteHeaderProps> = ({ showPromo = true }) => {
         </div>
       </header>
 
-      {showPromo && <PromoCard />}
+      {showPromo && <PromoCard onVisibleChange={setPromoVisible} />}
 
       {/* Scroll to top (available on every page that uses the header) */}
       <button
         type="button"
         onClick={scrollToTop}
         aria-label="Scroll to top"
-        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-xl flex items-center justify-center transition-all duration-300 transform ${
+        className={`fixed ${
+          promoVisible ? "bottom-48" : "bottom-4"
+        } right-4 sm:bottom-6 sm:right-6 z-40 w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-xl flex items-center justify-center transition-all duration-300 transform ${
           showScrollTop
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 translate-y-4 pointer-events-none"

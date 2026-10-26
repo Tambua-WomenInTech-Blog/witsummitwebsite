@@ -36,7 +36,11 @@ const STORAGE_KEY = "wit-promo-dismissed";
 const SHOW_DELAY_MS = 1500;
 const ROTATE_MS = 6000;
 
-const PromoCard: React.FC = () => {
+interface PromoCardProps {
+  onVisibleChange?: (visible: boolean) => void;
+}
+
+const PromoCard: React.FC<PromoCardProps> = ({ onVisibleChange }) => {
   const [visible, setVisible] = useState(false);
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -54,6 +58,10 @@ const PromoCard: React.FC = () => {
     const t = setTimeout(() => setVisible(true), SHOW_DELAY_MS);
     return () => clearTimeout(t);
   }, []);
+
+  useEffect(() => {
+    onVisibleChange?.(visible);
+  }, [visible, onVisibleChange]);
 
   // Auto-rotate, paused on hover/focus and skipped for reduced motion
   useEffect(() => {
@@ -85,7 +93,7 @@ const PromoCard: React.FC = () => {
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
-      className={`fixed z-30 bottom-4 left-3 right-20 sm:right-auto sm:left-6 sm:bottom-6 sm:w-[25rem] rounded-3xl border border-white/20 bg-indigo-950/90 backdrop-blur-xl shadow-2xl p-3 transition-all duration-500 motion-reduce:transition-none ${
+      className={`fixed z-30 bottom-4 left-3 right-3 sm:right-auto sm:left-6 sm:bottom-6 sm:w-[25rem] rounded-3xl border border-white/20 bg-indigo-950/90 backdrop-blur-xl shadow-2xl p-3 transition-all duration-500 motion-reduce:transition-none ${
         visible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-6 invisible"
