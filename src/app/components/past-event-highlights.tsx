@@ -152,6 +152,7 @@ const PastEventHighlights: React.FC = () => {
 
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-transparent to-pink-900/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-indigo-950/90 via-indigo-950/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-indigo-950/90 via-indigo-950/20 to-transparent" />
 
           <div
             className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
