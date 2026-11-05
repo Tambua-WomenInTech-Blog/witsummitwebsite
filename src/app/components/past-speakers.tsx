@@ -34,7 +34,7 @@ export default function PastSpeakers({ year }: PastSpeakersProps) {
               </p>
             </div>
           </div>
-          <SpeakersSection lineup={speakerLineups[year]} />
+          <SpeakersSection lineup={speakerLineups[year]} isPast />
         </div>
       </section>
     </>
