@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "server-only": ["./server-only-noop.ts"]
+    }
+  }
+}
