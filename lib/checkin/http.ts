@@ -38,7 +38,6 @@ export function isAllowedOrigin(req: Request): boolean {
   return [parseOrigin(req.url), ...configured].includes(origin);
 }
 
-// x-nf-client-connection-ip is set by Netlify and can't be spoofed by clients.
 // x-forwarded-for is only the fallback for local development. The check-in
 // service rate-limits by this address, so it must be a real IP.
 export function getClientIp(req: Request): string {
