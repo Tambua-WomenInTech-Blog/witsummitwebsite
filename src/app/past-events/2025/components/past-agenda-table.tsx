@@ -51,10 +51,10 @@ const firstDayViewMoreSessions: Session[] = [
   },
   {
     time: "13:15 – 13:45",
-    title: "Positioning for desired roles",
+    title: "Legal Tech & Governance",
     description:
       "Governance - Legal & Regulatory Fundamentals & Framework by Julie Ojwaya  | Breakout: Why Your Next Promotion Isn't Just About Your Skills by Eunice Eze",
-    tags: ["Roles", "Leadership", "Career"],
+    tags: ["Legal Tech", "Governance",],
   },
   {
     time: "13:45 – 14:15",
