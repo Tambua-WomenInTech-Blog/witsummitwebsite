@@ -22,7 +22,6 @@ export interface DaySchedule {
   sessions: Session[];
 }
 
-
 const VIEW_MORE_CUTOFF = "12:30";
 const TIMEZONE_LABEL = "EAT";
 const DOWNLOAD_FILENAME = "WIT-Summit-Kenya-2026-Agenda.txt";
@@ -54,9 +53,8 @@ export const defaultScheduleData: DaySchedule[] = [
       },
       {
         time: "10:00 – 11:00",
-        title: "Panel: Mentorship & Career Growth",
-        description: "Panel discussion with Faith and guests",
-        tags: ["Panel", "Mentorship", "Growth"],
+        title: "Panel: Executive & Boardroom Track",
+        tags: ["Panel", "Executive", "Boardroom"],
       },
       {
         time: "11:00 – 11:30",
@@ -64,54 +62,63 @@ export const defaultScheduleData: DaySchedule[] = [
         tags: ["Break"],
       },
       {
-        time: "11:30 – 12:30",
+        time: "11:30 – 12:15",
         title: "The Surreal Pivot: Navigating a Career I Never Planned",
         speaker: "Brenda Mwaura",
-        tags: ["Career", "Product", "Workshop"],
-        breakout: {
-          title: "The Future Belongs to Translators",
-          speaker: "Sarah Muwanguzi",
-        },
-      },
-      {
-        time: "12:30 – 13:30",
-        title:
-          "Beyond Technical Expertise: Building Influence in the Boardroom and Shaping Technology Decisions",
-        speaker: "Mercy Chore",
-        tags: ["Leadership", "Governance", "Boardroom", "Legal Tech"],
+        tags: ["Career", "Governance", "Legal Tech"],
         breakout: {
           title: "Governance – Legal & Regulatory Fundamentals & Framework",
           speaker: "Julie Ojwaya",
         },
       },
       {
-        time: "13:30 – 14:30",
-        title: "Lunch Break",
+        time: "12:20 – 13:15",
+        title:
+          "Beyond Technical Expertise: Building Influence in the Boardroom and Shaping Technology Decisions",
+        speaker: "Mercy Chore",
+        tags: ["Leadership", "Boardroom", "AI", "Privacy"],
+        breakout: {
+          title:
+            "The Human in the Loop: Designing AI Systems That Respect Privacy and Earn Trust",
+          speaker: "Tabitha Margaret",
+        },
+      },
+      {
+        time: "13:20 – 14:20",
+        title: "Lunch Break & Group Photos",
         tags: ["Break"],
       },
       {
-        time: "14:30 – 15:30",
+        time: "14:30 – 15:15",
         title:
           "The Design of Wealth: A Financial Blueprint for Kenya's Creative Tech Professionals",
         speaker: "Kyendereta Chantelle",
         tags: ["Finance", "Career", "Growth"],
-        breakout: {
-          title: "Why Your Next Promotion Isn't Just About Your Skills",
-          speaker: "Eunice Eze",
-        },
+        breakout: { title: "Sponsor-Led Session", speaker: "Kopo Kopo" },
       },
       {
-        time: "15:30 – 16:30",
+        time: "15:15 – 16:00",
         title:
           "The Habits Holding Her Back: Unlearning the Rules That Got You Here",
         speaker: "Tabitha Kavyu",
         tags: ["Leadership", "Growth"],
       },
       {
-        time: "16:30 – 18:00",
+        time: "16:00 – 16:45",
+        title: "Panel: Health Tech Track",
+        tags: ["Panel", "Health Tech"],
+      },
+      {
+        time: "16:45 – 17:45",
         title: "Community Mixer",
         description: "Evening networking for all attendees",
         tags: ["Networking", "Community"],
+      },
+      {
+        time: "17:45 – 18:00",
+        title: "Closing Ceremony & Group Photos",
+        description: "Closing and thank-you notes",
+        tags: ["Closing"],
       },
     ],
   },
@@ -141,7 +148,8 @@ export const defaultScheduleData: DaySchedule[] = [
       {
         time: "10:00 – 11:00",
         title: "Panel: Building in the AI Era",
-        description: "With Africa's Talking, Loop, KopoKopo & GIZ",
+        description:
+          "Technical panel with Africa's Talking, Loop, Kopo Kopo & GIZ",
         tags: ["Panel", "AI", "Industry"],
       },
       {
@@ -150,7 +158,7 @@ export const defaultScheduleData: DaySchedule[] = [
         tags: ["Break"],
       },
       {
-        time: "11:30 – 12:30",
+        time: "11:30 – 12:15",
         title: "From Idea to Impact: Product Innovation for Communities",
         speaker: "Christal Riziki",
         tags: ["Product Innovation", "Leadership", "Boardroom"],
@@ -160,7 +168,7 @@ export const defaultScheduleData: DaySchedule[] = [
         },
       },
       {
-        time: "12:30 – 13:30",
+        time: "12:20 – 13:15",
         title:
           "From Prototype to Production: Building Autonomous Multi-Agent Systems for Africa's Fintech Ecosystem",
         speaker: "Beth Njeri",
@@ -172,12 +180,12 @@ export const defaultScheduleData: DaySchedule[] = [
         },
       },
       {
-        time: "13:30 – 14:30",
-        title: "Lunch Break",
+        time: "13:15 – 14:20",
+        title: "Lunch Break & Group Photos",
         tags: ["Break"],
       },
       {
-        time: "14:30 – 15:30",
+        time: "14:20 – 15:05",
         title: "From Finance to Production Systems",
         speaker: "Lydiah Ng'ang'a",
         tags: ["Software Engineering", "Security", "AI"],
@@ -188,27 +196,32 @@ export const defaultScheduleData: DaySchedule[] = [
         },
       },
       {
-        time: "15:30 – 16:30",
+        time: "15:05 – 15:50",
         title:
-          "The Human in the Loop: Designing AI Systems That Respect Privacy and Earn Trust",
-        speaker: "Tabitha Margaret",
-        tags: ["AI", "Privacy", "RAG", "Gemini AI", "Software Engineering"],
-        breakout: {
-          title:
-            "Building Production-Ready RAG Apps: Deploying Angular & Gemini AI on Firebase",
-          speaker: "Morara Millicent",
-        },
+          "Building Production-Ready RAG Apps: Deploying Angular & Gemini AI on Firebase",
+        speaker: "Morara Millicent",
+        tags: ["AI", "RAG", "Gemini AI", "Software Engineering"],
       },
       {
-        time: "16:30 – 18:00",
+        time: "15:50 – 16:30",
+        title: "Panel: Mentorship & Career Growth",
+        tags: ["Panel", "Mentorship", "Growth"],
+      },
+      {
+        time: "16:30 – 17:45",
         title: "Speed Mentorship & Recruitment",
-        speaker: "Allela Eunice",
+        speaker: "Allela Eunice & speed recruitment partners",
         tags: ["Mentorship", "Careers", "Networking"],
+      },
+      {
+        time: "17:45 – 18:00",
+        title: "Closing Ceremony & Group Photos",
+        description: "Closing and thank-you notes",
+        tags: ["Closing"],
       },
     ],
   },
 ];
-
 
 const startTime = (time: string) => time.split("–")[0].trim();
 const endTime = (time: string) => time.split("–").pop()!.trim();
@@ -260,7 +273,6 @@ const downloadText = (text: string, filename: string) => {
   URL.revokeObjectURL(url);
 };
 
-
 const Tag: React.FC<{ label: string }> = ({ label }) => (
   <span className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full font-medium">
     {label}
@@ -268,7 +280,13 @@ const Tag: React.FC<{ label: string }> = ({ label }) => (
 );
 
 const DownloadIcon = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+  <svg
+    className="w-5 h-5"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -279,20 +297,42 @@ const DownloadIcon = () => (
 );
 
 const ClockIcon = () => (
-  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+  <svg
+    className="w-4 h-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+    />
   </svg>
 );
 
 const PinIcon = () => (
-  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+  <svg
+    className="w-4 h-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
       d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
     />
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+    />
   </svg>
 );
 
@@ -396,7 +436,11 @@ const PastAgendaTable: React.FC<AgendaTableProps> = ({
       </div>
 
       <div className="flex justify-center mb-8">
-        <div role="tablist" aria-label="Summit days" className="flex w-full max-w-4xl">
+        <div
+          role="tablist"
+          aria-label="Summit days"
+          className="flex w-full max-w-4xl"
+        >
           {scheduleData.map((day, index) => {
             const selected = activeTab === index;
             return (
