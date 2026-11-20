@@ -39,3 +39,10 @@ yarn-error.log*
 
 *.tsbuildinfo
 next-env.d.ts
+
+
+lib/checkin/fixtures/attendees.real.json
+*.attendees.csv
+
+
+.netlify
