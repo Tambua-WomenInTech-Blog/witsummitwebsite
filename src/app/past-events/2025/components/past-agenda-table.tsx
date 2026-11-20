@@ -1,265 +1,395 @@
 "use client";
-import React, { useState, useMemo } from "react";
+import React, { useMemo, useState } from "react";
 
-export interface Speaker {
-  name: string;
+export interface BreakoutSession {
   title: string;
-  company: string;
-  image: string;
+  speaker?: string;
 }
 
 export interface Session {
   time: string;
   title: string;
-  description: string;
+  speaker?: string;
+  description?: string;
   tags: string[];
-  speaker?: Speaker;
+  breakout?: BreakoutSession;
 }
 
 export interface DaySchedule {
   day: string;
   date: string;
+  theme: string;
   sessions: Session[];
 }
 
-export const extractBreakout = (description: string) => {
-  const breakoutMatch = description.match(
-    /\|\s*Breakout:\s*(.+?)(?:\s*by\s+(.+))?$/i,
-  );
-  if (breakoutMatch) {
-    return {
-      hasBreakout: true,
-      breakoutTitle: breakoutMatch[1].trim(),
-      breakoutSpeaker: breakoutMatch[2]?.trim(),
-      mainDescription: description.split("|")[0].trim(),
-    };
-  }
-  return {
-    hasBreakout: false,
-    breakoutTitle: null,
-    breakoutSpeaker: null,
-    mainDescription: description,
-  };
-};
+const VIEW_MORE_CUTOFF = "12:30";
+const TIMEZONE_LABEL = "EAT";
+const DOWNLOAD_FILENAME = "WIT-Summit-Kenya-2026-Agenda.txt";
+const NO_BREAKOUT_TAGS = ["Break", "Welcome", "Opening", "Networking"];
 
-const firstDayViewMoreSessions: Session[] = [
-  {
-    time: "12:15 – 13:15",
-    title: "Lunch & Networking & Group Photos",
-    description: "Lunch break, networking, and group photo sessions",
-    tags: ["Break", "Networking"],
-  },
-  {
-    time: "13:15 – 13:45",
-    title: "Legal Tech & Governance",
-    description:
-      "Governance - Legal & Regulatory Fundamentals & Framework by Julie Ojwaya  | Breakout: Why Your Next Promotion Isn't Just About Your Skills by Eunice Eze",
-    tags: ["Legal Tech", "Governance",],
-  },
-  {
-    time: "13:45 – 14:15",
-    title: "Speed Recruitment TBD",
-    description:
-      "Partner Led Session",
-    tags: ["Career", "Recruitment"],
-  },
-  {
-    time: "14:15 – 14:45",
-    title: "The Design of Wealth: A Financial Blueprint for Kenya's Creative Tech Professionals",
-    description: "Talk by Kyendereta Chantelle",
-    tags: ["Finance", "UI/UX", "Design"],
-  },
-  {
-    time: "14:45 – 15:00",
-    title: "Afternoon Break",
-    description: "Coffee break and networking",
-    tags: ["Break"],
-  },
-  {
-    time: "15:00 – 15:30",
-    title: "The Habits Holding Her Back: Unlearning the Rules That Got You Here",
-    description: "Talk by Tabitha Kavyu",
-    tags: ["Career", "Growth", "Thrive"],
-  },
-  {
-    time: "15:30 – 16:00",
-    title: "Lighting talks  – Community Showcase ",
-    description: " Community members share quick wins/projects",
-    tags: ["Open Mic", "Community", "Showcase"],
-  },
-  {
-    time: "16:00 – 17:00",
-    title: "Wrap-Up & Speed Networking and Group Photo",
-    description: "Day wrap-up, speed networking sessions, and group photos",
-    tags: ["Closing", "Networking"],
-  },
-];
-
-const secondDayViewMoreSessions: Session[] = [
-  {
-    time: "12:15 – 13:15",
-    title: "Lunch & Networking & Group Photos",
-    description: "Break for lunch and networking opportunities",
-    tags: ["Break", "Networking"],
-  },
-  {
-    time: "13:15 – 13:45",
-    title:
-      "Building Secure Software in the Age of AI: Protecting Your Projects from Supply Chain Attacks",
-    description: "by Blossom Dugbatey | Breakout: Talk: From Finance to Production Systems by Lydiah Ng'ang'a",
-    tags: ["Security", "Cybersecurity", "Quality Assurance", "AI"],
-  },
-  {
-    time: "13:45 – 14:15",
-    title:
-      "The Human in the Loop: Designing AI Systems That Respect Privacy and Earn Trust",
-    description: "Talk by: Tabitha Margaret | Breakout: Talk: Nobody Is Coming: Building Before the World Confirms It Is Time by Amen Divine Ikamba",
-    tags: ["Mentorship", "Networking"],
-  },
-  {
-    time: "14:15 – 14:45",
-    title: "Financial Investment session TBD ",
-    description: "TBD",
-    tags: ["Finance", "Money", "Investment"],
-  },
-  {
-    time: "14:45 – 15:00",
-    title: "Afternoon Break",
-    description: "Coffee break and networking",
-    tags: ["Break"],
-  },
-  {
-    time: "15:00 – 15:30",
-    title: "Main Hall: Building a Global Tech Career",
-    description: "by Esther Sumba",
-    tags: ["Global Tech", "Career", "Growth"],
-  },
-  {
-    time: "15:30 – 16:00",
-    title: "POP UP FIRESIDE CHAT TBD",
-    description: "",
-    tags: ["Closing", "Fireside Chat"],
-  },
-  {
-    time: "16:00 – 17:00",
-    title: "Closing Ceremony & Group Photos",
-    description: "",
-    tags: ["Closing", "Photos"],
-  },
-];
-
-const defaultScheduleData: DaySchedule[] = [
+export const defaultScheduleData: DaySchedule[] = [
   {
     day: "Friday",
     date: "Nov 27, 2026",
+    theme: "Leadership, Product & Impact",
     sessions: [
       {
-        time: "08:30 – 09:00",
-        title: "Registration and Welcome",
-        description:
-          "Check-in and welcome (MC: Allela Eunice)",
+        time: "08:00 – 09:00",
+        title: "Registration & Check-in",
+        description: "Check-in and welcome",
         tags: ["Welcome"],
       },
       {
-        time: "09:00 – 10:00",
-        title: "Opening Ceremony & Welcome",
-        description: "Official opening and welcome remarks",
+        time: "09:00 – 09:30",
+        title: "Opening Remarks",
+        speaker: "Allela Eunice",
         tags: ["Opening"],
       },
       {
-        time: "10:00 – 10:30",
-        title: "Keynote: TBD",
-        description: "Keynote by Maureen Josephine",
+        time: "09:30 – 10:00",
+        title: "Opening Keynote",
+        speaker: "Maureen Josephine",
         tags: ["Keynote", "Leadership"],
       },
       {
-        time: "10:30 – 10:45",
-        title: "Break & Networking",
-        description: "Coffee break and networking opportunity",
-        tags: ["Break"],
-      },
-      {
-        time: "10:45 – 11:15",
-        title: "Session: Beyond Technical Expertise: Building Influence in the Boardroom",
-        description:
-          "Talk by by Mercy Chore",
-        tags: ["Leadership", "Governance", "Legal Tech"],
-      },
-         {
-        time: "11:15 – 11:45 (TBD)",
-        title: "Executive & Boadroom Track",
-        description:
-          "Panel Discussion",
+        time: "10:00 – 11:00",
+        title: "Panel: Executive & Boardroom Track",
         tags: ["Panel", "Executive", "Boardroom"],
       },
       {
-        time: "11:15 – 11:45",
-        title: "The Future Belongs to Translators",
-        description:
-          "Talk by Sarah Muwanguzi | Breakout: The Surreal Pivot: Navigating a Career I Never Planned by Brenda Mwaura",
-        tags: ["Product", "Workshop"],
+        time: "11:00 – 11:30",
+        title: "Tea Break & Networking",
+        tags: ["Break"],
       },
       {
-        time: "11:45 – 12:15",
-        title: " AI for the Duka: Building Affordable Demand Intelligence for Kenya's 900,000+ Retail SMEs",
-        description:
-          "Talk by Abigael Mukuru",
-        tags: ["AI", "SMEs", "Retail", "Software", "Engineering"],
+        time: "11:30 – 12:15",
+        title: "The Surreal Pivot: Navigating a Career I Never Planned",
+        speaker: "Brenda Mwaura",
+        tags: ["Career", "Governance", "Legal Tech"],
+        breakout: {
+          title: "Governance – Legal & Regulatory Fundamentals & Framework",
+          speaker: "Julie Ojwaya",
+        },
+      },
+      {
+        time: "12:20 – 13:15",
+        title:
+          "Beyond Technical Expertise: Building Influence in the Boardroom and Shaping Technology Decisions",
+        speaker: "Mercy Chore",
+        tags: ["Leadership", "Boardroom", "AI", "Privacy"],
+        breakout: {
+          title:
+            "The Human in the Loop: Designing AI Systems That Respect Privacy and Earn Trust",
+          speaker: "Tabitha Margaret",
+        },
+      },
+      {
+        time: "13:20 – 14:20",
+        title: "Lunch Break & Group Photos",
+        tags: ["Break"],
+      },
+      {
+        time: "14:30 – 15:15",
+        title:
+          "The Design of Wealth: A Financial Blueprint for Kenya's Creative Tech Professionals",
+        speaker: "Kyendereta Chantelle",
+        tags: ["Finance", "Career", "Growth"],
+        breakout: { title: "Sponsor-Led Session", speaker: "Kopo Kopo" },
+      },
+      {
+        time: "15:15 – 16:00",
+        title:
+          "The Habits Holding Her Back: Unlearning the Rules That Got You Here",
+        speaker: "Tabitha Kavyu",
+        tags: ["Leadership", "Growth"],
+      },
+      {
+        time: "16:00 – 16:45",
+        title: "Panel: Health Tech Track",
+        tags: ["Panel", "Health Tech"],
+      },
+      {
+        time: "16:45 – 17:45",
+        title: "Community Mixer",
+        description: "Evening networking for all attendees",
+        tags: ["Networking", "Community"],
+      },
+      {
+        time: "17:45 – 18:00",
+        title: "Closing Ceremony & Group Photos",
+        description: "Closing and thank-you notes",
+        tags: ["Closing"],
       },
     ],
   },
   {
     day: "Saturday",
     date: "Nov 28, 2026",
+    theme: "Upskill, Career Growth & Mentorship",
     sessions: [
       {
-        time: "09:00 – 09:30",
-        title: "Opening and Welcome",
-        description: "Opening remarks (MC: TBD)",
+        time: "08:00 – 09:00",
+        title: "Registration & Check-in",
+        description: "Check-in and welcome",
         tags: ["Welcome"],
       },
       {
+        time: "09:00 – 09:30",
+        title: "Opening Remarks",
+        speaker: "Maureen Josephine",
+        tags: ["Opening"],
+      },
+      {
         time: "09:30 – 10:00",
-        title: "Opening Keynote: Fireside Chat",
-        description: "TBD",
-        tags: ["Keynote", "Fireside Chat"],
+        title: "Opening Keynote",
+        speaker: "Allela Eunice",
+        tags: ["Keynote"],
       },
       {
-        time: "10:00 – 10:30",
-        title: "Keynote: Google Representative TBD",
-        description: "TBD",
-        tags: ["Current State of Tech", "AI", "Google Technologies"],
+        time: "10:00 – 11:00",
+        title: "Panel: Building in the AI Era",
+        description:
+          "Technical panel with Africa's Talking, Loop, Kopo Kopo & GIZ",
+        tags: ["Panel", "AI", "Industry"],
       },
       {
-        time: "10:30 – 10:45",
-        title: "Break & Networking",
-        description: "Coffee break and networking opportunity",
+        time: "11:00 – 11:30",
+        title: "Tea Break & Networking",
         tags: ["Break"],
       },
       {
-        time: "10:45 – 11:15",
-        title: "Leadership by Example",
-        description:
-          "Main Track: Leadership by Depha Anns Okal | Breakout: From Idea to Impact: Product Innovation for Communities by Christal Riziki",
-        tags: ["Leadership", "Entrepreneurship", "Product Innovation"],
+        time: "11:30 – 12:15",
+        title: "From Idea to Impact: Product Innovation for Communities",
+        speaker: "Christal Riziki",
+        tags: ["Product Innovation", "Leadership", "Boardroom"],
+        breakout: {
+          title: "Leadership – Transitioning Into Board Roles",
+          speaker: "Depha Anns Okal",
+        },
       },
       {
-        time: "11:15 – 11:45",
-        title: "Building Production-Ready RAG Apps: Deploying Angular & Gemini AI on Firebase ",
-        description: "Talk by Morara Millicent | Breakout: Your Data Never Has to Leave the Building: Building Production AI Systems Without the Cloud - by Alfonce Micah Yano",
-        tags: ["Software Engineering", "Gemini AI", "Data", "AI", "RAG"],
+        time: "12:20 – 13:15",
+        title:
+          "From Prototype to Production: Building Autonomous Multi-Agent Systems for Africa's Fintech Ecosystem",
+        speaker: "Beth Njeri",
+        tags: ["AI", "Agents", "Fintech", "SMEs", "Retail"],
+        breakout: {
+          title:
+            "AI for the Duka: Building Affordable Demand Intelligence for Kenya's 900,000+ Retail SMEs",
+          speaker: "Abigael Mukuru Zawadi",
+        },
       },
       {
-        time: "11:45 – 12:15",
+        time: "13:15 – 14:20",
+        title: "Lunch Break & Group Photos",
+        tags: ["Break"],
+      },
+      {
+        time: "14:20 – 15:05",
+        title: "From Finance to Production Systems",
+        speaker: "Lydiah Ng'ang'a",
+        tags: ["Software Engineering", "Security", "AI"],
+        breakout: {
+          title:
+            "Building Secure Software in the Age of AI: Protecting Your Projects from Supply Chain Attacks",
+          speaker: "Blossom Dugbatey",
+        },
+      },
+      {
+        time: "15:05 – 15:50",
+        title:
+          "Building Production-Ready RAG Apps: Deploying Angular & Gemini AI on Firebase",
+        speaker: "Morara Millicent",
+        tags: ["AI", "RAG", "Gemini AI", "Software Engineering"],
+      },
+      {
+        time: "15:50 – 16:30",
         title: "Panel: Mentorship & Career Growth",
-        description:
-          "Main Track: Faith & TBD",
         tags: ["Panel", "Mentorship", "Growth"],
+      },
+      {
+        time: "16:30 – 17:45",
+        title: "Speed Mentorship & Recruitment",
+        speaker: "Allela Eunice & speed recruitment partners",
+        tags: ["Mentorship", "Careers", "Networking"],
+      },
+      {
+        time: "17:45 – 18:00",
+        title: "Closing Ceremony & Group Photos",
+        description: "Closing and thank-you notes",
+        tags: ["Closing"],
       },
     ],
   },
 ];
 
+const startTime = (time: string) => time.split("–")[0].trim();
+const endTime = (time: string) => time.split("–").pop()!.trim();
+
+/** "13:30" -> "1:30 PM" */
+const to12h = (hhmm: string) => {
+  const [h, m] = hhmm.split(":").map(Number);
+  const suffix = h >= 12 ? "PM" : "AM";
+  return `${h % 12 || 12}:${String(m).padStart(2, "0")} ${suffix}`;
+};
+
+const dayTimeRange = (day: DaySchedule) => {
+  if (!day.sessions.length) return "";
+  const first = startTime(day.sessions[0].time);
+  const last = endTime(day.sessions[day.sessions.length - 1].time);
+  return `${to12h(first)} – ${to12h(last)} ${TIMEZONE_LABEL}`;
+};
+
+const hasNoBreakout = (session: Session) =>
+  session.tags.some((tag) => NO_BREAKOUT_TAGS.includes(tag));
+
+const buildAgendaText = (days: DaySchedule[]) =>
+  days
+    .map((day) => {
+      const header = `${day.day}, ${day.date} — ${day.theme}`;
+      const sessions = day.sessions.map((s) => {
+        const lines = [`${s.time}  ${s.title}`];
+        if (s.speaker) lines.push(`  Speaker: ${s.speaker}`);
+        if (s.description) lines.push(`  ${s.description}`);
+        if (s.breakout) {
+          lines.push(
+            `  Breakout: ${s.breakout.title}${
+              s.breakout.speaker ? ` — ${s.breakout.speaker}` : ""
+            }`,
+          );
+        }
+        return lines.join("\n");
+      });
+      return [header, ...sessions].join("\n\n");
+    })
+    .join("\n\n\n");
+
+const downloadText = (text: string, filename: string) => {
+  const url = URL.createObjectURL(new Blob([text], { type: "text/plain" }));
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+};
+
+const Tag: React.FC<{ label: string }> = ({ label }) => (
+  <span className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full font-medium">
+    {label}
+  </span>
+);
+
+const DownloadIcon = () => (
+  <svg
+    className="w-5 h-5"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+    />
+  </svg>
+);
+
+const ClockIcon = () => (
+  <svg
+    className="w-4 h-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+    />
+  </svg>
+);
+
+const PinIcon = () => (
+  <svg
+    className="w-4 h-4"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+    />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+    />
+  </svg>
+);
+
+const SessionRow: React.FC<{ session: Session; striped: boolean }> = ({
+  session,
+  striped,
+}) => (
+  <tr
+    className={`border-b border-gray-200 ${
+      striped ? "bg-gray-50" : "bg-white"
+    } hover:bg-purple-50 transition-colors duration-150`}
+  >
+    <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap align-top">
+      {session.time}
+    </td>
+
+    <td className="py-4 px-6 align-top">
+      <div className="space-y-2">
+        <h4 className="font-semibold text-gray-900">{session.title}</h4>
+        {session.speaker && (
+          <p className="text-xs text-purple-800 font-medium">
+            {session.speaker}
+          </p>
+        )}
+        {session.description && (
+          <p className="text-sm text-gray-600 leading-relaxed">
+            {session.description}
+          </p>
+        )}
+        <div className="flex flex-wrap gap-1">
+          {session.tags.map((tag) => (
+            <Tag key={tag} label={tag} />
+          ))}
+        </div>
+      </div>
+    </td>
+
+    <td className="py-4 px-6 text-gray-600 align-top">
+      {session.breakout ? (
+        <div className="space-y-2">
+          <p className="font-semibold text-gray-900 text-sm">
+            {session.breakout.title}
+          </p>
+          {session.breakout.speaker && (
+            <p className="text-xs text-purple-800 font-medium">
+              {session.breakout.speaker}
+            </p>
+          )}
+        </div>
+      ) : (
+        <span className="text-gray-400" aria-label="No breakout session">
+          {hasNoBreakout(session) ? "—" : "–"}
+        </span>
+      )}
+    </td>
+  </tr>
+);
 
 interface AgendaTableProps {
   scheduleData?: DaySchedule[];
@@ -268,111 +398,83 @@ interface AgendaTableProps {
 const PastAgendaTable: React.FC<AgendaTableProps> = ({
   scheduleData = defaultScheduleData,
 }) => {
-  const [activeTab, setActiveTab] = useState<number>(0);
-  const [viewMore, setViewMore] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState(0);
+  const [viewMore, setViewMore] = useState(false);
 
-  const displayedSessions = useMemo(() => {
-    const currentDaySessions = scheduleData[activeTab].sessions;
+  const activeDay = scheduleData[activeTab];
 
-    if (!viewMore) {
-      return currentDaySessions;
-    }
-
-    if (activeTab === 0) {
-      return [...currentDaySessions, ...firstDayViewMoreSessions];
-    } else if (activeTab === 1) {
-      return [...currentDaySessions, ...secondDayViewMoreSessions];
-    }
-
-    return currentDaySessions;
-  }, [activeTab, viewMore, scheduleData]);
+  const { visibleSessions, hiddenCount } = useMemo(() => {
+    const all = activeDay?.sessions ?? [];
+    // "HH:MM" strings compare correctly as plain strings
+    const morning = all.filter((s) => startTime(s.time) < VIEW_MORE_CUTOFF);
+    return {
+      visibleSessions: viewMore ? all : morning,
+      hiddenCount: all.length - morning.length,
+    };
+  }, [activeDay, viewMore]);
 
   const handleTabChange = (index: number) => {
     setActiveTab(index);
     setViewMore(false);
   };
 
-  const activeDay = scheduleData[activeTab];
+  if (!activeDay) return null;
 
   return (
     <>
       <div className="flex justify-center mb-12">
         <button
-          onClick={() => {
-            const agendaText = scheduleData
-              .map(
-                (day) =>
-                  `${day.day}, ${day.date}\n` +
-                  day.sessions
-                    .map(
-                      (session) =>
-                        `${session.time}: ${session.title}\n${
-                          session.description
-                        }\nTags: ${session.tags.join(", ")}\n`,
-                    )
-                    .join("\n"),
-              )
-              .join("\n\n");
-
-            const blob = new Blob([agendaText], { type: "text/plain" });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = "WIT-Summit-Kenya-2025-Agenda.txt";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-          }}
+          type="button"
+          onClick={() =>
+            downloadText(buildAgendaText(scheduleData), DOWNLOAD_FILENAME)
+          }
           className="flex items-center gap-2 bg-purple-800 hover:bg-purple-900 text-white px-6 py-3 rounded-full font-medium transition-colors duration-200 shadow-lg hover:shadow-xl"
         >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-            />
-          </svg>
-           Download Agenda(DRAFT)
+          <DownloadIcon />
+          Download Agenda
         </button>
       </div>
 
       <div className="flex justify-center mb-8">
-        <div className="flex w-full max-w-4xl">
-          {scheduleData.map((day, index) => (
-            <button
-              key={index}
-              onClick={() => handleTabChange(index)}
-              className={`flex-1 py-4 text-left transition-all duration-200 ${
-                activeTab === index
-                  ? "border-b-4 border-purple-800"
-                  : "border-b-2 border-gray-300"
-              }`}
-            >
-              <div className="px-6">
-                <span
-                  className={`text-3xl font-bold block ${
-                    activeTab === index ? "text-gray-900" : "text-gray-400"
-                  }`}
-                >
-                  {day.day}
-                </span>
-                <span
-                  className={`text-lg ${
-                    activeTab === index ? "text-gray-700" : "text-gray-400"
-                  }`}
-                >
-                  {day.date}
-                </span>
-              </div>
-            </button>
-          ))}
+        <div
+          role="tablist"
+          aria-label="Summit days"
+          className="flex w-full max-w-4xl"
+        >
+          {scheduleData.map((day, index) => {
+            const selected = activeTab === index;
+            return (
+              <button
+                key={day.day}
+                type="button"
+                role="tab"
+                aria-selected={selected}
+                onClick={() => handleTabChange(index)}
+                className={`flex-1 py-4 text-left transition-all duration-200 ${
+                  selected
+                    ? "border-b-4 border-purple-800"
+                    : "border-b-2 border-gray-300"
+                }`}
+              >
+                <div className="px-6">
+                  <span
+                    className={`text-3xl font-bold block ${
+                      selected ? "text-gray-900" : "text-gray-400"
+                    }`}
+                  >
+                    {day.day}
+                  </span>
+                  <span
+                    className={`text-lg ${
+                      selected ? "text-gray-700" : "text-gray-400"
+                    }`}
+                  >
+                    {day.date}
+                  </span>
+                </div>
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -381,158 +483,57 @@ const PastAgendaTable: React.FC<AgendaTableProps> = ({
           <table className="w-full">
             <thead>
               <tr className="bg-purple-800 text-white">
-                <th className="text-left py-4 px-6 font-semibold">Time</th>
-                <th className="text-left py-4 px-6 font-semibold">
+                <th scope="col" className="text-left py-4 px-6 font-semibold">
+                  Time
+                </th>
+                <th scope="col" className="text-left py-4 px-6 font-semibold">
                   Main Conference Room
                 </th>
-                <th className="text-left py-4 px-6 font-semibold">
+                <th scope="col" className="text-left py-4 px-6 font-semibold">
                   Breakout Room
                 </th>
               </tr>
             </thead>
             <tbody>
-              {displayedSessions.map((session, index) => {
-                const breakoutInfo = extractBreakout(session.description);
-
-                return (
-                  <tr
-                    key={index}
-                    className={`border-b border-gray-200 ${
-                      index % 2 === 0 ? "bg-gray-50" : "bg-white"
-                    } hover:bg-purple-50 transition-colors duration-150`}
-                  >
-                    <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-                      {session.time}
-                    </td>
-                    <td className="py-4 px-6">
-                      <div className="space-y-2">
-                        <h4 className="font-semibold text-gray-900">
-                          {session.title}
-                        </h4>
-                        <p className="text-sm text-gray-600 leading-relaxed">
-                          {breakoutInfo.mainDescription}
-                        </p>
-                        <div className="flex flex-wrap gap-1">
-                          {session.tags.map((tag, tagIndex) => (
-                            <span
-                              key={tagIndex}
-                              className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full font-medium"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                        {session.speaker && (
-                          <div className="flex items-center gap-3 mt-3 p-3 bg-gray-100 rounded-lg">
-                            <div className="w-10 h-10 bg-purple-200 rounded-full flex items-center justify-center">
-                              <svg
-                                className="w-5 h-5 text-purple-800"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                              </svg>
-                            </div>
-                            <div>
-                              <p className="font-medium text-gray-900">
-                                {session.speaker.name}
-                              </p>
-                              <p className="text-sm text-gray-600">
-                                {session.speaker.title}
-                                {session.speaker.company &&
-                                  `, ${session.speaker.company}`}
-                              </p>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </td>
-                    <td className="py-4 px-6 text-gray-600 align-top">
-                      {breakoutInfo.hasBreakout ? (
-                        <div className="space-y-2">
-                          <p className="font-semibold text-gray-900 text-sm">
-                            {breakoutInfo.breakoutTitle}
-                          </p>
-                          {breakoutInfo.breakoutSpeaker && (
-                            <p className="text-xs text-gray-600">
-                              by {breakoutInfo.breakoutSpeaker}
-                            </p>
-                          )}
-                        </div>
-                      ) : session.tags.includes("Break") ||
-                        session.tags.includes("Welcome") ||
-                        session.tags.includes("Opening") ? (
-                        <span className="text-gray-400">—</span>
-                      ) : (
-                        <div className="space-y-1">
-                          <p className="font-medium text-sm"> - </p>
-                        </div>
-                      )}
-                    </td>
-                  </tr>
-                );
-              })}
+              {visibleSessions.map((session, index) => (
+                <SessionRow
+                  key={`${activeDay.day}-${session.time}`}
+                  session={session}
+                  striped={index % 2 === 0}
+                />
+              ))}
             </tbody>
           </table>
         </div>
 
         <div className="bg-gray-50 px-6 py-4 border-t border-gray-200">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <span>Time: 9:00 AM – 5:00 PM EAT</span>
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-sm text-gray-600">
+            <div className="flex items-center gap-2">
+              <ClockIcon />
+              <span>Time: {dayTimeRange(activeDay)}</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
+            <div className="flex items-center gap-2">
+              <PinIcon />
               <span>
-                {activeDay.day}:{" "}
-                {activeDay.day === "Friday"
-                  ? "Leadership, Product & Impact"
-                  : "Upskill, Career Growth & Mentorship"}
+                {activeDay.day}: {activeDay.theme}
               </span>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="flex justify-center py-4">
-        <button
-          onClick={() => setViewMore(!viewMore)}
-          className="bg-purple-800 hover:bg-purple-900 text-white px-6 py-3 rounded-full font-medium transition-colors duration-200 shadow-lg hover:shadow-xl"
-        >
-          {viewMore ? "View Less" : "View More"}
-        </button>
-      </div>
+      {hiddenCount > 0 && (
+        <div className="flex justify-center py-4">
+          <button
+            type="button"
+            aria-expanded={viewMore}
+            onClick={() => setViewMore((v) => !v)}
+            className="bg-purple-800 hover:bg-purple-900 text-white px-6 py-3 rounded-full font-medium transition-colors duration-200 shadow-lg hover:shadow-xl"
+          >
+            {viewMore ? "View Less" : `View More (${hiddenCount})`}
+          </button>
+        </div>
+      )}
     </>
   );
 };
