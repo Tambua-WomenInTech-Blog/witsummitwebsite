@@ -89,12 +89,15 @@ export const defaultScheduleData: DaySchedule[] = [
         tags: ["Break"],
       },
       {
-        time: "14:30 – 15:15",
-        title:
-          "The Design of Wealth: A Financial Blueprint for Kenya's Creative Tech Professionals",
-        speaker: "Kyendereta Chantelle",
+        time: "14:20 – 15:00",
+        title: "Kopo Kopo Sponsor-Led APIs brief",
+        speaker: "Sponsor-Led session (Kopo Kopo)",
         tags: ["Finance", "Career", "Growth"],
-        breakout: { title: "Sponsor-Led Session", speaker: "Kopo Kopo" },
+        breakout: {
+          title:
+            "The Design of Wealth: A Financial Blueprint for Kenya's Creative Tech Professionals",
+          speaker: "Kyendereta Chantelle",
+        },
       },
       {
         time: "15:15 – 16:00",
@@ -105,7 +108,7 @@ export const defaultScheduleData: DaySchedule[] = [
       },
       {
         time: "16:00 – 16:45",
-        title: "Panel: Health Tech Track",
+        title: "Wellness Activity Session",
         tags: ["Panel", "Health Tech"],
       },
       {
@@ -201,6 +204,11 @@ export const defaultScheduleData: DaySchedule[] = [
           "Building Production-Ready RAG Apps: Deploying Angular & Gemini AI on Firebase",
         speaker: "Morara Millicent",
         tags: ["AI", "RAG", "Gemini AI", "Software Engineering"],
+        breakout: {
+          title:
+            "Your Data Never Has to Leave the Building: Building Production AI Systems Without the Cloud",
+          speaker: "Alfonce Micah Yano",
+        },
       },
       {
         time: "15:50 – 16:30",
