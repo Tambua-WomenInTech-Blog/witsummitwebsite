@@ -58,7 +58,7 @@ export const defaultScheduleData: DaySchedule[] = [
       },
       {
         time: "11:00 – 11:30",
-        title: "Tea Break & Networking",
+        title: "Break & Networking",
         tags: ["Break"],
       },
       {
@@ -157,7 +157,7 @@ export const defaultScheduleData: DaySchedule[] = [
       },
       {
         time: "11:00 – 11:30",
-        title: "Tea Break & Networking",
+        title: "Break & Networking",
         tags: ["Break"],
       },
       {
