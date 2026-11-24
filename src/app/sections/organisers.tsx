@@ -71,6 +71,16 @@ const defaultOrganizers: Organizer[] = [
     title: "Flutteristas Mombasa Lead | Community Partnership lead",
     image: "/speakers/lina.png",
   },
+  {
+    name: "Khadija Abdul",
+    title: "Non Executive Board Director AWIT & AMREF Flying Doctors",
+    image: "/speakers/khadija.jpg",
+  },
+  {
+    name: "Valary Uhuru",
+    title: "Software Engineer | Public Speaking Enthusiast | Tech Writer",
+    image: "/speakers/valary.jpg",
+  },
 ];
 
 const defaultTestimonials: Testimonial[] = [
