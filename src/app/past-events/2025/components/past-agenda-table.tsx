@@ -109,7 +109,7 @@ export const defaultScheduleData: DaySchedule[] = [
       {
         time: "16:00 – 16:45",
         title: "Wellness Activity Session",
-        tags: ["Panel", "Health Tech"],
+        tags: ["Wellness", "Mental Health"],
       },
       {
         time: "16:45 – 17:45",
