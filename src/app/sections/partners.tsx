@@ -3,6 +3,7 @@ import React from "react";
 import { Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { SPONSOR_DECK_URL } from "../components/site-config";
 
 const Partners: React.FC = () => {
   const partners = [
@@ -102,7 +103,7 @@ const Partners: React.FC = () => {
                 </button>
 
                 <Link
-                  href="https://forms.gle/QcDq9yJc537ksVNu9"
+                  href={SPONSOR_DECK_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm flex items-center justify-center space-x-2"

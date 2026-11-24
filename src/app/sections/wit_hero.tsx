@@ -4,7 +4,7 @@ import { Calendar, Users } from "lucide-react";
 import Link from "next/link";
 import SecondaryCta from "../components/secondary-cta";
 import SiteHeader from "../components/site-header";
-import { RSVP_URL } from "../components/site-config";
+import { RSVP_URL, SPONSOR_DECK_URL } from "../components/site-config";
 
 interface CountdownTimerProps {
   targetDate: Date;
@@ -158,7 +158,7 @@ const WomenInTechSummitHero: React.FC = () => {
             →
           </span>
           <Link
-            href="https://forms.gle/QcDq9yJc537ksVNu9"
+            href={SPONSOR_DECK_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-purple-300 underline underline-offset-4 decoration-2 decoration-purple-300"
