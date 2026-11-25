@@ -13,15 +13,15 @@ const keynotes: Speaker[] = [
     bio: "Co-Founder - Mentor Match Kenya | GHC Scholar",
     image: "/speakers/allela.png",
   },
-  {
-    name: "Wendy Ouma",
-    company: "Keynote Speaker",
-    bio: "Keynote Speaker",
-    image: "/panelists/wendy-ouma.jpg",
-  },
 ];
 
 const panelists: Speaker[] = [
+  {
+    name: "Khadija Abdul",
+    company: "Non Executive Board Director AWIT & AMREF Flying Doctors",
+    bio: "With over 12 years of experience spanning the technology and media industries, Khadija is an entrepreneurial, results-oriented leader who is passionate about improving lives and livelihoods in Africa. A seasoned strategist, she excels at delivering complex programs at scale, nurturing inclusive, high-impact teams, and delivering strategic partnerships that drive transformative action. As Android Business Development Manager, Khadija manages the deals that keep driving Android's growth in Africa. Previous, in her role as Technical Programs Manager for Goggle for Developers in Africa, Khadija's worked to educate & advocate for 10,000+ African developers at Google Product Offerings through content focused community building.",
+    image: "/speakers/khadija.jpg",
+  },
   {
     name: "Faith Ngogoyo",
     company: "CEO and Founder Tanda Tech Hub",
@@ -51,6 +51,12 @@ const panelists: Speaker[] = [
     company: "Panelist",
     bio: "",
     image: "/panelists/doreen.jpg",
+  },
+  {
+    name: "Wendy Ouma",
+    company: "Panelist",
+    bio: "Panelist",
+    image: "/panelists/wendy-ouma.jpg",
   },
 ];
 
