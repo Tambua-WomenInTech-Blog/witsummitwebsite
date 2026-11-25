@@ -58,6 +58,12 @@ const panelists: Speaker[] = [
     bio: "Panelist",
     image: "/panelists/wendy-ouma.jpg",
   },
+  {
+    name: "Esther Kagwaini",
+    company: "Panelist",
+    bio: "Panelist",
+    image: "/panelists/esther-kagwaini.jpg",
+  },
 ];
 
 const speakers: Speaker[] = [
