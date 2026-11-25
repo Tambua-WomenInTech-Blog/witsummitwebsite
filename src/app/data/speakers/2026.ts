@@ -31,25 +31,25 @@ const panelists: Speaker[] = [
   {
     name: "Faith Kithenya-Mamboleo",
     company: "Panelist",
-    bio: "",
+    bio: "Panelist",
     image: "/panelists/faith-kithenya-mamboleo.jpg",
   },
   {
     name: "Mercy Jillo",
     company: "Panelist",
-    bio: "",
+    bio: "Panelist",
     image: "/panelists/mercy-jillo.jpg",
   },
   {
     name: "Nicollet Njora",
     company: "Panelist",
-    bio: "",
+    bio: "Panelist",
     image: "/panelists/nicollet-njora.jpg",
   },
   {
     name: "Doreen Chemweno",
     company: "Panelist",
-    bio: "",
+    bio: "Panelist",
     image: "/panelists/doreen.jpg",
   },
   {
