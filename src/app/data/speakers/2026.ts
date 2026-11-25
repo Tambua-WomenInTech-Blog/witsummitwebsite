@@ -1,5 +1,59 @@
 import type { Speaker, SpeakerLineup } from "./types";
 
+const keynotes: Speaker[] = [
+  {
+    name: "Maureen Josephine",
+    company: "Founder - Tambua Women In Tech | Software Engineer | GDE",
+    bio: "Founder - Tambua Women In Tech | WIT Summit Host | Software Engineer | GDE",
+    image: "/speakers/mj.png",
+  },
+  {
+    name: "Eunice Allela",
+    company: "Co-Founder - Mentor Match Kenya | GHC Scholar",
+    bio: "Co-Founder - Mentor Match Kenya | GHC Scholar",
+    image: "/speakers/allela.png",
+  },
+  {
+    name: "Wendy Ouma",
+    company: "Keynote Speaker",
+    bio: "Keynote Speaker",
+    image: "/panelists/wendy-ouma.jpg",
+  },
+];
+
+const panelists: Speaker[] = [
+  {
+    name: "Faith Ngogoyo",
+    company: "CEO and Founder Tanda Tech Hub",
+    bio: "Faith Ngogoyo-Mwangi, is a visionary leader in the African EdTech and innovation space. She has over nine years of experience leading transformative education and technology programs across East, West, and Southern Africa. Faith has served as Country Director, Co-Founder, and Program Director in several forward-thinking organizations, designing scalable, high-impact solutions that prepare teachers, youth, and entrepreneurs for the future of work. Her work has reached thousands of learners and educators, and she has been featured on Citizen TV, Nation Media Group, The SA Summit, and Online Education forums for her contributions to digital transformation and education reform.",
+    image: "/panelists/faith-ngogoyo.jpg",
+  },
+  {
+    name: "Faith Kithenya-Mamboleo",
+    company: "Panelist",
+    bio: "",
+    image: "/panelists/faith-kithenya-mamboleo.jpg",
+  },
+  {
+    name: "Mercy Jillo",
+    company: "Panelist",
+    bio: "",
+    image: "/panelists/mercy-jillo.jpg",
+  },
+  {
+    name: "Nicollet Njora",
+    company: "Panelist",
+    bio: "",
+    image: "/panelists/nicollet-njora.jpg",
+  },
+  {
+    name: "Doreen",
+    company: "Panelist",
+    bio: "",
+    image: "/panelists/doreen.jpg",
+  },
+];
+
 const speakers: Speaker[] = [
   {
     name: "Abigael Mukuru Zawadi",
@@ -131,8 +185,7 @@ const speakers: Speaker[] = [
 
 export const lineup2026: SpeakerLineup = {
   year: 2026,
-  // TODO(davies-k): Add keynote speakers and panelists when confirmed
-  keynotes: { speakers: [], comingSoon: 3 },
-  panelists: { speakers: [], comingSoon: 4 },
+  keynotes: { speakers: keynotes },
+  panelists: { speakers: panelists },
   speakers: { speakers },
 };
