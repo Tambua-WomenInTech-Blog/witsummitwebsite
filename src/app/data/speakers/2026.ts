@@ -47,7 +47,7 @@ const panelists: Speaker[] = [
     image: "/panelists/nicollet-njora.jpg",
   },
   {
-    name: "Doreen",
+    name: "Doreen Chemweno",
     company: "Panelist",
     bio: "",
     image: "/panelists/doreen.jpg",
