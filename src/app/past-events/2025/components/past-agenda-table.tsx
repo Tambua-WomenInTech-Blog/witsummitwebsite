@@ -41,13 +41,13 @@ export const defaultScheduleData: DaySchedule[] = [
       },
       {
         time: "09:00 – 09:30",
-        title: "Opening Remarks",
-        speaker: "Allela Eunice",
+        title: "Opening Ceremony - Ihub representative",
+        speaker: "Allan Mwangi",
         tags: ["Opening"],
       },
       {
         time: "09:30 – 10:00",
-        title: "Opening Keynote",
+        title: "Opening keynote - We made it here, Now lets talk about money",
         speaker: "Maureen Josephine",
         tags: ["Keynote", "Leadership"],
       },
@@ -91,7 +91,7 @@ export const defaultScheduleData: DaySchedule[] = [
       {
         time: "14:20 – 15:00",
         title: "Kopo Kopo Sponsor-Led APIs brief",
-        speaker: "Sponsor-Led session (Kopo Kopo)",
+        speaker: "Sponsor-Led session (Kopo Kopo) - Doreen Chemweno",
         tags: ["Finance", "Career", "Growth"],
         breakout: {
           title:
@@ -108,7 +108,7 @@ export const defaultScheduleData: DaySchedule[] = [
       },
       {
         time: "16:00 – 16:45",
-        title: "Wellness Activity Session",
+        title: "Wellness Activity Session: Pause. Breathe. Reconnect.",
         tags: ["Wellness", "Mental Health"],
       },
       {
