@@ -1,5 +1,5 @@
 import React from "react";
-import { MapPin, Mic, Users, Briefcase, GraduationCap, Calendar } from "lucide-react";
+import { MapPin, Mic, Users, Briefcase, GraduationCap } from "lucide-react";
 import Link from "next/link";
 import SecondaryCta from "../components/secondary-cta";
 

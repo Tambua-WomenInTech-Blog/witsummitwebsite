@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, ArrowRight, Users } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 const EmpowermentSection: React.FC = () => {
   return (
