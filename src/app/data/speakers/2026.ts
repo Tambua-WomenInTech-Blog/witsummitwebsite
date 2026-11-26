@@ -13,6 +13,12 @@ const keynotes: Speaker[] = [
     bio: "Co-Founder - Mentor Match Kenya | GHC Scholar",
     image: "/speakers/allela.png",
   },
+  {
+    name: "Allan Mwangi",
+    company: "iHub",
+    bio: "iHub representative",
+    image: "/panelists/allan.jpg",
+  },
 ];
 
 const panelists: Speaker[] = [
@@ -30,20 +36,20 @@ const panelists: Speaker[] = [
   },
   {
     name: "Faith Kithenya-Mamboleo",
-    company: "Panelist",
-    bio: "Panelist",
+    company: "Head of IT - BRAC Kenya",
+    bio: "Faith Kithenya-Mamboleo is an accomplished technology and digital transformation leader with over 10 years of experience in technology management, IT strategy, enterprise systems and digital innovation. She currently serves as the Head of IT at BRAC Kenya, having previously served as Head of ICT at VisionFund Kenya.\n\nShe is a 2025 CIO Awards Bronze recipient and holds a Master’s degree in Project Management and a Bachelor’s degree in Information Technology from Jomo Kenyatta University of Agriculture and Technology (JKUAT). She also holds a Certificate in Organizational Leadership from Harvard and a Certificate in Data Analytics.\n\nFaith is passionate about mentorship, coaching, talent development and empowering women to build successful careers in technology. She believes in intentional leadership, continuous learning and creating opportunities for the next generation of technology leaders.",
     image: "/panelists/faith-kithenya-mamboleo.jpg",
   },
   {
     name: "Mercy Jillo",
-    company: "Panelist",
-    bio: "Panelist",
+    company: "Technology & Product Leader",
+    bio: "Jillo Mercy is a technology and product leader with over seven years of experience across fintech, edtech, gaming, and developer ecosystems globally. Her career spans software engineering, project management, developer relations, strategic management, and product leadership, giving her a unique perspective on career transitions, professional growth, and building impactful digital products. She is passionate about mentorship and is committed to creating growth opportunities in the tech ecosystem.",
     image: "/panelists/mercy-jillo.jpg",
   },
   {
     name: "Nicollet Njora",
-    company: "Panelist",
-    bio: "Panelist",
+    company: "Senior Software Engineer - Kopo Kopo",
+    bio: "Nicollet Njora is a Senior Software Engineer at Kopo Kopo, where she builds and scales mobile payment platforms and APIs powering businesses across Kenya. Her experience spans mobile and backend engineering, system architecture, and DevOps. She holds a Master of Science in Computer Science from Georgia Tech, specializing in Machine Learning, and is passionate about exploring how AI can transform software development and help build smarter, more secure, and reliable systems.",
     image: "/panelists/nicollet-njora.jpg",
   },
   {
@@ -60,8 +66,8 @@ const panelists: Speaker[] = [
   },
   {
     name: "Esther Kagwaini",
-    company: "Panelist",
-    bio: "Panelist",
+    company: "CEO & Founder - Bloom Executive VAs",
+    bio: "Esther Kagwaini is the CEO and Founder of Bloom Executive VAs, an agency supporting international founders and executives with business operations, executive support and workflow coordination. Drawing on her experience working with CEOs and founders in the United States and building her own service business, she brings a practical perspective on delegation, team accountability and the systems that support effective leadership. Her work also explores how teams can use AI while retaining human judgment and clear responsibility. Through speaking, coaching and training, Esther helps entrepreneurs and remote professionals strengthen their operations and professional practice.",
     image: "/panelists/esther-kagwaini.jpg",
   },
 ];
@@ -71,127 +77,109 @@ const speakers: Speaker[] = [
     name: "Abigael Mukuru Zawadi",
     company: "Data Scientist & ML Engineer - Founder, Inua360",
     bio: "Abigael Zawadi Mukuru is a Nairobi-based Data Scientist and Machine Learning Engineer who builds AI systems grounded in African realities. She is the founder of Inua360, an ML platform assessing SME eligibility and default risk that achieves ~85% predictive accuracy and is designed to process over 1,000 applications per day — directly impacting access to funding for Kenyan small businesses.\nHer engineering experience spans recommendation systems, demand forecasting, predictive logistics, and FastAPI-powered ML deployments. As a Machine Learning Engineer Intern at Uamuzi, she shipped a hybrid recommendation engine serving 5,000+ active users on a live civic engagement platform.\nBeyond building, Abigael organises ML/AI workshops through Google Developer Groups across three cities, has won three hackathon awards, and writes applied ML tutorials reaching 100+ readers monthly on Medium.",
-    image:
-      "https://drive.google.com/open?id=1f7l1Y6FXsFi34SkhCJGjOeE6fL_A__Rf",
+    image: "https://drive.google.com/open?id=1f7l1Y6FXsFi34SkhCJGjOeE6fL_A__Rf",
   },
   {
     name: "Lydiah Ng'ang'a",
     company: "Cloud & DevOps Engineer",
     bio: "I'm a Cloud & DevOps Engineer based in Nairobi, currently interning as an SRE/DevOps Engineer at a telecom infrastructure company, where I work on security monitoring, Ansible automation, and log pipeline migrations for production systems. I'm a career transitioner from finance I've built my technical skills through AWS re/Start, the StegHub Cloud & DevOps Apprenticeship, and the Tech4Dev Fellowship. I'm AWS Cloud Practitioner and KCNA certified. I write about what I'm learning as I go, mistakes included.",
-    image:
-      "https://drive.google.com/open?id=1bddXuA5eZ8qD1wxQXjLrsxxpHhauQ-yJ",
+    image: "https://drive.google.com/open?id=1bddXuA5eZ8qD1wxQXjLrsxxpHhauQ-yJ",
   },
   {
     name: "Julie Ojwaya",
     company: "Advocate & Regulatory Affairs Specialist",
     bio: "I'm an advocate, and a regulatory affairs specialist of over 13 years' expertise. I'm also passionate about professional development and mentorship, of women, especially. I'm deeply passionate about technology, payments and fintech and Africans building solutions for Africa.\nFun fact, I was to speak in the 2019 summit but was pulled into a work engagement and I've been looking forward to another opportunity since. I'm truly looking forward to the session.",
-    image:
-      "https://drive.google.com/open?id=12pxgCT8nud9QqnidDPq7hpGFe3o-ha_l",
+    image: "https://drive.google.com/open?id=12pxgCT8nud9QqnidDPq7hpGFe3o-ha_l",
   },
   {
     name: "Morara Millicent",
     company: "Data Scientist & MLOps Engineer",
     bio: "I am a full stack Data Scientist and MLOps Engineer specializing in building scalable ML pipelines, full-stack AI products and cloud architectures like Google Cloud, Azure & Docker.\nI am passionate about community leadership and sustainable tech.\nI bridge robust backend engineering with user-friendly AI solutions.",
-    image:
-      "https://drive.google.com/open?id=1KoF4wdhhbm35n7kYTav5TWjM9Q1UGCAr",
+    image: "https://drive.google.com/open?id=1KoF4wdhhbm35n7kYTav5TWjM9Q1UGCAr",
   },
   {
     name: "Alfonce Micah Yano",
     company: "Applications Developer & Health Systems Architect",
     bio: "I became a health-tech developer because I believe that good data saves lives, and in much of Kenya, that data is still sitting in a handwritten diary.\n\nFor the past five years, I have been building systems that sit at the intersection of clinical care and technology. Right now, I work as an Applications Developer and Health Systems Architect at Aga Khan University Hospital in Nairobi, where I develop EHR integrations and clinical workflow systems in one of the most demanding and compliance-driven healthcare environments in East Africa.\n\nAt the same time, my MSc research at Moi University is taking me back to the problem that drives me: why do well-funded digital health systems get quietly abandoned? My research develops a prototype-based digital transformation framework specifically for maternal and child health records in Kisumu County by building an offline-first, FHIR-aligned mobile system designed around the real constraints of rural facilities, not the ideal ones.\n\nA year spent with CorpsAfrica in Kitui, facilitating community-led projects through Human-Centered Design, changed how I think about technology. The best solution is not the most sophisticated one. It is the one the community actually uses.\n\nI build with Flutter, .NET, Node.js, Python, and FHIR-standard integrations. I am passionate about interoperable health systems, digital transformation in low-resource settings, and design that puts users first.\nIf you are working on similar problems in African health systems, I would love to connect.",
-    image:
-      "https://drive.google.com/open?id=1eW-CMSXlr7tDmROEc5HNBMn70jBD5I1i",
+    image: "https://drive.google.com/open?id=1eW-CMSXlr7tDmROEc5HNBMn70jBD5I1i",
   },
   {
     name: "Blossom Dugbatey",
     company: "Software Engineer",
     bio: "Blossom Dugbatey is a software engineer based in Ghana with experience building secure systems across IT business solutions, banking systems, and startup environments. She is passionate about designing secure, scalable systems and actively contributes to developer communities across Ghana.\n\nShe is a Community Manager at Everything Open Source and an admin at DevCongress, where she supports developer growth through events, workshops, system design sessions, and mentorship.\n\nShe has mentored over 200 developers into tech, spoken at 15 tech events, organized a hackathon with MEST and UNICEF, and is focused on bridging the gap between software engineering, open source, and cybersecurity in Africa through advocacy and practical implementation.",
-    image:
-      "https://drive.google.com/open?id=17L0ePR4bIRdMhWuUl0wqf07ESpF2h9tE",
+    image: "https://drive.google.com/open?id=17L0ePR4bIRdMhWuUl0wqf07ESpF2h9tE",
   },
   {
     name: "Sarah Muwanguzi",
     company: "Product Owner",
     bio: "Sarah Muwanguzi is a Product Owner and former Product Designer passionate about building technology that solves real-world problems and helping people build meaningful careers in tech. She has worked across healthcare, HR, and enterprise software, leading cross-functional teams to deliver products that balance user needs, business goals, and operational impact.\n\nBeyond product development, Sarah is an educator, mentor, and speaker who has taught product design, facilitated career development sessions, and spoken at universities and technology communities across East Africa. She is particularly passionate about empowering women in tech, championing intentional career growth, and helping professionals develop the skills that extend beyond technical expertise.",
-    image:
-      "https://drive.google.com/open?id=1PfzjJZ5M3PBLo1itn9sg4XoA6-xa3XAm",
+    image: "https://drive.google.com/open?id=1PfzjJZ5M3PBLo1itn9sg4XoA6-xa3XAm",
   },
   {
     name: "Tabitha Margaret",
     company: "AI & Data Practitioner",
     bio: "Tabitha Margaret is an AI & Data practitioner transitioning from UI/UX and Graphic design to build user-centered, intelligent tech solutions. She's a passionate community builder; she actively contributes to Nairobi DevOps Community, Cursor Kenya, Write the Docs Kenya, and took part in organizing Kenya's first-ever UbuCon (Ubuntu Conference) that took place at USIU Africa. She is driven by a mission to blend human experience design with cutting-edge technology while empowering the African tech ecosystem to thrive.",
-    image:
-      "https://drive.google.com/open?id=1iVTyDj8yguttkdEgg6lIkS3U8rmtgNoY",
+    image: "https://drive.google.com/open?id=1iVTyDj8yguttkdEgg6lIkS3U8rmtgNoY",
   },
   {
     name: "Tabitha Kavyu",
     company: "Community Lead",
     bio: "Tabitha Kavyu is a customer success and community strategist who designs customer-centred systems that help people succeed. Her work spans Customer Success, Customer Experience, community strategy, and Voice of Customer.\n\nPreviously, she was Head of Learner Success at AltSchool Africa, where she led the Community and Customer Support functions, supporting more than 35,000 learners across 11 cohorts in over 100 countries. She also worked with Google as a Crowdsource Community Coordinator, coordinating communities across six East African countries and contributing to a community that generated more than 2 million contributions.\n\nTabitha brings experience in building communities, improving customer experiences, and turning customer insights into action. She speaks on Customer Success, community strategy, customer experience, and leadership.",
-    image:
-      "https://drive.google.com/open?id=1GyJtlEvQ_--F5_q2GDHUojdv6ANKEi2P",
+    image: "https://drive.google.com/open?id=1GyJtlEvQ_--F5_q2GDHUojdv6ANKEi2P",
   },
   {
     name: "Brenda Mwaura",
     company: "IT Product Development - First Assurance, Absa Group",
     bio: "Brenda Mwaura is an IT Product Development professional at First Assurance, Absa Group Africa and a community leader passionate about empowering women in technology across Africa. She has led and supported technology communities through mentorship, events and programs that foster learning, collaboration and career growth. She is also an AnitaB.org Kenya Community Leader and Youth Ambassador for Women in Tech Global, Kenya Chapter. Brenda is committed to creating inclusive spaces where women can connect, develop technical and leadership skills and thrive in the tech ecosystem. She enjoys building impactful products, growing communities and helping others unlock opportunities in technology.",
-    image:
-      "https://drive.google.com/open?id=12AVH_A7ELikYNZWAECnu3ya-2gImV7lR",
+    image: "https://drive.google.com/open?id=12AVH_A7ELikYNZWAECnu3ya-2gImV7lR",
   },
   {
     name: "Depha Anns Okal",
     company: "Country Manager, Uganda - Boxleo Courier",
     bio: "Depha Anns Okal is a results-driven operations leader, data analytics professional, and emerging voice in leadership development. She currently serves as Country Manager-Uganda at Boxleo Courier & Fulfillment Services, where she oversees business operations, performance management, customer experience, merchant relations, and strategic growth initiatives across the Ugandan market.\n\nHer career journey is a testament to the power of data-driven leadership. Beginning as a Data Analyst, Depha built a reputation for transforming operational data into actionable business insights. Through her analytical expertise, commitment to continuous improvement, and ability to translate numbers into strategy, she rose through the ranks to executive leadership, becoming one of the youngest country managers within the organization",
-    image:
-      "https://drive.google.com/open?id=1DCGUthuGkKoysNNr_svnI9XD8bnmV_eO",
+    image: "https://drive.google.com/open?id=1DCGUthuGkKoysNNr_svnI9XD8bnmV_eO",
   },
   {
     name: "Eng Mueni Faith",
     company: "Network Solution Architect - Huawei",
     bio: "Graduated from The Technical University of Kenya in December 2022 with a Bachelor of Technology in Electrical and Electronics Engineering (Telecommunications and Information Technology).\n\nCurrently serving as a Network Solution Architect at Huawei, contributing to solution design, technical proposals, and collaboration with account managers and engineers to deliver effective networking solutions.\n\nExpertise includes project management, technical solution design and development, with a focus on SD-WAN, WLAN, DCN and cybersecurity solutions. Actively involved in technical demonstrations, bid responses, customer engagement, partnerships management, marketing and training stakeholders. Passionate about leveraging technology to drive impactful solutions.",
-    image:
-      "https://drive.google.com/open?id=1BF3KEkXR5tHq5fiZDpxfR89-YAg3D0cA",
+    image: "https://drive.google.com/open?id=1BF3KEkXR5tHq5fiZDpxfR89-YAg3D0cA",
   },
   {
     name: "Beth Njeri",
     company: "ML Engineer - Founder, Axene.io",
     bio: "Beth Njeri Kimani is a Google Certified Professional Machine Learning Engineer, Founder of Axene.io, and the AI/ML Lead for GDG Chuka and She Code Africa Chuka. Passionate about bridging the gap between innovative research and practical infrastructure, Beth specializes in MLOps, autonomous multi-agent systems, and AI-driven fintech integrations. As a visionary developer, she is dedicated to building scalable AI solutions for the African digital economy and mentoring the next generation of tech leaders.",
-    image:
-      "https://drive.google.com/open?id=1l6Vh3U8fL9ZYQOnYXJqCY3JpMXAFDl8g",
+    image: "https://drive.google.com/open?id=1l6Vh3U8fL9ZYQOnYXJqCY3JpMXAFDl8g",
   },
   {
     name: "Kyendereta Chantelle",
     company: "Senior Product Designer - Founder, KDK",
     bio: "Kyendereta is a senior product designer and the founder of Kenyan Design Konversations (KDK), a design community and platform with 3,400+ members across East Africa. Her work sits at the intersection of empathy-driven design and real business outcomes, building products and systems that actually work for African users, not just African markets on paper.\nThrough KDK, she has spent three years growing one of Kenya's most active design communities, producing content, programming, and resources that meet designers where they are. She also leads Kreative Cirkuit, a boutique design consultancy, and is an emerging voice on AI, UX, and financial literacy for creatives in the Silicon Savannah.\nKyendereta believes that the next generation of African tech will be built by people who feel first and are paid well enough to keep building.",
-    image:
-      "https://drive.google.com/open?id=1ho6gdVo0mxKXiaZHpSsQJnN3jo33f2Kz",
+    image: "https://drive.google.com/open?id=1ho6gdVo0mxKXiaZHpSsQJnN3jo33f2Kz",
   },
   {
     name: "Mercy Chore",
     company: "Advocate - CM Advocates LLP",
     bio: "Mercy Cheredi Chore is an Advocate of the High Court of Kenya and a specialist in Intellectual Property, Technology and Commercial Law with over five years' experience. She is currently practising at CM Advocates LLP, where she advises on digital compliance, telecommunications, technology transactions, commercial contracts, platform governance and cross-border digital services.\n\nShe holds an LL. B (Hons) and a Postgraduate Diploma in Law from the Kenya School of Law, as well as certifications in data protection, copyright law, patent law and alternative dispute resolution for IP and technology matters.\n\nShe is a member of ICANN's Intellectual Property Constituency and the IP/ICT Liaison Committee- Nairobi Branch, and is committed to advancing a secure, inclusive and rights-respecting digital ecosystem across Africa.",
-    image:
-      "https://drive.google.com/open?id=1hu2LnS3WMlCDZ6l97mhjjOA5Dy_f124l",
+    image: "https://drive.google.com/open?id=1hu2LnS3WMlCDZ6l97mhjjOA5Dy_f124l",
   },
   {
     name: "Eunice Eze",
     company: "Senior Product Designer",
     bio: "Eunice is a Senior Product Designer, international speaker, and mentor who believes great careers are built through intentional impact, not just technical expertise. She has led product teams, designed products used by thousands, mentored thousands of aspiring designers, and spoken at technology conferences across Africa. Through her work at the intersection of design, leadership, and community, she helps women build the visibility, credibility, and career capital needed to lead, influence, and thrive in the technology industry.",
-    image:
-      "https://drive.google.com/open?id=1nALgkHOq7Y1LMQes34wBTgKvMp5-zpMY",
+    image: "https://drive.google.com/open?id=1nALgkHOq7Y1LMQes34wBTgKvMp5-zpMY",
   },
   {
     name: "Christal Riziki",
     company: "Software Developer",
     bio: "Christal Riziki is a passionate technology enthusiast, aspiring software developer, and community-focused innovator dedicated to using technology to create meaningful social impact. With a growing background in web and mobile application development, Christal has been actively building skills in modern technologies such as Angular, React, Flutter, and AI-powered solutions.\n\nDriven by a strong passion for youth empowerment and women in technology, she is committed to creating inclusive digital solutions that address real-world community challenges in areas such as healthcare, education, and economic empowerment. Her work reflects a deep interest in product innovation, human-centered design, and using technology as a tool for positive change across African communities.",
-    image:
-      "https://drive.google.com/open?id=1qU5SI56wPlqLHwYpJlw_o4fWSfdq_OdA",
+    image: "https://drive.google.com/open?id=1qU5SI56wPlqLHwYpJlw_o4fWSfdq_OdA",
   },
   {
     name: "Amen Divine Ikamba",
     company: "Founder & CEO - PACIN",
     bio: "Amen is the founder and CEO of PACIN (Pan-African Credit Intelligence Network), a B2B API platform selected for the inaugural UNICEF AI Ventures Accelerator and backed by the NVIDIA Inception Program. PACIN aggregates mobile money, BNPL, and savings group data across Africa to return explainable AI credit scores for the 500M+ people with no formal credit record.\n\nAmen grew up in Kigali, Rwanda, watching her mother, a loan officer, turn away creditworthy people because the system gave her no way to prove what she already knew. That experience is the origin of PACIN. She is a senior at Pitzer College studying Data Science and Mathematical Economics and competed as the youngest national finalist at Black Is Tech Conference 2026. She speaks from the middle of building something the world has not yet confirmed is possible.",
-    image:
-      "https://drive.google.com/open?id=1S23XzdRZXAFI8EsGYhZz9MFK1WsbRzsa",
+    image: "https://drive.google.com/open?id=1S23XzdRZXAFI8EsGYhZz9MFK1WsbRzsa",
   },
 ];
 
