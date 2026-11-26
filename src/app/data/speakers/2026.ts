@@ -54,13 +54,13 @@ const panelists: Speaker[] = [
   },
   {
     name: "Doreen Chemweno",
-    company: "Panelist",
+    company: "Software Engineer - Kopo Kopo",
     bio: "Panelist",
     image: "/panelists/doreen.jpg",
   },
   {
     name: "Wendy Ouma",
-    company: "Panelist",
+    company: "Microsoft D365 BC Consultant",
     bio: "Panelist",
     image: "/panelists/wendy-ouma.jpg",
   },
