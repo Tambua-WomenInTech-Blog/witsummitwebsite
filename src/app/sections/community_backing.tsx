@@ -5,27 +5,52 @@ import Image from "next/image";
 
 const CommunityBacking: React.FC = () => {
   const communities = [
-    { src: "/sponsors/platcorp.png", alt: "platcorp", height: 90, width: 150 },
+    {
+      src: "/2026/sponsors/the-beret-edit.png",
+      alt: "The Beret Edit",
+      height: 77,
+      width: 120,
+    },
+    {
+      src: "/2026/sponsors/genius-ink.png",
+      alt: "Genius Ink",
+      height: 100,
+      width: 100,
+    },
     { src: "/sponsors/vabu.png", alt: "vabu", height: 80, width: 100 },
     { src: "/sponsors/lamu.png", alt: "lamu", height: 80, width: 150 },
-    //  { src: "/sponsors/luxpng.png", alt: "lux", height: 80, width: 150 },
     { src: "/sponsors/ihub.png", alt: "ihub", height: 80, width: 150 },
     { src: "/sponsors/kdk.png", alt: "kdk", height: 80, width: 150 },
     {
-      src: "/sponsors/tech_event_kenya.png",
-      alt: "k_tech_event",
-      height: 80,
+      src: "/2026/sponsors/africa-vibe-coders.png",
+      alt: "Africa Vibe Coders",
+      height: 100,
       width: 100,
     },
     {
-      src: "/sponsors/wtn.png",
-      alt: "womentechNetwork",
-      height: 80,
+      src: "/2026/sponsors/awit-2026.png",
+      alt: "African Women in Technology",
+      height: 64,
       width: 150,
     },
-
-    { src: "/sponsors/ttw.png", alt: "ttw", height: 90, width: 100 },
-    { src: "/sponsors/awit.png", alt: "awit", height: 80, width: 150 },
+    {
+      src: "/2026/sponsors/genius-ink.png",
+      alt: "Genius Ink",
+      height: 100,
+      width: 100,
+    },
+    {
+      src: "/2026/sponsors/kopo-kopo.png",
+      alt: "Kopo Kopo",
+      height: 39,
+      width: 170,
+    },
+    {
+      src: "/2026/sponsors/mentor-match-kenya.png",
+      alt: "Mentor Match Kenya",
+      height: 70,
+      width: 150,
+    },
   ];
 
   return (
