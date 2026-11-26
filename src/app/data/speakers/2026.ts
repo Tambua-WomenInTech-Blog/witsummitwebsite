@@ -1,5 +1,71 @@
 import type { Speaker, SpeakerLineup } from "./types";
 
+const keynotes: Speaker[] = [
+  {
+    name: "Maureen Josephine",
+    company: "Founder - Tambua Women In Tech | Software Engineer | GDE",
+    bio: "Founder - Tambua Women In Tech | WIT Summit Host | Software Engineer | GDE",
+    image: "/speakers/mj.png",
+  },
+  {
+    name: "Eunice Allela",
+    company: "Co-Founder - Mentor Match Kenya | GHC Scholar",
+    bio: "Co-Founder - Mentor Match Kenya | GHC Scholar",
+    image: "/speakers/allela.png",
+  },
+];
+
+const panelists: Speaker[] = [
+  {
+    name: "Khadija Abdul",
+    company: "Non Executive Board Director AWIT & AMREF Flying Doctors",
+    bio: "With over 12 years of experience spanning the technology and media industries, Khadija is an entrepreneurial, results-oriented leader who is passionate about improving lives and livelihoods in Africa. A seasoned strategist, she excels at delivering complex programs at scale, nurturing inclusive, high-impact teams, and delivering strategic partnerships that drive transformative action. As Android Business Development Manager, Khadija manages the deals that keep driving Android's growth in Africa. Previous, in her role as Technical Programs Manager for Goggle for Developers in Africa, Khadija's worked to educate & advocate for 10,000+ African developers at Google Product Offerings through content focused community building.",
+    image: "/speakers/khadija.jpg",
+  },
+  {
+    name: "Faith Ngogoyo",
+    company: "CEO and Founder Tanda Tech Hub",
+    bio: "Faith Ngogoyo-Mwangi, is a visionary leader in the African EdTech and innovation space. She has over nine years of experience leading transformative education and technology programs across East, West, and Southern Africa. Faith has served as Country Director, Co-Founder, and Program Director in several forward-thinking organizations, designing scalable, high-impact solutions that prepare teachers, youth, and entrepreneurs for the future of work. Her work has reached thousands of learners and educators, and she has been featured on Citizen TV, Nation Media Group, The SA Summit, and Online Education forums for her contributions to digital transformation and education reform.",
+    image: "/panelists/faith-ngogoyo.jpg",
+  },
+  {
+    name: "Faith Kithenya-Mamboleo",
+    company: "Panelist",
+    bio: "Panelist",
+    image: "/panelists/faith-kithenya-mamboleo.jpg",
+  },
+  {
+    name: "Mercy Jillo",
+    company: "Panelist",
+    bio: "Panelist",
+    image: "/panelists/mercy-jillo.jpg",
+  },
+  {
+    name: "Nicollet Njora",
+    company: "Panelist",
+    bio: "Panelist",
+    image: "/panelists/nicollet-njora.jpg",
+  },
+  {
+    name: "Doreen Chemweno",
+    company: "Panelist",
+    bio: "Panelist",
+    image: "/panelists/doreen.jpg",
+  },
+  {
+    name: "Wendy Ouma",
+    company: "Panelist",
+    bio: "Panelist",
+    image: "/panelists/wendy-ouma.jpg",
+  },
+  {
+    name: "Esther Kagwaini",
+    company: "Panelist",
+    bio: "Panelist",
+    image: "/panelists/esther-kagwaini.jpg",
+  },
+];
+
 const speakers: Speaker[] = [
   {
     name: "Abigael Mukuru Zawadi",
@@ -131,8 +197,7 @@ const speakers: Speaker[] = [
 
 export const lineup2026: SpeakerLineup = {
   year: 2026,
-  // TODO(davies-k): Add keynote speakers and panelists when confirmed
-  keynotes: { speakers: [], comingSoon: 3 },
-  panelists: { speakers: [], comingSoon: 4 },
+  keynotes: { speakers: keynotes },
+  panelists: { speakers: panelists },
   speakers: { speakers },
 };
