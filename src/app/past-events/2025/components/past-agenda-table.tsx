@@ -92,19 +92,19 @@ export const defaultScheduleData: DaySchedule[] = [
         time: "14:20 – 15:00",
         title: "Kopo Kopo Sponsor-Led APIs brief",
         speaker: "Sponsor-Led session (Kopo Kopo) - Doreen Chemweno",
-        tags: ["Finance", "Career", "Growth"],
-        breakout: {
-          title:
-            "The Design of Wealth: A Financial Blueprint for Kenya's Creative Tech Professionals",
-          speaker: "Kyendereta Chantelle",
-        },
+        tags: ["Finance", "APIs", "Fintech"],
       },
       {
         time: "15:15 – 16:00",
         title:
           "The Habits Holding Her Back: Unlearning the Rules That Got You Here",
         speaker: "Tabitha Kavyu",
-        tags: ["Leadership", "Growth"],
+        tags: ["Leadership", "Growth", "Career"],
+        breakout: {
+          title:
+            "The Design of Wealth: A Financial Blueprint for Kenya's Creative Tech Professionals",
+          speaker: "Kyendereta Chantelle",
+        },
       },
       {
         time: "16:00 – 16:45",
